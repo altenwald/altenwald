@@ -1,0 +1,1693 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);"
+
+#: lib/books_web/controllers/catalog_html/book.heex:121
+#: lib/books_web/controllers/catalog_html/book.heex:131
+#: lib/books_web/controllers/catalog_html/book.heex:141
+#, elixir-autogen, elixir-format
+msgid "%{month} of %{year}"
+msgstr "%{month} de %{year}"
+
+#: lib/books_web/controllers/cart_html/index.heex:108
+#, elixir-autogen, elixir-format
+msgid "<strong>Card</strong> (Stripe): recommended for credit/debit card."
+msgstr "<strong>Tarjeta</strong> (Stripe): recomendado para tarjeta de crédito/débito."
+
+#: lib/books_web/controllers/cart_html/index.heex:116
+#, elixir-autogen, elixir-format
+msgid "<strong>PayPal</strong>: debit/credit card and PayPal balance."
+msgstr "<strong>PayPal</strong>: tarjeta débito/crédito y saldo PayPal."
+
+#: lib/books_web/components/layouts/landing.heex:87
+#: lib/books_web/controllers/legal_controller.ex:58
+#: lib/books_web/controllers/legal_controller.ex:66
+#, elixir-autogen, elixir-format
+msgid "About"
+msgstr "Acerca de"
+
+#: lib/books_web/components/layouts/cookie.heex:65
+#, elixir-autogen, elixir-format
+msgid "Accept"
+msgstr "Aceptar"
+
+#: lib/books_web/controllers/cart_html/index.heex:227
+#, elixir-autogen, elixir-format
+msgid "Accept the <a href='%{tos_url}'>Terms of Service</a>"
+msgstr "Acepta los <a href='%{tos_url}'>Términos de Servicio</a>"
+
+#: lib/books_web/controllers/cart_controller.ex:321
+#, elixir-autogen, elixir-format
+msgid "Added successfully the item to the <a href='%{url}'>cart</a>"
+msgstr "Libro añadido correctamente al <a href='%{url}'>carrito</a>"
+
+#: lib/books_web/controllers/cart_html/index.heex:155
+#, elixir-autogen, elixir-format
+msgid "Address"
+msgstr "Dirección"
+
+#: lib/books_web/components/layouts/cookie.heex:67
+#: lib/books_web/controllers/catalog_html/index.heex:21
+#, elixir-autogen, elixir-format
+msgid "All"
+msgstr "Todo"
+
+#: lib/books_web/components/layouts/facebook.heex:36
+#: lib/books_web/components/layouts/twitter.heex:24
+#, elixir-autogen, elixir-format
+msgid "Altenwald is a technical bookshop online which brings you technologies related to software development in an easy an simple way."
+msgstr "Altenwald es una librería técnica online que te trae tecnologías relacionadas con el desarrollo de software de una forma fácil y simple."
+
+#: lib/books_web/controllers/catalog_html.ex:24
+#, elixir-autogen, elixir-format
+msgid "April"
+msgstr "abril"
+
+#: lib/books_web/controllers/catalog_html.ex:28
+#, elixir-autogen, elixir-format
+msgid "August"
+msgstr "agosto"
+
+#: lib/books_web/components/layouts/landing.heex:117
+#: lib/books_web/controllers/catalog_html.ex:42
+#, elixir-autogen, elixir-format
+msgid "Author"
+msgstr "Autor"
+
+#: lib/books_web/controllers/catalog_html/book.heex:156
+#, elixir-autogen, elixir-format
+msgid "Authors"
+msgstr "Autores"
+
+#: lib/books_web/controllers/catalog_html/book.heex:203
+#, elixir-autogen, elixir-format
+msgid "Available formats"
+msgstr "Formatos disponibles"
+
+#: lib/books_web/controllers/cart_html/index.heex:12
+#: lib/books_web/controllers/cart_html/my_order.heex:45
+#, elixir-autogen, elixir-format
+msgid "Book"
+msgstr "Libro"
+
+#: lib/books_web/components/layouts/nav.heex:28
+#: lib/books_web/controllers/posts_html/custom_form.heex:26
+#, elixir-autogen, elixir-format
+msgid "Books"
+msgstr "Libros"
+
+#: lib/books_web/controllers/stripe_html/index.heex:32
+#, elixir-autogen, elixir-format
+msgid "Books purchase"
+msgstr "Compra de libros"
+
+#: lib/books_web/controllers/catalog_html/index.heex:19
+#, elixir-autogen, elixir-format
+msgid "Books' Languages"
+msgstr "Idiomas de los Libros"
+
+#: lib/books_web/components/layouts/menu.heex:40
+#: lib/books_web/components/layouts/menu.heex:69
+#: lib/books_web/controllers/user_bookshelf_html/index.heex:2
+#, elixir-autogen, elixir-format
+msgid "Bookshelf"
+msgstr "Estantería"
+
+#: lib/books_web/components/layouts/menu.heex:24
+#: lib/books_web/controllers/cart_controller.ex:35
+#, elixir-autogen, elixir-format
+msgid "Cart"
+msgstr "Carrito"
+
+#: lib/books_web/live/user_settings_live/change_password.html.heex:2
+#: lib/books_web/live/user_settings_live/change_password.html.heex:38
+#, elixir-autogen, elixir-format
+msgid "Change password"
+msgstr "Cambia contraseña"
+
+#: lib/books_web/controllers/catalog_html/book.heex:15
+#, elixir-autogen, elixir-format
+msgid "Check content tab for further information of the book. Here you can see the excerpts:"
+msgstr "Comprueba la lengüeta de contenido para obtener más información del libro. Aquí puedes ver algunos extractos:"
+
+#: lib/books_web/components/layouts/footer.heex:24
+#, elixir-autogen, elixir-format
+msgid "Check out our <a href='%{privacy}'>Privacy Policy</a>, <a href='%{cookies}'>Cookies Policy</a>, <a href='%{about}'>About us</a> and <a href='%{tos}'>Terms of Service</a>."
+msgstr "Echa un vistazo a nuestra <a href='%{privacy}'>Política de Privacidad</a>, <a href='%{cookies}'>Política de Cookies</a>, <a href='%{about}'>Sobre nosotros</a> y <a href='%{tos}'>Términos del Servicio</a>."
+
+#: lib/books_web/controllers/cart_html/index.heex:167
+#, elixir-autogen, elixir-format
+msgid "City"
+msgstr "Ciudad"
+
+#: lib/books_web/controllers/catalog_html/book.heex:234
+#, elixir-autogen, elixir-format
+msgid "Coming soon"
+msgstr "Próximamente"
+
+#: lib/books_web/controllers/user_confirmation_html/edit.heex:4
+#, elixir-autogen, elixir-format
+msgid "Confirm account"
+msgstr "Confirmar cuenta"
+
+#: lib/books_web/controllers/user_confirmation_html/edit.heex:27
+#, elixir-autogen, elixir-format
+msgid "Confirm my account"
+msgstr "Confirmo mi cuenta"
+
+#: lib/books_web/controllers/user_reset_password_html/edit.heex:16
+#: lib/books_web/live/user_settings_live/change_password.html.heex:30
+#, elixir-autogen, elixir-format
+msgid "Confirm new password"
+msgstr "Confirma nueva contraseña"
+
+#: lib/books_web/components/layouts/landing.heex:99
+#: lib/books_web/controllers/cart_html/my_orders.heex:12
+#: lib/books_web/controllers/catalog_html/book.heex:66
+#: lib/books_web/controllers/posts_html/custom_form.heex:16
+#, elixir-autogen, elixir-format
+msgid "Content"
+msgstr "Contenido"
+
+#: lib/books_web/controllers/legal_controller.ex:26
+#: lib/books_web/controllers/legal_controller.ex:34
+#, elixir-autogen, elixir-format
+msgid "Cookies Policy"
+msgstr "Política de Cookies"
+
+#: lib/books_web/controllers/cart_html/index.heex:177
+#, elixir-autogen, elixir-format
+msgid "Country"
+msgstr "País"
+
+#: lib/books_web/controllers/catalog_html.ex:32
+#, elixir-autogen, elixir-format
+msgid "December"
+msgstr "diciembre"
+
+#: lib/books_web/controllers/catalog_html/book.heex:226
+#, elixir-autogen, elixir-format
+msgid "Depending on the country it could take 6 to 28 working days\nfor receiving the book. Tracking isn't available for all of\nthe countries.\n"
+msgstr "Dependiendo del país puede tomar entre 6 y 28 días laborales\nrecibir el libro. El seguimiento no está disponible para todos los\npaíses.\n"
+
+#: lib/books_web/controllers/cart_html/index.heex:187
+#, elixir-autogen, elixir-format
+msgid "Depending on the country, the shipping price could be modified."
+msgstr "Dependiendo del país, el precio de envío puede variar."
+
+#: lib/books_web/controllers/catalog_html.ex:38
+#, elixir-autogen, elixir-format
+msgid "Digital"
+msgstr "Digital"
+
+#: lib/books_web/controllers/catalog_html.ex:43
+#, elixir-autogen, elixir-format
+msgid "Editor"
+msgstr "Editor"
+
+#: lib/books_web/controllers/cart_html/index.heex:140
+#: lib/books_web/controllers/user_confirmation_html/new.heex:8
+#: lib/books_web/controllers/user_registration_html/new.heex:30
+#: lib/books_web/controllers/user_reset_password_html/new.heex:8
+#, elixir-autogen, elixir-format
+msgid "Email"
+msgstr "Email"
+
+#: lib/books_web/controllers/user_settings_controller.ex:34
+#, elixir-autogen, elixir-format
+msgid "Email change link is invalid or it has expired."
+msgstr "El enlace para cambio de email no es válido o ha expirado."
+
+#: lib/books_web/controllers/user_settings_controller.ex:29
+#, elixir-autogen, elixir-format
+msgid "Email changed successfully."
+msgstr "Email cambiado correctamente."
+
+#: lib/books_web/controllers/catalog_html/index.heex:21
+#: lib/books_web/controllers/posts_controller.ex:207
+#, elixir-autogen, elixir-format
+msgid "English"
+msgstr "Inglés"
+
+#: lib/books_web/controllers/download_html/expired.heex:2
+#, elixir-autogen, elixir-format
+msgid "Expired order"
+msgstr "Pedido expirado"
+
+#: lib/books_web/controllers/catalog_html.ex:22
+#, elixir-autogen, elixir-format
+msgid "February"
+msgstr "febrero"
+
+#: lib/books_web/controllers/user_confirmation_html/edit.heex:35
+#: lib/books_web/controllers/user_registration_html/new.heex:56
+#: lib/books_web/controllers/user_registration_html/new.heex:71
+#: lib/books_web/controllers/user_reset_password_html/new.heex:4
+#: lib/books_web/controllers/user_session_html/new.heex:40
+#, elixir-autogen, elixir-format
+msgid "Forgot your password?"
+msgstr "¿Olvidó su contraseña?"
+
+#: lib/books_web/controllers/cart_html/index.heex:13
+#: lib/books_web/controllers/cart_html/my_order.heex:46
+#, elixir-autogen, elixir-format
+msgid "Format"
+msgstr "Formato"
+
+#: lib/books_web/controllers/catalog_html/book.heex:88
+#, elixir-autogen, elixir-format
+msgid "ISBN"
+msgstr "ISBN"
+
+#: lib/books_web/controllers/user_registration_html/new.heex:12
+#, elixir-autogen, elixir-format
+msgid "If you bought a book in the past and you don't recall the email\nyou used or you didn't receive the welcome message for the\nAltenwald Community, send us an email to <a href=\"mailto:%{email}\">\n%{email}</a> and we will contact you to solve the issue.\n"
+msgstr "Si compraste un libro en el pasado y no recuerdas el email\nque usaste o no recibiste el mensaje de bienvenida para la\nComunidad Altenwald, envíanos un email a <a href='mailto:%{email}'>%{email}</a> y contactaremos contigo para resolver el problema.\n"
+
+#: lib/books_web/controllers/user_confirmation_controller.ex:22
+#, elixir-autogen, elixir-format
+msgid "If your email is in our system and it has not been confirmed yet,\nyou will receive an email with instructions shortly.\n"
+msgstr "Si tu email está en nuestro sistema y no ha sido confirmado aún, recibirás un email con las instrucciones en breve.\n"
+
+#: lib/books_web/controllers/user_reset_password_controller.ex:24
+#, elixir-autogen, elixir-format
+msgid "If your email is in our system, you will receive instructions to reset your password shortly."
+msgstr "Si tu email está en nuestro sistema, recibirás las instrucciones para recuperar tu contraseña en breve."
+
+#: lib/books_web/controllers/cart_html/paid.heex:27
+#, elixir-autogen, elixir-format
+msgid "In a one working day maximum you will receive an email with the information about\nthe prepartion for the sending of the book. In addition, you has been subscribed\nto the Altenwald community, you will receive the welcome message and information\nabout the membership.\n"
+msgstr "Recibirás un email en el plazo de un día de trabajo como máximo con información sobre la preparación de el envío del libro. Además, ya formas parte de la Comunidad Altenwald, recibirás un email con un mensaje de bienvenida e información sobre la membresía."
+
+#: lib/books_web/controllers/catalog_html/book.heex:97
+#, elixir-autogen, elixir-format
+msgid "In process"
+msgstr "En proceso"
+
+#: lib/books_web/controllers/catalog_html/book.heex:64
+#, elixir-autogen, elixir-format
+msgid "Information"
+msgstr "Información"
+
+#: lib/books_web/controllers/user_session_controller.ex:25
+#, elixir-autogen, elixir-format
+msgid "Invalid email or password"
+msgstr "Email o contraseña no válidos"
+
+#: lib/books_web/controllers/catalog_html.ex:21
+#, elixir-autogen, elixir-format
+msgid "January"
+msgstr "enero"
+
+#: lib/books_web/controllers/catalog_html.ex:27
+#, elixir-autogen, elixir-format
+msgid "July"
+msgstr "julio"
+
+#: lib/books_web/controllers/catalog_html.ex:26
+#, elixir-autogen, elixir-format
+msgid "June"
+msgstr "junio"
+
+#: lib/books_web/controllers/user_session_html/new.heex:25
+#, elixir-autogen, elixir-format
+msgid "Keep me logged in for 60 days"
+msgstr "Mantén mi inicio de sesión 60 días"
+
+#: lib/books_web/controllers/catalog_html/book.heex:106
+#: lib/books_web/controllers/posts_html/custom_form.heex:22
+#, elixir-autogen, elixir-format
+msgid "Language"
+msgstr "Idioma"
+
+#: lib/books_web/controllers/catalog_html/book.heex:92
+#, elixir-autogen, elixir-format
+msgid "Legal deposit"
+msgstr "Depósito legal"
+
+#: lib/books_web/components/layouts/menu.heex:54
+#: lib/books_web/components/layouts/menu.heex:79
+#: lib/books_web/controllers/user_confirmation_html/edit.heex:32
+#: lib/books_web/controllers/user_confirmation_html/new.heex:21
+#: lib/books_web/controllers/user_registration_html/new.heex:53
+#: lib/books_web/controllers/user_registration_html/new.heex:68
+#: lib/books_web/controllers/user_session_html/new.heex:4
+#: lib/books_web/controllers/user_session_html/new.heex:32
+#, elixir-autogen, elixir-format
+msgid "Log in"
+msgstr "Inicia sesión"
+
+#: lib/books_web/controllers/user_session_controller.ex:34
+#, elixir-autogen, elixir-format
+msgid "Logged out successfully."
+msgstr "Sesión cerrada correctamente."
+
+#: lib/books_web/controllers/cart_html/payment_error.heex:3
+#, elixir-autogen, elixir-format
+msgid "Looks like there was an error with the payment. Please,\ncontact with the administrator using the following email:\n"
+msgstr "Hubo un error con el pago. Por favor, contacte con el administrador usando el siguiente email:"
+
+#: lib/books_web/controllers/download_html/expired.heex:3
+#, elixir-autogen, elixir-format
+msgid "Looks like time ago you bought this item. If you need more time for downloading it you can send a message to:"
+msgstr "Parce que hace tiempo adquirió este libro. Si necesitas más tiempo para descargarlo puedes enviar un mensaje a:"
+
+#: lib/books_web/components/layouts/cookie.heex:30
+#, elixir-autogen, elixir-format
+msgid "Manage Cookies"
+msgstr "Administra las Cookies"
+
+#: lib/books_web/controllers/catalog_html.ex:23
+#, elixir-autogen, elixir-format
+msgid "March"
+msgstr "marzo"
+
+#: lib/books_web/controllers/catalog_html.ex:25
+#, elixir-autogen, elixir-format
+msgid "May"
+msgstr "mayo"
+
+#: lib/books_web/controllers/cart_html/payment_not_found.heex:8
+#, elixir-autogen, elixir-format
+msgid "Mention in your communication the following purchase identifier:"
+msgstr "Menciona en tu comunicación el siguiente identificador de compra:"
+
+#: lib/books_web/controllers/cart_html/index.heex:210
+#, elixir-autogen, elixir-format
+msgid "Method to pay"
+msgstr "Método de pago"
+
+#: lib/books_web/controllers/cart_html/index.heex:130
+#, elixir-autogen, elixir-format
+msgid "Name"
+msgstr "Nombre"
+
+#: lib/books_web/components/layouts/cookie.heex:66
+#, elixir-autogen, elixir-format
+msgid "Necessary"
+msgstr "Necesario"
+
+#: lib/books_web/controllers/user_reset_password_html/edit.heex:8
+#: lib/books_web/live/user_settings_live/change_password.html.heex:22
+#, elixir-autogen, elixir-format
+msgid "New password"
+msgstr "Nueva contraseña"
+
+#: lib/books_web/controllers/catalog_html.ex:31
+#, elixir-autogen, elixir-format
+msgid "November"
+msgstr "noviembre"
+
+#: lib/books_web/controllers/catalog_html/book.heex:96
+#, elixir-autogen, elixir-format
+msgid "Number of pages"
+msgstr "Número de páginas"
+
+#: lib/books_web/controllers/catalog_html.ex:30
+#, elixir-autogen, elixir-format
+msgid "October"
+msgstr "octubre"
+
+#: lib/books_web/controllers/error_html/404.heex:2
+#, elixir-autogen, elixir-format
+msgid "Page Not Found"
+msgstr "página no encontrada"
+
+#: lib/books_web/controllers/error_html/404.heex:3
+#, elixir-autogen, elixir-format
+msgid "Page doesn't exist, if that's related to a book download, contact with the administrator to solve the issue:"
+msgstr "La página no existe, si está relacionado con la descarga de un libro, contacte con el administrador para resolver el problema:"
+
+#: lib/books_web/controllers/catalog_html.ex:39
+#, elixir-autogen, elixir-format
+msgid "Paper"
+msgstr "Papel"
+
+#: lib/books_web/controllers/user_registration_html/new.heex:38
+#: lib/books_web/controllers/user_session_html/new.heex:15
+#, elixir-autogen, elixir-format
+msgid "Password"
+msgstr "Contraseña"
+
+#: lib/books_web/controllers/user_reset_password_controller.ex:41
+#, elixir-autogen, elixir-format
+msgid "Password reset successfully."
+msgstr "Contraseña recuperada correctamente."
+
+#: lib/books_web/live/user_settings_live/change_password.ex:42
+#, elixir-autogen, elixir-format
+msgid "Password updated successfully."
+msgstr "Contraseña actualizada correctamente."
+
+#: lib/books_web/controllers/cart_html/index.heex:238
+#, elixir-autogen, elixir-format
+msgid "Pay"
+msgstr "Pagar"
+
+#: lib/books_web/controllers/cart_html/index.heex:217
+#, elixir-autogen, elixir-format
+msgid "Pay with..."
+msgstr "Paga con..."
+
+#: lib/books_web/controllers/cart_controller.ex:179
+#: lib/books_web/controllers/cart_controller.ex:215
+#: lib/books_web/controllers/cart_html/payment_cancelled.heex:2
+#, elixir-autogen, elixir-format
+msgid "Payment cancelled"
+msgstr "Pago cancelado"
+
+#: lib/books_web/controllers/cart_controller.ex:95
+#: lib/books_web/controllers/cart_controller.ex:126
+#: lib/books_web/controllers/cart_controller.ex:244
+#: lib/books_web/controllers/cart_html/payment_error.heex:2
+#, elixir-autogen, elixir-format
+msgid "Payment error"
+msgstr "Pago erróneo"
+
+#: lib/books_web/controllers/cart_controller.ex:229
+#: lib/books_web/controllers/cart_controller.ex:258
+#: lib/books_web/controllers/cart_html/payment_not_found.heex:2
+#, elixir-autogen, elixir-format
+msgid "Payment not found"
+msgstr "Pago no encontrado"
+
+#: lib/books_web/controllers/cart_controller.ex:76
+#: lib/books_web/controllers/cart_controller.ex:198
+#: lib/books_web/controllers/cart_html/paid.heex:2
+#, elixir-autogen, elixir-format
+msgid "Payment successfully"
+msgstr "Pago realizado"
+
+#: lib/books_web/controllers/cart_html/index.heex:192
+#, elixir-autogen, elixir-format
+msgid "Phone"
+msgstr "Teléfono"
+
+#: lib/books_web/controllers/cart_html/index.heex:160
+#, elixir-autogen, elixir-format
+msgid "Postal Code"
+msgstr "Código Postal"
+
+#: lib/books_web/components/layouts/facebook.heex:22
+#: lib/books_web/components/layouts/itemprops.heex:17
+#: lib/books_web/components/layouts/ld_json.heex:14
+#: lib/books_web/components/layouts/nav.heex:29
+#: lib/books_web/components/layouts/twitter.heex:15
+#: lib/books_web/controllers/posts_controller.ex:19
+#: lib/books_web/controllers/posts_controller.ex:39
+#, elixir-autogen, elixir-format
+msgid "Posts"
+msgstr "Artículos"
+
+#: lib/books_web/controllers/catalog_html.ex:40
+#, elixir-autogen, elixir-format
+msgid "Presale"
+msgstr "Preventa"
+
+#: lib/books_web/controllers/cart_html/index.heex:15
+#: lib/books_web/controllers/cart_html/my_order.heex:48
+#, elixir-autogen, elixir-format
+msgid "Price"
+msgstr "Precio"
+
+#: lib/books_web/controllers/legal_controller.ex:10
+#: lib/books_web/controllers/legal_controller.ex:18
+#, elixir-autogen, elixir-format
+msgid "Privacy Policy"
+msgstr "Política de privacidad"
+
+#: lib/books_web/controllers/cart_controller.ex:165
+#, elixir-autogen, elixir-format
+msgid "Provide full data and accept the terms of service, please"
+msgstr "Proporciona todos los datos y acepta los términos de servicio, por favor"
+
+#: lib/books_web/controllers/cart_html/index.heex:145
+#, elixir-autogen, elixir-format
+msgid "Provide your email for payment and notifications from acquired products and Altenwald membership."
+msgstr "Proporciona tu email para el pago, notificaciones de productos adquiridos y membresía a Altenwald."
+
+#: lib/books_web/controllers/cart_html/index.heex:172
+#, elixir-autogen, elixir-format
+msgid "Province / State"
+msgstr "Provincia / Estado"
+
+#: lib/books_web/controllers/catalog_html/book.heex:119
+#, elixir-autogen, elixir-format
+msgid "Published date"
+msgstr "Fecha de publicación"
+
+#: lib/books_web/controllers/cart_html/index.heex:14
+#: lib/books_web/controllers/cart_html/my_order.heex:47
+#, elixir-autogen, elixir-format
+msgid "Quantity"
+msgstr "Cantidad"
+
+#: lib/books_web/controllers/catalog_html/book.heex:13
+#, elixir-autogen, elixir-format
+msgid "Read sample"
+msgstr "Muestras para leer"
+
+#: lib/books_web/components/layouts/menu.heex:57
+#: lib/books_web/components/layouts/menu.heex:82
+#: lib/books_web/controllers/user_confirmation_html/new.heex:24
+#: lib/books_web/controllers/user_registration_html/new.heex:4
+#: lib/books_web/controllers/user_registration_html/new.heex:48
+#: lib/books_web/controllers/user_session_html/new.heex:37
+#, elixir-autogen, elixir-format
+msgid "Register"
+msgstr "Registro"
+
+#: lib/books_web/controllers/catalog_html/book.heex:333
+#, elixir-autogen, elixir-format
+msgid "Related books"
+msgstr "Libros relacionados"
+
+#: lib/books_web/controllers/user_confirmation_html/new.heex:16
+#, elixir-autogen, elixir-format
+msgid "Resend"
+msgstr "Reenviar"
+
+#: lib/books_web/controllers/user_confirmation_html/new.heex:4
+#: lib/books_web/controllers/user_confirmation_html/new.heex:17
+#, elixir-autogen, elixir-format
+msgid "Resend confirmation instructions"
+msgstr "Reenviar instrucciones de confirmación"
+
+#: lib/books_web/controllers/user_reset_password_html/edit.heex:25
+#, elixir-autogen, elixir-format
+msgid "Reset"
+msgstr "Recupera"
+
+#: lib/books_web/controllers/user_reset_password_html/edit.heex:4
+#, elixir-autogen, elixir-format
+msgid "Reset password"
+msgstr "Recupera contraseña"
+
+#: lib/books_web/controllers/user_reset_password_controller.ex:56
+#, elixir-autogen, elixir-format
+msgid "Reset password link is invalid or it has expired."
+msgstr "Enlace de recuperación de contraseña no válido o expirado."
+
+#: lib/books_web/controllers/posts_html/show.heex:156
+#: lib/books_web/controllers/user_reset_password_html/new.heex:15
+#, elixir-autogen, elixir-format
+msgid "Send"
+msgstr "Envía"
+
+#: lib/books_web/controllers/user_reset_password_html/new.heex:16
+#, elixir-autogen, elixir-format
+msgid "Send instructions to reset password"
+msgstr "Envía instrucciones para reiniciar la contraseña"
+
+#: lib/books_web/controllers/catalog_html.ex:29
+#, elixir-autogen, elixir-format
+msgid "September"
+msgstr "septiembre"
+
+#: lib/books_web/controllers/error_html/500.heex:2
+#, elixir-autogen, elixir-format
+msgid "Server Error"
+msgstr "Error de Servidor"
+
+#: lib/books_web/components/layouts/menu.heex:46
+#: lib/books_web/components/layouts/menu.heex:72
+#: lib/books_web/live/user_settings_live/edit.html.heex:4
+#, elixir-autogen, elixir-format
+msgid "Settings"
+msgstr "Configuración"
+
+#: lib/books_web/controllers/cart_html/index.heex:197
+#, elixir-autogen, elixir-format
+msgid "Shipping companies requires phone number for sending the\npackages.\n"
+msgstr "Las empresas de envío requieren el número móvil para enviar los paquetes."
+
+#: lib/books_web/controllers/cart_html/index.heex:59
+#: lib/books_web/controllers/cart_html/my_order.heex:76
+#, elixir-autogen, elixir-format
+msgid "Shipping costs"
+msgstr "Coste de envío"
+
+#: lib/books_web/controllers/cart_html/index.heex:65
+#: lib/books_web/controllers/cart_html/my_order.heex:82
+#, elixir-autogen, elixir-format
+msgid "Shipping discount"
+msgstr "Descuento de envío"
+
+#: lib/books_web/live/user_settings_live/change_password.ex:47
+#, elixir-autogen, elixir-format
+msgid "Something went wrong, review the form"
+msgstr "Algo fue mal, revise el formulario"
+
+#: lib/books_web/controllers/catalog_html/index.heex:21
+#: lib/books_web/controllers/posts_controller.ex:208
+#, elixir-autogen, elixir-format
+msgid "Spanish"
+msgstr "Español"
+
+#: lib/books_web/components/layouts/landing.heex:122
+#: lib/books_web/controllers/catalog_html/book.heex:251
+#: lib/books_web/controllers/landing_html/show_book.heex:10
+#: lib/books_web/controllers/landing_html/show_book.heex:140
+#, elixir-autogen, elixir-format
+msgid "Subscribe"
+msgstr "Suscríbete"
+
+#: lib/books_web/controllers/cart_html/index.heex:135
+#, elixir-autogen, elixir-format
+msgid "Surname"
+msgstr "Apellidos"
+
+#: lib/books_web/controllers/legal_controller.ex:42
+#: lib/books_web/controllers/legal_controller.ex:50
+#, elixir-autogen, elixir-format
+msgid "Terms of Service"
+msgstr "Términos de Servicio"
+
+#: lib/books_web/controllers/cart_html/payment_cancelled.heex:9
+#: lib/books_web/controllers/cart_html/payment_error.heex:8
+#: lib/books_web/controllers/cart_html/payment_not_found.heex:10
+#: lib/books_web/controllers/download_html/expired.heex:5
+#: lib/books_web/controllers/error_html/404.heex:5
+#: lib/books_web/controllers/error_html/500.heex:5
+#, elixir-autogen, elixir-format
+msgid "Thank you and sorry about the inconveniences."
+msgstr "Gracias y disculple las molestias."
+
+#: lib/books_web/controllers/user_registration_html/new.heex:19
+#, elixir-autogen, elixir-format
+msgid "Thank you and sorry for the inconveniences.\n"
+msgstr "Gracias y disculpe las molestias."
+
+#: lib/books_web/controllers/cart_html/paid.heex:54
+#, elixir-autogen, elixir-format
+msgid "Thanks for your purchase."
+msgstr "Gracias por su compra."
+
+#: lib/books_web/controllers/cart_html/index.heex:245
+#, elixir-autogen, elixir-format
+msgid "The cart is empty."
+msgstr "El carrito está vacío."
+
+#: lib/books_web/controllers/cart_html/paid.heex:5
+#, elixir-autogen, elixir-format
+msgid "The link(s) for the digital downloading are the following:\n"
+msgstr "Los enlaces para la descarga digital se muestran a continuación:"
+
+#: lib/books_web/controllers/cart_html/payment_not_found.heex:3
+#, elixir-autogen, elixir-format
+msgid "The payment doesn't exist or an error happened. Please,\ncontact with the administrator using the following email:\n"
+msgstr "El pago no existe o sucedió un error. Por favor,\ncontacta con el administrador usando el siguiente email:\n"
+
+#: lib/books_web/controllers/cart_html/payment_cancelled.heex:3
+#, elixir-autogen, elixir-format
+msgid "The payment was cancelled by the payment gateway. If that's not\ncorrect or you need support, please,\ncontact with the administrator using the following email:\n"
+msgstr "El pago fue cancelado por la pasarela de pago. Si no es correcto\no necesitas soporte, por favor,\ncontacta con el administrador usando el siguiente email:\n"
+
+#: lib/books_web/controllers/cart_html/paid.heex:3
+#, elixir-autogen, elixir-format
+msgid "The payment was received successfully."
+msgstr "El pago fue recibido correctamente."
+
+#: lib/books_web/controllers/error_html/500.heex:3
+#, elixir-autogen, elixir-format
+msgid "The process failed. If that was during a purchase please, contact with the administrator and remark the problem:"
+msgstr "El proceso falló. Si suecdió durante la compra por favor, contacta con el administrador e indica el problema:"
+
+#: lib/books_web/controllers/cart_html/index.heex:16
+#: lib/books_web/controllers/cart_html/my_order.heex:49
+#: lib/books_web/controllers/cart_html/my_orders.heex:14
+#, elixir-autogen, elixir-format
+msgid "Total"
+msgstr "Total"
+
+#: lib/books_web/controllers/cart_html/index.heex:73
+#: lib/books_web/controllers/cart_html/my_order.heex:88
+#, elixir-autogen, elixir-format
+msgid "Total (VAT incl.)"
+msgstr "Total (IVA incl.)"
+
+#: lib/books_web/controllers/catalog_html.ex:45
+#, elixir-autogen, elixir-format
+msgid "Translator"
+msgstr "Traductor/a"
+
+#: lib/books_web/controllers/user_confirmation_controller.ex:59
+#, elixir-autogen, elixir-format
+msgid "User confirmation link is invalid or it has expired."
+msgstr "El enlace de confirmación de usuario no es válido o expiró."
+
+#: lib/books_web/controllers/user_confirmation_controller.ex:44
+#, elixir-autogen, elixir-format
+msgid "User confirmed successfully. You need to configure a password."
+msgstr "Usuario confirmado correctamente. Necesitas indicar una contraseña."
+
+#: lib/books_web/controllers/user_registration_controller.ex:24
+#, elixir-autogen, elixir-format
+msgid "User created successfully."
+msgstr "Usuario creado correctamente."
+
+#: lib/books_web/controllers/stripe_html/index.heex:40
+#, elixir-autogen, elixir-format
+msgid "Wait a moment..."
+msgstr "Espera un momento..."
+
+#: lib/books_web/controllers/user_registration_html/new.heex:6
+#, elixir-autogen, elixir-format
+msgid "We are working to get access to all the people to the Altenwald\nCommunity, at the moment the only way to get into the Community\nis purchasing a digital book.\n"
+msgstr "Trabajamos para dar acceso a todas las personas a la Comunidad Altenwald,\nde momento la única forma de acceder a la comunidad\nes comprando un libro digital.\n"
+
+#: lib/books_web/controllers/user_confirmation_html/edit.heex:6
+#, elixir-autogen, elixir-format
+msgid "You are confirming you want to participate in the Altenwald\nCommunity, if you agree with the terms and conditions, please\npress the below button.\n"
+msgstr "Estás confirmando que quieres participar en la Comunidad\nAltenwald, si estás de acuerdo con los términos y condiciones, por favor,\npresiona el botón inferior.\n"
+
+#: lib/books_web/controllers/user_confirmation_html/edit.heex:12
+#, elixir-autogen, elixir-format
+msgid "You can read the <a href=\"%{tos}\">Terms of Service</a> and\n<a href=\"%{privacy}\">Privacy Policy</a> following\ntheir links (see footer of this page for further information).\n"
+msgstr "Puedes leer los <a href='%{tos}'>Términos de Servicio</a> y nuestra\n<a href='%{privacy}'>Política de Privacidad</a> siguiendo sus respectivos enlaces (ver el pie de esta página web para más información).\n"
+
+#: lib/books_web/controllers/cart_html/paid.heex:35
+#, elixir-autogen, elixir-format
+msgid "You could see the book in your <a href=\"%{url}\">bookshelf</a> and download it\nwhenever.\n"
+msgstr "Puedes ver el libro en tu <a href='%{url}'>estantería</a> y descargarlo en cualquier momento.\n"
+
+#: lib/books_web/controllers/user_auth.ex:136
+#, elixir-autogen, elixir-format
+msgid "You must log in to access this page."
+msgstr "Debes iniciar sesión para acceder a esta página."
+
+#: lib/books_web/controllers/cart_html/paid.heex:47
+#, elixir-autogen, elixir-format
+msgid "You will receive a message to confirm your email (<strong>%{email}</strong>) and\njoin the Altenwald Community. This way you can have access to download the books\nwhenever and you will receive information about the community.\n"
+msgstr "Recibirás un mensaje para confirmar tu email (<strong>%{email}</strong>) y\nunirte a la Comunidad Altenwald. De esta forma tendrás acceso a la descarga de los libros\nen cualquier momento y recibirás información sobre la comunidad.\n"
+
+#: lib/books_web/controllers/cart_html/paid.heex:41
+#, elixir-autogen, elixir-format
+msgid "Your purchase was added to your bookshelf based on your email\n(<strong>%{email}</strong>), you can check your\n<a href=\"%{bookshelf_url}\">bookshelf in this link</a>.\n"
+msgstr "Tu compra ha sido agregada a tu estantería basada en tu email\n(<strong>%{email}</strong>), puedes comprobar tu\n<a href='%{bookshelf_url}'>estantería en este enlace</a>.\n"
+
+#: lib/books_web/controllers/cart_controller.ex:48
+#, elixir-autogen, elixir-format
+msgid "accepted code"
+msgstr "código aceptado"
+
+#: lib/books_web/components/book_cover_component.ex:7
+#, elixir-autogen, elixir-format
+msgid "book cover"
+msgstr "portada del libro"
+
+#: lib/books_web/controllers/catalog_html.ex:51
+#, elixir-autogen, elixir-format
+msgid "final"
+msgstr "final"
+
+#: lib/books_web/controllers/cart_controller.ex:52
+#, elixir-autogen, elixir-format
+msgid "invalid code"
+msgstr "código no válido"
+
+#: lib/books_web/controllers/catalog_html.ex:49
+#, elixir-autogen, elixir-format
+msgid "prepared"
+msgstr "preparado"
+
+#: lib/books_web/controllers/posts_html/index.heex:36
+#: lib/books_web/controllers/posts_html/index.heex:95
+#: lib/books_web/controllers/posts_html/show.heex:26
+#, elixir-autogen, elixir-format
+msgid "reading minutes"
+msgstr "minutos de lectura"
+
+#: lib/books_web/controllers/catalog_html.ex:48
+#, elixir-autogen, elixir-format
+msgid "reviewed"
+msgstr "revisado"
+
+#: lib/books_web/controllers/catalog_html/content.heex:5
+#: lib/books_web/controllers/landing_html/show_book.heex:118
+#: lib/books_web/controllers/landing_html/show_bundle.heex:82
+#: lib/books_web/controllers/landing_html/show_bundle.heex:99
+#, elixir-autogen, elixir-format
+msgid "sample"
+msgstr "extracto"
+
+#: lib/books_web/controllers/catalog_html.ex:50
+#, elixir-autogen, elixir-format
+msgid "to do"
+msgstr "por hacer"
+
+#: lib/books_web/controllers/posts_html.ex:55
+#, elixir-autogen, elixir-format
+msgid "updated at"
+msgstr "actualizado"
+
+#: lib/books_web/controllers/cart_html/index.heex:88
+#, elixir-autogen, elixir-format
+msgid "Apply"
+msgstr "Aplicar"
+
+#: lib/books_web/controllers/cart_html/index.heex:82
+#, elixir-autogen, elixir-format
+msgid "Apply discount code:"
+msgstr "Aplica código de descuento:"
+
+#: lib/books_web/controllers/cart_html/index.heex:79
+#, elixir-autogen, elixir-format
+msgid "Discount code"
+msgstr "Código de descuento"
+
+#: lib/books_web/controllers/cart_html/index.heex:96
+#, elixir-autogen, elixir-format
+msgid "Payment options"
+msgstr "Opciones de pago"
+
+#: lib/books_web/controllers/cart_html/index.heex:100
+#, elixir-autogen, elixir-format
+msgid "You can perform the payment via the following payment methods:"
+msgstr "Puedes realizar el pago a través de los siguientes métodos de pago:"
+
+#: lib/books_web/controllers/posts_html/index.heex:60
+#: lib/books_web/controllers/posts_html/index.heex:117
+#, elixir-autogen, elixir-format
+msgid "Read more"
+msgstr "Leer más"
+
+#: lib/books_web/components/layouts/facebook.heex:35
+#, elixir-autogen, elixir-format
+msgid "Books about development"
+msgstr "Libros sobre programación"
+
+#: lib/books_web/components/layouts/menu.heex:50
+#: lib/books_web/components/layouts/menu.heex:75
+#, elixir-autogen, elixir-format
+msgid "Log out"
+msgstr "Cerrar sesión"
+
+#: lib/books_web/controllers/cart_html.ex:28
+#, elixir-autogen, elixir-format
+msgid "Card (Stripe)"
+msgstr "Tarjeta (Stripe)"
+
+#: lib/books_web/components/layouts/cookie.heex:34
+#, elixir-autogen, elixir-format
+msgid "We use cookies to provide a better service,\nas well as to analyze the usage of the website\nin order to offer you a great user experience.\nTo learn more about our use of cookies see our\n<a href=\"%{url}\" target=\"_blank\">Privacy Policy</a>.\n"
+msgstr "Usamos cookies para proporcionar un mejor servicio,\ntambién como para analizar el uso de la web\npara ofrecerte una gran experiencia de usuario.\nPara saber más sobre nuestro uso de cookies ver nuestra\n<a href='%{url}' target='_blank'>Política de Privacidad</a>.\n"
+
+#: lib/books_web/controllers/cart_html/paid.heex:18
+#, elixir-autogen, elixir-format
+msgid "You has been subscribed to the Altenwald community as a member and you will\nreceive notifications from us about updates and improvements on the books you\nbought, new drafts you could have access to download and other information you\ncould find useful.\n"
+msgstr "Has sido suscrito a la comunidad Altenwald como miembro y recibirás nuestras notificaciones sobre actualizaciones y mejoras en los libros adquiridos, nuevos borradores a los que podrás tener acceso para su descarga y otra información que puedas encontrar útil."
+
+#: lib/books_web/controllers/landing_html/show_book.heex:68
+#, elixir-autogen, elixir-format
+msgid "About The Book"
+msgstr "Acerca del Libro"
+
+#: lib/books_web/controllers/catalog_controller.ex:128
+#: lib/books_web/controllers/landing_controller.ex:47
+#, elixir-autogen, elixir-format
+msgid "An error happened trying to subscribe. Maybe invalid name or email?"
+msgstr "Sucedió un error intentando suscribirte. ¿Quizás nombre o email no válidos?"
+
+#: lib/books_web/controllers/catalog_controller.ex:119
+#: lib/books_web/controllers/landing_controller.ex:39
+#, elixir-autogen, elixir-format
+msgid "An error happened trying to subscribe. Try again later."
+msgstr "Sucedió un error intentando suscribirte. Intenta de nuevo más tarde."
+
+#: lib/books_web/components/layouts/landing.heex:93
+#, elixir-autogen, elixir-format
+msgid "Chapters"
+msgstr "Capítulos"
+
+#: lib/books_web/controllers/landing_html/show_book.heex:138
+#: lib/books_web/controllers/landing_html/show_book.heex:148
+#: lib/books_web/controllers/landing_html/show_bundle.heex:119
+#, elixir-autogen, elixir-format
+msgid "Don’t miss the opportunity of learning!"
+msgstr "¡No pierdas la oportunidad de aprender!"
+
+#: lib/books_web/controllers/catalog_html/book.heex:295
+#: lib/books_web/controllers/landing_html/show_book.heex:313
+#: lib/books_web/controllers/landing_html/show_bundle.heex:313
+#, elixir-autogen, elixir-format
+msgid "Enter Your email"
+msgstr "Introduce tu email"
+
+#: lib/books_web/components/layouts/landing.heex:105
+#, elixir-autogen, elixir-format
+msgid "FAQ"
+msgstr "FAQ"
+
+#: lib/books_web/controllers/landing_html/show_book.heex:263
+#: lib/books_web/controllers/landing_html/show_bundle.heex:287
+#, elixir-autogen, elixir-format
+msgid "Follow Me"
+msgstr "Sígueme"
+
+#: lib/books_web/controllers/landing_html/show_book.heex:175
+#: lib/books_web/controllers/landing_html/show_bundle.heex:140
+#, elixir-autogen, elixir-format
+msgid "Frequently Asked Questions"
+msgstr "Preguntas de Uso Frecuente"
+
+#: lib/books_web/controllers/catalog_html/book.heex:286
+#: lib/books_web/controllers/landing_html/show_book.heex:310
+#: lib/books_web/controllers/landing_html/show_bundle.heex:310
+#, elixir-autogen, elixir-format
+msgid "Full Name"
+msgstr "Nombre Completo"
+
+#: lib/books_web/controllers/landing_html/show_book.heex:304
+#: lib/books_web/controllers/landing_html/show_bundle.heex:304
+#, elixir-autogen, elixir-format
+msgid "If you want to get updates for this book, offers and more:"
+msgstr "Si deseas recibir actualizaciones para este libro, ofertas y más:"
+
+#: lib/books_web/controllers/landing_html/show_book.heex:255
+#: lib/books_web/controllers/landing_html/show_bundle.heex:278
+#, elixir-autogen, elixir-format
+msgid "Know More About Author"
+msgstr "Saber Más Sobre el Autor/a"
+
+#: lib/books_web/controllers/landing_html/show_book.heex:281
+#, elixir-autogen, elixir-format
+msgid "Others books by the author"
+msgstr "Otros libros del autor/a"
+
+#: lib/books_web/controllers/landing_html/show_book.heex:210
+#: lib/books_web/controllers/landing_html/show_bundle.heex:180
+#, elixir-autogen, elixir-format
+msgid "Readers Reviews"
+msgstr "Reseñas de los Lectores"
+
+#: lib/books_web/components/layouts/landing.heex:111
+#, elixir-autogen, elixir-format
+msgid "Reviews"
+msgstr "Reseñas"
+
+#: lib/books_web/controllers/catalog_html/book.heex:302
+#: lib/books_web/controllers/landing_html/show_book.heex:316
+#: lib/books_web/controllers/landing_html/show_bundle.heex:316
+#, elixir-autogen, elixir-format
+msgid "Subscribe!"
+msgstr "¡Suscríbete!"
+
+#: lib/books_web/components/layouts/landing.heex:77
+#, elixir-autogen, elixir-format
+msgid "Toggle navigation"
+msgstr "Alternar navegación"
+
+#: lib/books_web/controllers/landing_html/show_book.heex:99
+#, elixir-autogen, elixir-format
+msgid "What's inside the book"
+msgstr "Qué hay dentro del libro"
+
+#: lib/books_web/controllers/catalog_controller.ex:108
+#: lib/books_web/controllers/landing_controller.ex:35
+#: lib/books_web/controllers/user_settings_controller.ex:63
+#, elixir-autogen, elixir-format
+msgid "You has been subscribed successfully."
+msgstr "Has sido suscrito/a correctamente."
+
+#: lib/books_web/controllers/landing_html/show_book.heex:56
+#: lib/books_web/controllers/landing_html/show_book.heex:58
+#, elixir-autogen, elixir-format
+msgid "sample page %{page_num}"
+msgstr "página de muestra %{page_num}"
+
+#: lib/books_web/controllers/landing_html/show_book.heex:100
+#, elixir-autogen, elixir-format
+msgid "Here you can check it out what you can find inside of the book, chapter by chapter and some extracts if you want jump into the reading right now."
+msgstr "Aquí puedes echar un vistazo a lo que puedes encontrar dentro del libro, capítulo a capítulo y algunos extractos si quieres lanzarte directamente a la lectura ahora mismo."
+
+#: lib/books_web/controllers/landing_html/show_book.heex:176
+#: lib/books_web/controllers/landing_html/show_bundle.heex:141
+#, elixir-autogen, elixir-format
+msgid "Whether you have questions or you would just like to say hello, contact us. Maybe some of your questions could be answered with the following frequently asked questions."
+msgstr "Si tienes preguntaso te solo quieres decir hola, contáctanos. Quizás algunas de tus preguntas puedan ser respondidas en la sección de preguntas de uso frecuente."
+
+#: lib/books_web/controllers/landing_html/show_book.heex:30
+#: lib/books_web/controllers/landing_html/show_book.heex:158
+#, elixir-autogen, elixir-format
+msgid "eBook includes PDF & ePUB versions"
+msgstr "eBook incluye las versiones PDF y ePUB"
+
+#: lib/books_web/controllers/landing_html/show_book.heex:220
+#: lib/books_web/controllers/landing_html/show_bundle.heex:191
+#, elixir-autogen, elixir-format
+msgid "rated %{value} out of 5"
+msgstr "valorado %{value} de 5"
+
+#: lib/books_web/components/layouts/nav.heex:26
+#, elixir-autogen, elixir-format
+msgid "Admin"
+msgstr "Admin"
+
+#: lib/books_web/controllers/cart_html/my_order.heex:3
+#: lib/books_web/controllers/cart_html/my_orders.heex:3
+#, elixir-autogen, elixir-format
+msgid "Dashboard"
+msgstr "Panel"
+
+#: lib/books_web/controllers/cart_html/my_orders.heex:10
+#, elixir-autogen, elixir-format
+msgid "Date"
+msgstr "Fecha"
+
+#: lib/books_web/controllers/cart_html/my_orders.heex:13
+#, elixir-autogen, elixir-format
+msgid "Items"
+msgstr "Ítems"
+
+#: lib/books_web/controllers/cart_controller.ex:358
+#, elixir-autogen, elixir-format
+msgid "My Order: %{order_id}"
+msgstr "Mi Pedido: %{order_id}"
+
+#: lib/books_web/components/layouts/menu.heex:43
+#: lib/books_web/controllers/cart_controller.ex:343
+#: lib/books_web/controllers/cart_html/my_order.heex:4
+#: lib/books_web/controllers/cart_html/my_orders.heex:4
+#, elixir-autogen, elixir-format
+msgid "My Orders"
+msgstr "Mis Pedidos"
+
+#: lib/books_web/controllers/cart_html/my_orders.heex:15
+#, elixir-autogen, elixir-format
+msgid "Options"
+msgstr "Opciones"
+
+#: lib/books_web/controllers/cart_html/my_order.heex:5
+#, elixir-autogen, elixir-format
+msgid "Order %{order_id}"
+msgstr "Pedido %{order_id}"
+
+#: lib/books_web/controllers/cart_html/my_orders.heex:11
+#, elixir-autogen, elixir-format
+msgid "Status"
+msgstr "Estado"
+
+#: lib/books_web/controllers/cart_html.ex:34
+#, elixir-autogen, elixir-format
+msgid "cancelled"
+msgstr "cancelado"
+
+#: lib/books_web/controllers/cart_html.ex:31
+#: lib/books_web/controllers/cart_html.ex:39
+#, elixir-autogen, elixir-format
+msgid "new"
+msgstr "nuevo"
+
+#: lib/books_web/controllers/cart_html.ex:33
+#, elixir-autogen, elixir-format
+msgid "paid"
+msgstr "pagado"
+
+#: lib/books_web/controllers/cart_html.ex:35
+#, elixir-autogen, elixir-format
+msgid "timed-out"
+msgstr "expirado"
+
+#: lib/books_web/controllers/cart_html.ex:32
+#, elixir-autogen, elixir-format
+msgid "waiting"
+msgstr "esperando"
+
+#: lib/books_web/controllers/catalog_html/book.heex:272
+#, elixir-autogen, elixir-format
+msgid "If you want to get updates for this book, provide your name and email to be subscribed to the newsletter:"
+msgstr "Si deseas recibir actualizaciones para este libro, puedes proporcionar tu nombre y email para ser suscrito al boletín de noticias:"
+
+#: lib/books_web/controllers/catalog_html/book.heex:246
+#, elixir-autogen, elixir-format
+msgid "Subscribe to receive updates for this book and to know when it will be available:"
+msgstr "Suscríbete para recibir actualizaciones de este libro y saber cuándo estará disponible:"
+
+#: lib/books_web/controllers/catalog_html/book.heex:309
+#, elixir-autogen, elixir-format
+msgid "Subscribed successfully. You will receive news from us soon. Thank you for your interest."
+msgstr "Suscríto correctamente. Recibirás noticias nuestras pronto. Gracias por tu interés."
+
+#: lib/books_web/controllers/catalog_html/book.heex:263
+#, elixir-autogen, elixir-format
+msgid "Unsubscribe"
+msgstr "Desuscríbete"
+
+#: lib/books_web/controllers/catalog_html/book.heex:258
+#, elixir-autogen, elixir-format
+msgid "You has been subscribed for updates for this book. If you want to stop receiving information press the following button:"
+msgstr "Has sido suscrito para actualizaciones de este libro. Si deseas dejar de recibir información presiona el siguiente botón:"
+
+#: lib/books_web/controllers/user_settings_controller.ex:73
+#, elixir-autogen, elixir-format
+msgid "You has been unsubscribed successfully."
+msgstr "Has sido desuscrito/a correctamente."
+
+#: lib/books_web/controllers/catalog_html/book.heex:129
+#, elixir-autogen, elixir-format
+msgid "Presale started"
+msgstr "Preventa iniciada"
+
+#: lib/books_web/controllers/catalog_html/book.heex:139
+#, elixir-autogen, elixir-format
+msgid "Presale will start"
+msgstr "Preventa iniciará"
+
+#: lib/books_web/controllers/catalog_html/book.heex:237
+#, elixir-autogen, elixir-format
+msgid "Presale will start in <strong>%{month} %{year}</strong>"
+msgstr "La preventa comenzará en <strong>%{month} de %{year}</strong>"
+
+#: lib/books_web/controllers/posts_html/show.heex:130
+#, elixir-autogen, elixir-format
+msgid "There is one comment."
+msgid_plural "There are %{num} comments."
+msgstr[0] "Hay un comentario."
+msgstr[1] "Hay %{num} comentarios."
+
+#: lib/books_web/controllers/posts_html/show.heex:125
+#: lib/books_web/controllers/posts_html/show.heex:132
+#, elixir-autogen, elixir-format
+msgid "<a href='%{url}'>Log in</a> to send a comment."
+msgstr "<a href='%{url}'>Inicia sesión</a> para enviar un comentario."
+
+#: lib/books_web/controllers/posts_html/show.heex:119
+#, elixir-autogen, elixir-format
+msgid "Comments"
+msgstr "Comentarios"
+
+#: lib/books_web/controllers/landing_html/show_book.heex:19
+#: lib/books_web/controllers/landing_html/show_book.heex:149
+#: lib/books_web/controllers/landing_html/show_bundle.heex:11
+#: lib/books_web/controllers/landing_html/show_bundle.heex:122
+#, elixir-autogen, elixir-format
+msgid "Digital version"
+msgstr "Versión digital"
+
+#: lib/books_web/controllers/landing_html/show_book.heex:24
+#: lib/books_web/controllers/landing_html/show_book.heex:153
+#, elixir-autogen, elixir-format
+msgid "Paper version"
+msgstr "Versión en papel"
+
+#: lib/books_web/controllers/posts_html/show.heex:123
+#, elixir-autogen, elixir-format
+msgid "There are no comments."
+msgstr "No hay comentarios."
+
+#: lib/books_web/controllers/landing_html/show_book.heex:32
+#: lib/books_web/controllers/landing_html/show_book.heex:160
+#, elixir-autogen, elixir-format
+msgid "shipping cost is %{shipping_cost}"
+msgstr "coste de envío %{shipping_cost}"
+
+#: lib/books_web/controllers/posts_html.ex:86
+#, elixir-autogen, elixir-format
+msgid "Unknown user"
+msgstr "Usuario desconocido"
+
+#: lib/books_web/controllers/comments_controller.ex:33
+#, elixir-autogen, elixir-format
+msgid "cannot create comment"
+msgstr "no se pudo crear el comentario"
+
+#: lib/books_web/controllers/comments_controller.ex:26
+#, elixir-autogen, elixir-format
+msgid "comment created successfully"
+msgstr "comentario creado correctamente"
+
+#: lib/books_web/controllers/catalog_html.ex:77
+#, elixir-autogen, elixir-format
+msgid "(1st) First edition"
+msgstr "(1ª) Primera edición"
+
+#: lib/books_web/controllers/catalog_html.ex:78
+#, elixir-autogen, elixir-format
+msgid "(2nd) Second edition"
+msgstr "(2ª) Segunda edición"
+
+#: lib/books_web/controllers/catalog_html.ex:79
+#, elixir-autogen, elixir-format
+msgid "(3nd) Third edition"
+msgstr "(3ª) Tercera edición"
+
+#: lib/books_web/controllers/catalog_html.ex:80
+#, elixir-autogen, elixir-format
+msgid "(4nd) Fourth edition"
+msgstr "(4ª) Cuarta edición"
+
+#: lib/books_web/controllers/catalog_html.ex:81
+#, elixir-autogen, elixir-format
+msgid "(5th) Fifth edition"
+msgstr "(5ª) Quinta edición"
+
+#: lib/books_web/controllers/catalog_html/book.heex:150
+#, elixir-autogen, elixir-format
+msgid "Edition"
+msgstr "Edición"
+
+#: lib/books_web/controllers/posts_html/show.heex:149
+#, elixir-autogen, elixir-format
+msgid "type a comment"
+msgstr "escribe un comentario"
+
+#: lib/books_web/live/user_settings_live/marketing.ex:78
+#, elixir-autogen, elixir-format
+msgid "Correo directo"
+msgstr ""
+
+#: lib/books_web/live/user_settings_live/marketing.ex:77
+#, elixir-autogen, elixir-format
+msgid "Correo electrónico"
+msgstr ""
+
+#: lib/books_web/live/user_settings_live/marketing.html.heex:2
+#, elixir-autogen, elixir-format
+msgid "Marketing options"
+msgstr "Opciones de Márketing"
+
+#: lib/books_web/live/user_settings_live/marketing.ex:64
+#, elixir-autogen, elixir-format
+msgid "Permite a nuestro equipo poder enviarle mensajes directos para alguna consulta\npuntual o encuesta.\n"
+msgstr ""
+
+#: lib/books_web/live/user_settings_live/marketing.ex:71
+#, elixir-autogen, elixir-format
+msgid "Permite a nuestro sistema enviarle mensajes con respecto a actualizaciones de sus\nproductos comprados, compra de productos, recibos y otra información importante.\n"
+msgstr ""
+
+#: lib/books_web/live/user_settings_live/marketing.ex:79
+#, elixir-autogen, elixir-format
+msgid "Publicidad en línea personalizada"
+msgstr ""
+
+#: lib/books_web/live/user_settings_live/marketing.ex:57
+#, elixir-autogen, elixir-format
+msgid "Recibe publicidad personalizada. Esta publicidad estará basada en sus intereses.\nVea más abajo la configuración de Intereses.\n"
+msgstr ""
+
+#: lib/books_web/live/user_settings_live/interest.html.heex:2
+#, elixir-autogen, elixir-format
+msgid "Interests"
+msgstr "Intereses"
+
+#: lib/books_web/live/user_settings_live/interest.html.heex:34
+#, elixir-autogen, elixir-format
+msgid "Not available description."
+msgstr "Descripción no disponible."
+
+#: lib/books_web/controllers/user_bookshelf_html/index.heex:50
+#, elixir-autogen, elixir-format
+msgid "You don't still have purchased books to show."
+msgstr "No has comprado aún libros para mostrar."
+
+#: lib/books_web/controllers/cart_html.ex:36
+#, elixir-autogen, elixir-format
+msgid "refunded"
+msgstr "reembolsado"
+
+#: lib/books_web/controllers/catalog_html.ex:46
+#, elixir-autogen, elixir-format
+msgid "Illustrator"
+msgstr "Ilustrador"
+
+#: lib/books_web/controllers/catalog_html.ex:44
+#, elixir-autogen, elixir-format
+msgid "Reviewer"
+msgstr "Revisor"
+
+#: lib/books_web/live/user_settings_live/change_password.html.heex:38
+#, elixir-autogen, elixir-format
+msgid "Changing..."
+msgstr "Cambiando..."
+
+#: lib/books_web/controllers/user_bookshelf_controller.ex:10
+#, elixir-autogen, elixir-format
+msgid "My Bookshelf"
+msgstr "Mi Estantería"
+
+#: lib/books_web/controllers/cart_html/index.heex:236
+#, elixir-autogen, elixir-format
+msgid "Obtain"
+msgstr "Obtener"
+
+#: lib/books_web/controllers/user_bookshelf_html/index.heex:20
+#, elixir-autogen, elixir-format
+msgid "Obtained"
+msgstr "Obtenido"
+
+#: lib/books_web/controllers/cart_html/index.heex:98
+#, elixir-autogen, elixir-format
+msgid "The order is for free, you don't need to pay anything."
+msgstr "El pedido es gratuito, no necesitas pagar nada."
+
+#: lib/books_web/controllers/posts_html/custom_form.heex:7
+#, elixir-autogen, elixir-format
+msgid "Advanced"
+msgstr "Avanzado"
+
+#: lib/books_web/controllers/posts_html/custom_form.heex:35
+#, elixir-autogen, elixir-format
+msgid "Background image"
+msgstr "Imagen de fondo"
+
+#: lib/books_web/controllers/posts_html/custom_form.heex:14
+#, elixir-autogen, elixir-format
+msgid "Category"
+msgstr "Categoría"
+
+#: lib/books_web/controllers/posts_html/custom_form.heex:14
+#, elixir-autogen, elixir-format
+msgid "Choose one..."
+msgstr "Elige uno..."
+
+#: lib/books_web/controllers/catalog_html/book.heex:192
+#, elixir-autogen, elixir-format
+msgid "Comming soon"
+msgstr "Próximamente"
+
+#: lib/books_web/controllers/posts_html/show.heex:67
+#, elixir-autogen, elixir-format
+msgid "Edit"
+msgstr "Edita"
+
+#: lib/books_web/controllers/posts_html/edit.heex:4
+#, elixir-autogen, elixir-format
+msgid "Edit Post"
+msgstr "Edita Artículo"
+
+#: lib/books_web/controllers/posts_controller.ex:88
+#, elixir-autogen, elixir-format
+msgid "Edit post"
+msgstr "Edita artículo"
+
+#: lib/books_web/controllers/posts_html/custom_form.heex:23
+#, elixir-autogen, elixir-format
+msgid "Excerpt"
+msgstr "Resumen"
+
+#: lib/books_web/controllers/posts_html/custom_form.heex:32
+#, elixir-autogen, elixir-format
+msgid "Featured image"
+msgstr "Imagen destacada"
+
+#: lib/books_web/controllers/posts_html/custom_form.heex:27
+#, elixir-autogen, elixir-format
+msgid "If any book is selected the post is converted to private and only shown if the user belongs any of these books."
+msgstr "Si algún libro es seleccionado el artículo se convierte en privado y solo se mostrará si el usuario posee cualquiera de estos libros."
+
+#: lib/books_web/controllers/posts_html/show.heex:102
+#, elixir-autogen, elixir-format
+msgid "If you acquired one of these items, you can <a href='%{url}'>log in</a> to read them."
+msgstr "Si adquriste uno de estos ítems, puedes <a href='%{url}'>iniciar sesión</a> para leerlos."
+
+#: lib/books_web/controllers/posts_html/custom_form.heex:24
+#, elixir-autogen, elixir-format
+msgid "If you specified a <!--more--> tag inside of the content, this excerpt will be replaced for the indicated content."
+msgstr "Si especificaste una etiqueta <!--more--> dentro del contenido, este resumen será reemplazado para el contenido indicado."
+
+#: lib/books_web/controllers/posts_html/custom_form.heex:6
+#, elixir-autogen, elixir-format
+msgid "Images"
+msgstr "Imágenes"
+
+#: lib/books_web/controllers/posts_html/show.heex:93
+#, elixir-autogen, elixir-format
+msgid "It's not allowed the access to this content. Contact our team to get more information."
+msgstr "No está permitido el acceso a este contenido. Contacta con nuestro equipo para obtener más información."
+
+#: lib/books_web/controllers/posts_html/custom_form.heex:5
+#, elixir-autogen, elixir-format
+msgid "Main"
+msgstr "Principal"
+
+#: lib/books_web/components/layouts/menu.heex:36
+#: lib/books_web/components/layouts/menu.heex:65
+#: lib/books_web/controllers/posts_html/new.heex:4
+#, elixir-autogen, elixir-format
+msgid "New Post"
+msgstr "Nuevo Artículo"
+
+#: lib/books_web/controllers/posts_controller.ex:61
+#: lib/books_web/controllers/posts_controller.ex:133
+#: lib/books_web/controllers/posts_controller.ex:179
+#, elixir-autogen, elixir-format
+msgid "New post"
+msgstr "Nuevo artículo"
+
+#: lib/books_web/controllers/posts_html/show.heex:88
+#, elixir-autogen, elixir-format
+msgid "Private content"
+msgstr "Contenido privado"
+
+#: lib/books_web/controllers/posts_html/custom_form.heex:21
+#, elixir-autogen, elixir-format
+msgid "Publish date"
+msgstr "Fecha de publicación"
+
+#: lib/books_web/controllers/posts_html/custom_form.heex:41
+#, elixir-autogen, elixir-format
+msgid "Save"
+msgstr "Guardar"
+
+#: lib/books_web/controllers/posts_html/custom_form.heex:20
+#, elixir-autogen, elixir-format
+msgid "Slug"
+msgstr "Slug"
+
+#: lib/books_web/controllers/posts_html/custom_form.heex:13
+#, elixir-autogen, elixir-format
+msgid "Subtitle"
+msgstr "Subtítulo"
+
+#: lib/books_web/controllers/posts_html/custom_form.heex:15
+#, elixir-autogen, elixir-format
+msgid "Tags"
+msgstr "Etiquetas"
+
+#: lib/books_web/controllers/posts_html/custom_form.heex:12
+#, elixir-autogen, elixir-format
+msgid "Title"
+msgstr "Título"
+
+#: lib/books_web/controllers/posts_html/show.heex:95
+#, elixir-autogen, elixir-format
+msgid "You need to acquire one of the following items"
+msgstr "Necesitas adquirir uno de los siguientes ítems"
+
+#: lib/books_web/controllers/catalog_html/book.heex:49
+#, elixir-autogen, elixir-format
+msgid "Private posts"
+msgstr "Artículos privados"
+
+#: lib/books_web/controllers/cart_html/my_order.heex:22
+#, elixir-autogen, elixir-format
+msgid "Last modification: %{date}"
+msgstr "Última modificación: %{date}"
+
+#: lib/books_web/controllers/cart_html/my_order.heex:24
+#: lib/books_web/controllers/cart_html/my_order.heex:36
+#, elixir-autogen, elixir-format
+msgid "No provided yet"
+msgstr "No proporcionada aún"
+
+#: lib/books_web/controllers/cart_html/my_order.heex:13
+#, elixir-autogen, elixir-format
+msgid "Order data"
+msgstr "Datos del pedido"
+
+#: lib/books_web/controllers/cart_html/my_order.heex:19
+#, elixir-autogen, elixir-format
+msgid "Shipping status"
+msgstr "Estado del envío"
+
+#: lib/books_web/controllers/cart_html/my_order.heex:29
+#, elixir-autogen, elixir-format
+msgid "Tracking URL"
+msgstr "URL de Rastreo"
+
+#: lib/books_web/controllers/cart_html.ex:38
+#, elixir-autogen, elixir-format
+msgid "not-applicable"
+msgstr "en espera"
+
+#: lib/books_web/controllers/cart_html.ex:40
+#, elixir-autogen, elixir-format
+msgid "preparing"
+msgstr "en preparación"
+
+#: lib/books_web/controllers/cart_html.ex:42
+#, elixir-autogen, elixir-format
+msgid "received"
+msgstr "recibido"
+
+#: lib/books_web/controllers/cart_html.ex:41
+#, elixir-autogen, elixir-format
+msgid "sent"
+msgstr "enviado"
+
+#: lib/books_web/controllers/user_bookshelf_html/index.heex:3
+#, elixir-autogen, elixir-format
+msgid "If you requested paperback books, you can check your shipping status in your <a href='%{url}'>orders</a>."
+msgstr "Si solicitaste libros en papel, puedes comprobar el estado de envío en tus <a href='%{url}'>pedidos</a>."
+
+#: lib/books_web/controllers/posts_html/custom_form.heex:36
+#, elixir-autogen, elixir-format
+msgid "(Optional) Choose an existing background image"
+msgstr "(Opcional) Elige una imagen de fondo existente"
+
+#: lib/books_web/controllers/posts_html/custom_form.heex:33
+#, elixir-autogen, elixir-format
+msgid "(Optional) Choose an existing featured image"
+msgstr "(Opcional) Elige una imagen destacada existente"
+
+#: lib/books_web/controllers/posts_html/custom_form.heex:32
+#: lib/books_web/controllers/posts_html/custom_form.heex:35
+#, elixir-autogen, elixir-format
+msgid "No image selected"
+msgstr "Imagen no seleccionada"
+
+#: lib/books_web/controllers/catalog_html/book.heex:364
+#, elixir-autogen, elixir-format
+msgid "Digital also available on..."
+msgstr "Digital también disponible en..."
+
+#: lib/books_web/controllers/catalog_html/book.heex:319
+#, elixir-autogen, elixir-format
+msgid "Paper book available on..."
+msgstr "Libro en papel disponible en..."
+
+#: lib/books_web/components/layouts/facebook.heex:23
+#: lib/books_web/components/layouts/itemprops.heex:16
+#: lib/books_web/components/layouts/twitter.heex:16
+#, elixir-autogen, elixir-format
+msgid "Altenwald Blog is a good way to get up-to-date for technologies related to software development in an easy and simple way."
+msgstr "El blog de Altenwald es una buena forma de mantenerse al día de las tecnologías relacionadas con el desarrollo de software de una forma fácil y sencilla."
+
+#: lib/books_web/components/layouts/itemprops.heex:26
+#, elixir-autogen, elixir-format
+msgid "Altenwald is a technical bookshop online which brings you technologies related to software development in an easy and simple way."
+msgstr "Altenwald es una librería técnica online que te trae tecnologías relacionadas con el desarrollo de software de una forma fácil y sencilla."
+
+#: lib/books_web/components/layouts/root.heex:11
+#: lib/books_web/controllers/catalog_html/index.heex:16
+#, elixir-autogen, elixir-format
+msgid "Book catalog"
+msgstr "Catálogo de libros"
+
+#: lib/books_web/controllers/posts_html/card.heex:6
+#: lib/books_web/controllers/posts_html/index.heex:23
+#: lib/books_web/controllers/posts_html/index.heex:85
+#: lib/books_web/controllers/posts_html/show.heex:8
+#: lib/books_web/controllers/posts_html/show.heex:14
+#, elixir-autogen, elixir-format
+msgid "featured image"
+msgstr "Imagen destacada"
+
+#: lib/books_web/components/layouts/itemprops.heex:15
+#: lib/books_web/components/layouts/itemprops.heex:25
+#, elixir-autogen, elixir-format
+msgid "manuel rubio, erlang, elixir, phoenix framework, programming languages, beam, programming, books"
+msgstr "manuel rubio, erlang, elixir, phoenix framework, lenguajes de programación, beam, programación, libros"
+
+#: lib/books_web/controllers/landing_html/show_bundle.heex:34
+#, elixir-autogen, elixir-format
+msgid "About The Bundle"
+msgstr "Acerca de los Libros"
+
+#: lib/books_web/components/core_components.ex:489
+#, elixir-autogen, elixir-format
+msgid "Actions"
+msgstr "Opciones"
+
+#: lib/books_web/controllers/catalog_controller.ex:98
+#, elixir-autogen, elixir-format
+msgid "Book not found"
+msgstr "Libro no encontrado"
+
+#: lib/books_web/controllers/landing_html/show_bundle.heex:63
+#, elixir-autogen, elixir-format
+msgid "Here you can check it out what you can find inside of the books, some chapters and some extracts if you want jump into the reading right now."
+msgstr "Aquí puedes echar un vistazo a lo que puedes encontrar dentro de los libros, algunos capítulos y algunos extractos si quieres lanzarte directamente a la lectura ahora mismo."
+
+#: lib/books_web/controllers/cart_controller.ex:364
+#, elixir-autogen, elixir-format
+msgid "Order not found"
+msgstr "Pedido no encontrado"
+
+#: lib/books_web/components/layouts/stripe.heex:5
+#, elixir-autogen, elixir-format
+msgid "Stripe Payment"
+msgstr "Pago de Stripe"
+
+#: lib/books_web/controllers/landing_html/show_bundle.heex:62
+#, elixir-autogen, elixir-format
+msgid "What's inside the books"
+msgstr "Qué hay dentro de los libros"
+
+#: lib/books_web/controllers/download_controller.ex:25
+#, elixir-autogen, elixir-format
+msgid "book format not found"
+msgstr "formato del libro no encontrado"
+
+#: lib/books_web/controllers/catalog_controller.ex:16
+#: lib/books_web/controllers/user_settings_controller.ex:18
+#, elixir-autogen, elixir-format
+msgid "book not found"
+msgstr "libro no encontrado"
+
+#: lib/books_web/components/bundle_cover_component.ex:7
+#, elixir-autogen, elixir-format
+msgid "bundle cover"
+msgstr "portada del paquete"
+
+#: lib/books_web/components/core_components.ex:76
+#: lib/books_web/components/core_components.ex:128
+#, elixir-autogen, elixir-format
+msgid "close"
+msgstr "cerrar"
+
+#: lib/books_web/controllers/download_controller.ex:95
+#: lib/books_web/controllers/download_controller.ex:108
+#: lib/books_web/controllers/user_bookshelf_controller.ex:38
+#, elixir-autogen, elixir-format
+msgid "file not found"
+msgstr "fichero no encontrado"
+
+#: lib/books_web/controllers/landing_controller.ex:21
+#: lib/books_web/controllers/landing_controller.ex:27
+#, elixir-autogen, elixir-format
+msgid "landing page not found"
+msgstr "página de inicio no encontrada"
+
+#: lib/books_web/controllers/download_controller.ex:53
+#, elixir-autogen, elixir-format
+msgid "order expired"
+msgstr "pedido caducado"
+
+#: lib/books_web/controllers/comments_controller.ex:37
+#: lib/books_web/controllers/posts_controller.ex:244
+#, elixir-autogen, elixir-format
+msgid "post not found"
+msgstr "artículo no encontrado"
+
+#: lib/books_web/controllers/user_auth.ex:145
+#, elixir-autogen, elixir-format
+msgid "page not found"
+msgstr "página no encontrada"
+
+#: lib/books_web/controllers/landing_html/show_book.heex:13
+#: lib/books_web/controllers/landing_html/show_book.heex:143
+#, elixir-autogen, elixir-format
+msgid "Subscribe to stay informed of news."
+msgstr "Suscríbete para mantenerte informado de las novedades."

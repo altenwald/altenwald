@@ -1,0 +1,197 @@
+<section class="hero is-hero-bar">
+  <div class="hero-body">
+    <div class="level">
+      <div class="level-left">
+        <div class="level-item">
+          <div class="title"><%= gettext("Dashboard") %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section is-main-section">
+  <h2 class="subtitle"><%= gettext("Last month") %></h2>
+  <div class="tile is-ancestor">
+    <div :for={{source, income} <- @last_month_income} :if={source in @enabled_sources} class="tile is-parent">
+      <div class="card tile is-child">
+        <div class="card-content">
+          <div class="level is-mobile">
+            <div class="level-item">
+              <div class="is-widget-label">
+                <h3 class="subtitle is-spaced">
+                  <i class={source_icon(source)}></i>
+                  <%= source %>
+                </h3>
+                <h3 class="title has-text-right"><%= income %></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h2 class="subtitle"><%= gettext("Current month") %></h2>
+  <div class="tile is-ancestor">
+    <div :for={{source, income} <- @current_month_income} :if={source in @enabled_sources} class="tile is-parent">
+      <div class="card tile is-child">
+        <div class="card-content">
+          <div class="level is-mobile">
+            <div class="level-item">
+              <div class="is-widget-label">
+                <h3 class="subtitle is-spaced">
+                  <i class={source_icon(source)}></i>
+                  <%= source %>
+                </h3>
+                <h3 class="title has-text-right"><%= income %></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tile is-ancestor">
+    <div class="tile is-parent">
+      <div class="card tile is-child has-table has-mobile-sort-spaced">
+        <header class="card-header">
+          <p class="card-header-title">
+            <span class="icon"><i class="fas fa-users"></i></span>
+            <%= gettext("Visits") %>
+          </p>
+          <a href="#" class="card-header-icon">
+            <span class="icon"><i class="fas fa-sync"></i></span>
+          </a>
+        </header>
+        <div class="card-content">
+          <div class="b-table has-pagination">
+            <div class="table-wrapper has-mobile-cards">
+              <table class="table is-fullwidth is-striped is-hoverable">
+                <thead>
+                <tr>
+                  <th>IP</th>
+                  <th><%= gettext("State") %></th>
+                  <th><%= gettext("Price") %></th>
+                  <th><%= gettext("Shipping?") %></th>
+                </tr>
+                </thead>
+                <tbody id="orders-content">
+                <tr id="no-orders">
+                  <td colspan="4"><strong>No Orders</strong></td>
+                </tr>
+                </tbody>
+              </table>
+
+              <table class="table is-fullwidth is-stripped is-hoverable">
+                <thead>
+                  <th><%= gettext("Country") %></th>
+                  <th><%= gettext("Visitors") %></th>
+                </thead>
+                <tbody id="orders-summary">
+                  <tr id="no-orders-summary">
+                    <td colspan="2"><strong>No Orders</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tile is-parent">
+      <div class="card tile is-child has-table has-mobile-sort-spaced">
+        <header class="card-header">
+          <p class="card-header-title">
+            <span class="icon"><i class="fas fa-euro-sign"></i></span>
+            <%= gettext("Income per year") %>
+          </p>
+        </header>
+        <div class="card-content">
+          <div class="b-table has-pagination">
+            <div class="table-wrapper has-mobile-cards">
+              <table class="table is-fullwidth is-striped is-hoverable">
+                <thead>
+                  <th><%= gettext("Year") %></th>
+                  <th class="has-text-right"><%= gettext("Total Income") %></th>
+                  <th class="has-text-right"><%= gettext("Monthly Average") %></th>
+                  <th class="has-text-right"><%= gettext("Sold Items") %></th>
+                </thead>
+                <tbody>
+                  <tr :for={[year, total_income, monthly_avg, sold_items] <- @income_per_year}>
+                    <td><%= year %></td>
+                    <td class="has-text-right"><%= total_income %></td>
+                    <td class="has-text-right"><%= monthly_avg %></td>
+                    <td class="has-text-right"><%= sold_items %></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-content">
+      <canvas id="chart-by-book-per-year"></canvas>
+    </div>
+    <script><!--
+    const data_by_book_per_year = {
+      labels: [<%= Enum.join(2012..(Date.utc_today().year), ", ") %>],
+      datasets: [
+        <%= for income <- income_chart_by_book_per_year(@income_by_book_per_year) do %>
+        {
+          label: "<%= income.label %>",
+          backgroundColor: "<%= income.backgroundColor %>",
+          data: [ <%= Enum.join(income.data, ", ") %> ]
+        },
+        <% end %>
+      ]
+    };
+    const config_by_book_per_year = {
+      type: 'bar',
+      data: data_by_book_per_year,
+      options: {
+        responsive: true,
+        scales: {
+          x: { stacked: true },
+          y: { stacked: true }
+        }
+      }
+    };
+    var ctx_by_book_per_year = document.getElementById('chart-by-book-per-year');
+    var chart_by_book_per_year = new Chart(ctx_by_book_per_year, config_by_book_per_year);
+    // -->
+    </script>
+  </div>
+
+  <div class="card">
+    <div class="card-content">
+      <canvas id="chart-by-month-and-year"></canvas>
+    </div>
+    <script><!--
+    const data_char_by_month_and_year = {
+      labels: [<%= Enum.join(2012..(Date.utc_today().year), ", ") %>],
+      datasets: [
+        <%= for income <- income_chart_by_book_per_month(@income_chart_by_book_per_month) do %>
+        {
+          label: "<%= income.label %>",
+          backgroundColor: "<%= income.backgroundColor %>",
+          data: [ <%= Enum.join(income.data, ", ") %> ]
+        },
+        <% end %>
+      ]
+    };
+    const config_char_by_month_and_year = {
+        type: 'bar',
+        data: data_char_by_month_and_year,
+        options: {
+          responsive: true
+        }
+      };
+      var ctx_char_by_month_and_year = document.getElementById('chart-by-month-and-year');
+      var chart_by_month_and_year = new Chart(ctx_char_by_month_and_year, config_char_by_month_and_year);
+      // --></script>
+  </div>
+</section>

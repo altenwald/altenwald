@@ -1,0 +1,16 @@
+<div class="content">
+  <h1 class="title is-2"><%= gettext("Expired order") %></h1>
+  <p>
+    <%= gettext(
+      "Looks like time ago you bought this item. If you need more time for downloading it you can send a message to:"
+    ) %>
+  </p>
+  <p>
+    <%= link("info@altenwald.com",
+      to: "mailto:info@altenwald.com",
+      rel: "noopener",
+      target: "_blank"
+    ) %>
+  </p>
+  <p><%= gettext("Thank you and sorry about the inconveniences.") %></p>
+</div>

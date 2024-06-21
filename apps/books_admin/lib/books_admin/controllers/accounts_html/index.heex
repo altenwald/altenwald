@@ -1,0 +1,93 @@
+<section class="hero is-hero-bar">
+  <div class="hero-body">
+    <div class="level">
+      <div class="level-left">
+        <div class="level-item">
+          <div class="title"><%= gettext("Accounts") %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section is-main-section">
+  <div class="card tile is-child has-table has-mobile-sort-spaced">
+    <header class="card-header">
+      <p class="card-header-title">
+        <span class="icon"><i class="fas fa-book"></i></span>
+        <%= gettext("Accounts") %>
+      </p>
+    </header>
+    <div class="card-content">
+      <div class="b-table has-pagination">
+        <div class="table-wrapper has-mobile-cards">
+          <div class="field is-grouped is-grouped-right">
+            <div class="control">
+              <%= link to: catalog_path(@conn, :new), class: "button" do %>
+                <i class="fas fa-plus"></i>&nbsp;<%= gettext("New account") %>
+              <% end %>
+            </div>
+          </div>
+          <table class="table is-fullwidth is-striped is-hoverable">
+            <thead>
+              <th class="has-text-left"><%= gettext("Name") %></th>
+              <th class="has-text-left"><%= gettext("Email") %></th>
+              <th class="has-text-centered"><%= gettext("Initiated?") %></th>
+              <th class="has-text-centered"><%= gettext("Confirmed?") %></th>
+              <th class="has-text-centered"><%= gettext("Is Admin?") %></th>
+              <th class="has-text-centered"><%= gettext("Is Author?") %></th>
+              <th class="has-text-left"><%= gettext("Options") %></th>
+            </thead>
+            <tbody>
+            <%= for user <- @page.entries do %>
+            <tr>
+              <td>
+                <%= link to: accounts_path(@conn, :edit, user.id) do %>
+                  <%= user.first_name %> <%= user.last_name %>
+                <% end %>
+              </td>
+              <td>
+                <%= link to: accounts_path(@conn, :edit, user.id) do %>
+                  <%= user.email %>
+                <% end %>
+              </td>
+              <td class="has-text-centered">
+                <span class="icon">
+                  <i class={"fas fa-#{if(user.hashed_password == "non-initiated", do: "times", else: "check")}"}></i>
+                </span>
+              </td>
+              <td class="has-text-centered">
+                <span class="icon">
+                  <i class={"fas fa-#{if(user.confirmed_at, do: "check", else: "times")}"}></i>
+                </span>
+              </td>
+              <td class="has-text-centered">
+                <span class="icon">
+                  <i class={"fas fa-#{if(Books.Accounts.user_role?(user, :admin), do: "check", else: "times")}"}></i>
+                </span>
+              </td>
+              <td class="has-text-centered">
+                <span class="icon">
+                  <i class={"fas fa-#{if(Books.Accounts.user_role?(user, :author), do: "check", else: "times")}"}></i>
+                </span>
+              </td>
+              <td class="has-text-centered">
+                <div class="field has-addons">
+                  <p class="control">
+                    <%= link to: accounts_bookshelf_path(@conn, :index, user.id), title: gettext("bookshelf"), class: "button" do %>
+                      <span class="icon is-small">
+                        <i class="fas fa-book"></i>
+                      </span>
+                    <% end %>
+                  </p>
+                </div>
+              </td>
+            </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+        <.paginate page={@page} url={&accounts_path(@conn, :index, page: "#{&1}")}/>
+      </div>
+    </div>
+  </div>
+</section>

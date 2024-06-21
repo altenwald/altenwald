@@ -1,0 +1,53 @@
+<div class="content">
+  <div class="columns">
+    <div class="column is-4-tablet is-offset-4-tablet">
+      <h1><%= gettext("Log in") %></h1>
+
+      <.form :let={f} for={@conn} action={Routes.user_session_path(@conn, :create)} as={:user}>
+        <div class="field">
+          <%= label(f, :email, class: "label") %>
+          <div class="control">
+            <%= email_input(f, :email, required: true, class: input_classes(f, :email)) %>
+          </div>
+          <.error_tag form={f} field={:email} />
+        </div>
+        <div class="field">
+          <%= label(f, :password, gettext("Password"), class: "label") %>
+          <div class="control">
+            <%= password_input(f, :password, required: true, class: input_classes(f, :password)) %>
+          </div>
+          <.error_tag form={f} field={:password} />
+        </div>
+        <div class="field">
+          <div class="control">
+            <%= label f, :remember_me do %>
+              <%= checkbox(f, :remember_me) %>
+              <%= gettext("Keep me logged in for 60 days") %>
+            <% end %>
+          </div>
+        </div>
+        <div class="level">
+          <div class="level-left">
+            <div class="level-item">
+              <%= submit(gettext("Log in"), class: "button is-primary") %>
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item">
+              <%= link(gettext("Register"),
+                to: Routes.user_registration_path(@conn, :new),
+                class: "button is-ghost"
+              ) %>
+            </div>
+            <div class="level-item">
+              <%= link(gettext("Forgot your password?"),
+                to: Routes.user_reset_password_path(@conn, :new),
+                class: "button is-ghost"
+              ) %>
+            </div>
+          </div>
+        </div>
+      </.form>
+    </div>
+  </div>
+</div>

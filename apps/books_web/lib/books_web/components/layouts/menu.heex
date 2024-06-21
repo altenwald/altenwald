@@ -1,0 +1,87 @@
+<div class="navbar-end">
+  <div class="navbar-item has-dropdown is-hoverable is-hidden-touch">
+    <a class="navbar-link">
+      <%= if @locale == "es" do %>
+        <img id="lang" alt="ES" src={static_path(@conn, "/images/lang_es.png")} width="30px" />
+      <% else %>
+        <img id="lang" alt="EN" src={static_path(@conn, "/images/lang_en.png")} width="30px" />
+      <% end %>
+    </a>
+    <div class="navbar-dropdown">
+      <a class="navbar-item" href={locale("es", @conn.request_path)}>
+        <img id="lang" alt="ES" src={static_path(@conn, "/images/lang_es.png")} width="30px" />&nbsp;&nbsp;Español
+      </a>
+      <a class="navbar-item" href={locale("en", @conn.request_path)}>
+        <img id="lang" alt="EN" src="/images/lang_en.png" width="30px" />&nbsp;&nbsp;English
+      </a>
+    </div>
+  </div>
+  <hr class="navbar-divider is-hidden-desktop" />
+  <a class="navbar-item is-hidden-desktop" href={locale("es", @conn.request_path)}>Español</a>
+  <a class="navbar-item is-hidden-desktop" href={locale("en", @conn.request_path)}>English</a>
+  <hr class="navbar-divider is-hidden-desktop" />
+  <a class="navbar-item" href={Routes.cart_path(@conn, :index)}>
+    <span class="is-hidden-desktop"><%= gettext("Cart") %></span>
+    <i class="fas fa-shopping-cart is-hidden-touch"></i>&nbsp;
+    <span class="tag is-black is-rounded" id="cart-num-items">
+      <%= if(cart = assigns[:cart], do: num_items(cart), else: 0) %>
+    </span>
+  </a>
+  <div class="navbar-item has-dropdown is-hoverable is-hidden-touch">
+    <a class="navbar-link">
+      <i class="fas fa-user-circle"></i>
+    </a>
+    <div class="navbar-dropdown is-right">
+      <%= if @current_user do %>
+        <%= if user_role?(@current_user, :author) do %>
+          <a class="navbar-item" href={Routes.posts_path(@conn, :new)}>
+            <i class="fas fa-plus"></i>&nbsp;<%= gettext("New Post") %>
+          </a>
+        <% end %>
+        <a class="navbar-item" href={Routes.user_bookshelf_path(@conn, :index)}>
+          <i class="fas fa-book"></i>&nbsp;<%= gettext("Bookshelf") %>
+        </a>
+        <a class="navbar-item" href={Routes.cart_path(@conn, :my_orders)}>
+          <i class="fas fa-book"></i>&nbsp;<%= gettext("My Orders") %>
+        </a>
+        <a class="navbar-item" href={Routes.user_settings_edit_path(@conn, :edit)}>
+          <i class="fas fa-cog"></i>&nbsp;<%= gettext("Settings") %>
+        </a>
+        <hr class="navbar-divider" />
+        <a class="navbar-item" href={Routes.user_session_path(@conn, :delete)}>
+          <i class="fas fa-sign-out-alt"></i>&nbsp;<%= gettext("Log out") %>
+        </a>
+      <% else %>
+        <a class="navbar-item" href={Routes.user_session_path(@conn, :new)}>
+          <i class="fas fa-sign-in-alt"></i>&nbsp;<%= gettext("Log in") %>
+        </a>
+        <a class="navbar-item" href={Routes.user_registration_path(@conn, :new)}>
+          <i class="fas fa-user-plus"></i>&nbsp;<%= gettext("Register") %>
+        </a>
+      <% end %>
+    </div>
+  </div>
+  <%= if @current_user do %>
+    <%= if user_role?(@current_user, :author) do %>
+      <a class="navbar-item is-hidden-desktop" href={Routes.posts_path(@conn, :new)}>
+        <%= gettext("New Post") %>
+      </a>
+    <% end %>
+    <a class="navbar-item is-hidden-desktop" href={Routes.user_bookshelf_path(@conn, :index)}>
+      <%= gettext("Bookshelf") %>
+    </a>
+    <a class="navbar-item is-hidden-desktop" href={Routes.user_settings_edit_path(@conn, :edit)}>
+      <%= gettext("Settings") %>
+    </a>
+    <a class="navbar-item is-hidden-desktop" href={Routes.user_session_path(@conn, :delete)}>
+      <%= gettext("Log out") %>
+    </a>
+  <% else %>
+    <a class="navbar-item is-hidden-desktop" href={Routes.user_session_path(@conn, :new)}>
+      <%= gettext("Log in") %>
+    </a>
+    <a class="navbar-item is-hidden-desktop" href={Routes.user_registration_path(@conn, :new)}>
+      <%= gettext("Register") %>
+    </a>
+  <% end %>
+</div>

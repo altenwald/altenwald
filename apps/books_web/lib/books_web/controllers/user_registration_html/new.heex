@@ -1,0 +1,101 @@
+<div class="content">
+  <div class="columns">
+    <div class="column is-4-tablet is-offset-4-tablet">
+      <h1><%= gettext("Register") %></h1>
+
+      <p>
+        <%= gettext("""
+        We are working to get access to all the people to the Altenwald
+        Community, at the moment the only way to get into the Community
+        is purchasing a digital book.
+        """) %>
+      </p>
+
+      <p>
+        <%= raw(
+          gettext(
+            """
+            If you bought a book in the past and you don't recall the email
+            you used or you didn't receive the welcome message for the
+            Altenwald Community, send us an email to <a href="mailto:%{email}">
+            %{email}</a> and we will contact you to solve the issue.
+            """,
+            email: "info@altenwald.com"
+          )
+        ) %>
+      </p>
+
+      <p>
+        <%= gettext("""
+        Thank you and sorry for the inconveniences.
+        """) %>
+      </p>
+      <.form
+        :let={f}
+        for={@changeset}
+        action={
+          "/"
+          # Routes.user_registration_path(@conn, :create)
+        }
+        class="is-hidden"
+      >
+        <div class="field">
+          <%= label(f, :email, gettext("Email"), class: "label") %>
+          <div class="control">
+            <%= email_input(f, :email, required: true, class: input_classes(f, :email)) %>
+          </div>
+          <.error_tag form={f} field={:email} />
+        </div>
+
+        <div class="field">
+          <%= label(f, :password, gettext("Password"), class: "label") %>
+          <div class="control">
+            <%= password_input(f, :password, required: true, class: input_classes(f, :password)) %>
+          </div>
+          <.error_tag form={f} field={:password} />
+        </div>
+
+        <div class="level">
+          <div class="level-left">
+            <div class="level-item">
+              <%= submit(gettext("Register"), class: "button is-primary") %>
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item">
+              <%= link(gettext("Log in"),
+                to: Routes.user_session_path(@conn, :new),
+                class: "button is-ghost"
+              ) %>
+            </div>
+            <div class="level-item">
+              <%= link(gettext("Forgot your password?"),
+                to: Routes.user_reset_password_path(@conn, :new),
+                class: "button is-ghost"
+              ) %>
+            </div>
+          </div>
+        </div>
+      </.form>
+      <div class="level">
+        <div class="level-left">
+          <div class="level-item">&nbsp;</div>
+        </div>
+        <div class="level-right">
+          <div class="level-item">
+            <%= link(gettext("Log in"),
+              to: Routes.user_session_path(@conn, :new),
+              class: "button is-ghost"
+            ) %>
+          </div>
+          <div class="level-item">
+            <%= link(gettext("Forgot your password?"),
+              to: Routes.user_reset_password_path(@conn, :new),
+              class: "button is-ghost"
+            ) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

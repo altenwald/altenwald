@@ -1,0 +1,85 @@
+<div class="column is-10 is-offset-1">
+  <.form :let={f} for={@changeset} action={@action}>
+    <div class="tabs">
+      <ul>
+        <li class="tab-item is-active" data-id="tab-main"><a><%= gettext("Main") %></a></li>
+        <li class="tab-item" data-id="tab-images"><a><%= gettext("Images") %></a></li>
+        <li class="tab-item" data-id="tab-advanced"><a><%= gettext("Advanced") %></a></li>
+      </ul>
+    </div>
+
+    <div id="tab-main" class="tab-section">
+      <.text_input form={f} name={:title} title={gettext("Title")} required={true} />
+      <.text_input form={f} name={:subtitle} title={gettext("Subtitle")} />
+      <.select
+        form={f}
+        name={:category_id}
+        title={gettext("Category")}
+        values={@categories}
+        required={true}
+        prompt={gettext("Choose one...")}
+      />
+      <.tags_input
+        form={f}
+        name={:tags_text}
+        title={gettext("Tags")}
+        data-values={@tags}
+        data-selectable="true"
+        data-free-input="true"
+        data-search-on="text"
+      />
+      <.textarea form={f} name={:content} title={gettext("Content")} class="easymde" />
+    </div>
+
+    <div id="tab-advanced" class="tab-section is-hidden">
+      <.text_input form={f} name={:slug} title={gettext("Slug")} />
+      <.datetime form={f} name={:inserted_at} title={gettext("Publish date")} />
+      <.select form={f} name={:lang} title={gettext("Language")} values={@languages} />
+      <.textarea
+        form={f}
+        name={:excerpt}
+        title={gettext("Excerpt")}
+        class="easymde"
+        data-height="200px"
+      >
+        <:help>
+          <%= gettext(
+            "If you specified a <!--more--> tag inside of the content, this excerpt will be replaced for the indicated content."
+          ) %>
+        </:help>
+      </.textarea>
+      <.select form={f} name={:books} title={gettext("Books")} values={@book_list} multiple={true}>
+        <:help>
+          <%= gettext(
+            "If any book is selected the post is converted to private and only shown if the user belongs any of these books."
+          ) %>
+        </:help>
+      </.select>
+    </div>
+
+    <div id="tab-images" class="tab-section is-hidden">
+      <.select
+        form={f}
+        name={:featured_image}
+        title={gettext("Featured image")}
+        values={@featured}
+        prompt={gettext("No image selected")}
+      >
+        <help><%= gettext("(Optional) Choose an existing featured image") %></help>
+      </.select>
+      <.select
+        form={f}
+        name={:background_image}
+        title={gettext("Background image")}
+        values={@backgrounds}
+        prompt={gettext("No image selected")}
+      >
+        <help><%= gettext("(Optional) Choose an existing background image") %></help>
+      </.select>
+    </div>
+
+    <div class="mt-5">
+      <.submit_form title={gettext("Save")} />
+    </div>
+  </.form>
+</div>

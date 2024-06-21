@@ -1,0 +1,104 @@
+<section class="hero is-hero-bar">
+  <div class="hero-body">
+    <div class="level">
+      <div class="level-left">
+        <div class="level-item">
+          <div class="title"><%= gettext("Finance") %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section is-main-section">
+  <div class="card tile is-child has-table has-mobile-sort-spaced">
+    <header class="card-header">
+      <p class="card-header-title">
+        <span class="icon"><i class="fas fa-coins"></i></span>
+        <%= gettext("Balances") %>
+      </p>
+    </header>
+    <div class="card-content">
+      <div class="b-table has-pagination">
+        <div class="table-wrapper has-mobile-cards">
+          <div class="field is-grouped is-grouped-right">
+            <div class="control">
+              <%= link to: finance_path(@conn, :new_income), class: "button" do %>
+                <i class="fas fa-plus"></i>&nbsp;<%= gettext("New income") %>
+              <% end %>
+            </div>
+            <div class="control">
+              <%= link to: finance_path(@conn, :new_outcome), class: "button" do %>
+                <i class="fas fa-plus"></i>&nbsp;<%= gettext("New outcome") %>
+              <% end %>
+            </div>
+          </div>
+          <div class="field is-grouped is-grouped-left">
+            <.form :let={f} for={@conn} method="get" action={finance_path(@conn, :index)}>
+              <div class="field is-grouped">
+                <div class="field has-addons">
+                  <div class="control">
+                    <div class="select">
+                      <%= select f, :year, @years, prompt: gettext("All years"), value: @year %>
+                    </div>
+                  </div>
+                  <div class="control">
+                    <div class="select">
+                      <%= select f, :month, @months, prompt: gettext("All months"), value: @month %>
+                    </div>
+                  </div>
+                  <div class="control">
+                    <%= submit gettext("Filter"), class: "button" %>
+                  </div>
+                </div>
+              </div>
+            </.form>
+          </div>
+          <table class="table is-fullwidth is-striped is-hoverable">
+            <thead>
+              <th class="has-text-left"><%= gettext("Date") %></th>
+              <th class="has-text-left"><%= gettext("Type") %></th>
+              <th class="has-text-left"><%= gettext("Name") %></th>
+              <th class="has-text-right"><%= gettext("Items") %></th>
+              <th class="has-text-right"><%= gettext("Amount") %></th>
+              <th class="has-text-left"><%= gettext("Options") %></th>
+            </thead>
+            <tbody>
+            <%= for balance <- @page.entries do %>
+            <tr>
+              <td><%= get_date(balance) %></td>
+              <td><%= balance.type %></td>
+              <td>
+                <%= link to: finance_path(@conn, if(balance.type == :income, do: :edit_income, else: :edit_outcome), balance.id) do %>
+                  <strong><%= get_name(balance) %></strong><br/>
+                <% end %>
+              </td>
+              <td class="has-text-right"><%= balance.items %></td>
+              <td class="has-text-right"><%= balance.amount %></td>
+              <td class="has-text-centered">
+                <div class="field has-addons">
+                  <p class="control">
+                    <%= link to: finance_path(@conn, if(balance.type == :income, do: :edit_income, else: :edit_outcome), balance.id), title: gettext("edit"), class: "button is-warning" do %>
+                      <span class="icon is-small">
+                        <i class="fas fa-pencil-alt"></i>
+                      </span>
+                    <% end %>
+                  </p>
+                  <p class="control">
+                    <%= link to: finance_path(@conn, :delete, balance.id, type: balance.type), title: gettext("delete"), class: "button is-danger", method: "delete", data: [confirm: gettext("Are you sure you want to remove the %{name} offer?", name: get_name(balance))] do %>
+                      <span class="icon is-small">
+                        <i class="fas fa-trash"></i>
+                      </span>
+                    <% end %>
+                  </p>
+                </div>
+              </td>
+            </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+        <.paginate page={@page} url={&finance_path(@conn, :index, page: "#{&1}")}/>
+      </div>
+    </div>
+  </div>
+</section>

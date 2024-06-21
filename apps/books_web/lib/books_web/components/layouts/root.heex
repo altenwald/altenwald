@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang={@locale}>
+  <head>
+    <meta charset="utf-8" />
+    <%= cond do %>
+      <% assigns[:title] -> %>
+        <title><%= @title %> - Altenwald</title>
+      <% assigns[:book] -> %>
+        <title><%= Catalog.get_book_title(@book) %> - Altenwald</title>
+      <% :else -> %>
+        <title><%= gettext("Book catalog") %> - Altenwald</title>
+    <% end %>
+    <%= csrf_meta_tag() %>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Altenwald" />
+    <meta
+      name="sitemap"
+      type="application/xml"
+      title="Sitemap"
+      href={static_path(@conn, "/sitemaps/sitemap.xml.gz")}
+    />
+    <.favicon {assigns} />
+    <.ld_json {assigns} />
+    <.twitter {assigns} />
+    <.facebook {assigns} />
+    <.itemprops {assigns} />
+
+    <%= cond do %>
+      <% assigns[:post] -> %>
+        <link rel="canonical" href={path_to_url(locale(nil, @conn.request_path))} />
+        <link
+          rel="alternate"
+          href={path_to_url(locale(@locale, @conn.request_path))}
+          hreflang={@locale}
+        />
+        <link
+          rel="alternate"
+          href={path_to_url(locale(nil, @conn.request_path))}
+          hreflang="x-default"
+        />
+      <% :else -> %>
+        <link rel="canonical" href={path_to_url(locale(nil, @conn.request_path))} />
+        <link rel="alternate" href={path_to_url(locale("es", @conn.request_path))} hreflang="es" />
+        <link rel="alternate" href={path_to_url(locale("en", @conn.request_path))} hreflang="en" />
+        <link
+          rel="alternate"
+          href={path_to_url(locale(nil, @conn.request_path))}
+          hreflang="x-default"
+        />
+    <% end %>
+
+    <link
+      rel="preload"
+      href={static_path(@conn, "/assets/css/app.css")}
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link href={static_path(@conn, "/assets/css/app.css")} rel="stylesheet" />
+    </noscript>
+
+    <.google {assigns} />
+    <script type="text/javascript" src={static_path(@conn, "/assets/js/app.js")}>
+    </script>
+    <.mailchimp {assigns} />
+  </head>
+  <body>
+    <.nav {assigns} />
+
+    <%= @inner_content %>
+
+    <.cookie {assigns} />
+
+    <.footer {assigns} />
+  </body>
+</html>

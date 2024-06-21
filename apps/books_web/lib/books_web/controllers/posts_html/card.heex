@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-64x64">
+          <img
+            alt={gettext("featured image")}
+            src={static_path(@conn, "/images/posts/#{@post.featured_image}")}
+          />
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4 project-name">
+          <%= link(get_title(@post), to: post_path(@conn, @post)) %>
+        </p>
+        <p class="subtitle is-6 project-url"><%= get_date(@post) %></p>
+      </div>
+    </div>
+    <div class="content project-description">
+      <%= raw(@post.excerpt) %>
+    </div>
+  </div>
+</div>

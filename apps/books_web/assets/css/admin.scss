@@ -1,0 +1,51 @@
+$fa-font-path: "@fortawesome/fontawesome-free/webfonts/";
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/regular";
+@import "@fortawesome/fontawesome-free/scss/solid";
+@import "@fortawesome/fontawesome-free/scss/brands";
+@import "@fortawesome/fontawesome-free/scss/v4-shims";
+
+$navbar-item-img-max-height: 3.5rem;
+$dimensions: 16 24 32 48 64 96 100 128 250 256 512;
+
+@import "../node_modules/nprogress/nprogress.css";
+@import "variables";
+@import "../node_modules/bulma/bulma.sass";
+@import "overrides";
+@import "../node_modules/@creativebulma/bulma-badge/dist/bulma-badge.css";
+@import "../node_modules/bulma-checkbox/css/main.css";
+@import "../node_modules/bulma-switch-control/css/main.css";
+@import "../node_modules/trumbowyg/dist/ui/trumbowyg.css";
+
+@import "admin/mixins";
+@import "admin/theme-default";
+@import "admin/hero-bar";
+@import "admin/card";
+@import "admin/table";
+@import "admin/form";
+@import "admin/main-section";
+
+form.form.container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+img.bookstores {
+  width: 236px;
+}
+
+ol.ol-roman li {
+  list-style-type: lower-roman;
+}
+
+ol.ol-number li {
+  list-style-type: decimal;
+}
+
+ol.ol-letter li {
+  list-style-type: upper-alpha;
+}
+
+.carousel-thumbnail {
+  max-height: 50px;
+}

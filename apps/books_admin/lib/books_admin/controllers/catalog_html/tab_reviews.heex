@@ -1,0 +1,37 @@
+<div class="field is-grouped is-grouped-right">
+  <div class="control">
+    <% return_to = catalog_path(@conn, :show, @book.slug, tab: "reviews") %>
+    <%= link to: catalog_reviews_path(@conn, :new, @book.slug, return_to: return_to), class: "button" do %>
+      <i class="fas fa-plus"></i>&nbsp;<%= gettext("New review") %>
+    <% end %>
+  </div>
+</div>
+<%= for review <- @book.reviews do %>
+<div class="block">
+  <p><strong><%= review.full_name %></strong></p>
+  <p><%= review.position %> (<%= review.company %>)</p>
+  <p><%= raw review.content %></p>
+  <p>
+    <%= for i <- 10..50//10 do %>
+    <%= cond do %>
+    <% i <= review.value -> %>
+    <a href="#"><i class="fas fa-star"></i></a>
+    <% (i / 10) == ceil(review.value / 10) -> %>
+    <a href="#"><i class="fas fa-star-half-alt"></i></a>
+    <% :else -> %>
+    <a href="#"><i class="far fa-star"></i></a>
+    <% end %>
+    <% end %>
+  </p>
+</div>
+<div class="field is-grouped is-grouped-right">
+  <div class="control">
+    <%= link title: gettext("Remove"), class: "button is-danger", to: catalog_reviews_path(@conn, :delete, @book.slug, review.id, return_to: return_to), method: "delete", data: [confirm: gettext("Are you sure you want to remove this review?")] do %>
+      <i class="fas fa-trash-alt"></i>
+    <% end %>
+    <%= link title: gettext("Edit"), class: "button is-warning", to: catalog_reviews_path(@conn, :edit, @book.slug, review.id, return_to: return_to) do %>
+      <i class="fas fa-pencil-alt"></i>
+    <% end %>
+  </div>
+</div>
+<% end %>

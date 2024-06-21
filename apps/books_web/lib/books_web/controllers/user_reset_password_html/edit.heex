@@ -1,0 +1,38 @@
+<div class="content">
+  <div class="columns">
+    <div class="column is-4-tablet is-offset-4-tablet">
+      <h1><%= gettext("Reset password") %></h1>
+
+      <.form
+        :let={f}
+        for={@changeset}
+        action={Routes.user_reset_password_path(@conn, :update, @token)}
+      >
+        <div class="field">
+          <%= label(f, :password, gettext("New password"), class: "label") %>
+          <div class="control">
+            <%= password_input(f, :password, required: true, class: input_classes(f, :password)) %>
+          </div>
+          <.error_tag form={f} field={:password} />
+        </div>
+
+        <div class="field">
+          <%= label(f, :password_confirmation, gettext("Confirm new password"), class: "label") %>
+          <div class="control">
+            <%= password_input(f, :password_confirmation,
+              required: true,
+              class: input_classes(f, :password_confirmation)
+            ) %>
+          </div>
+          <.error_tag form={f} field={:password_confirmation} />
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <%= submit(gettext("Reset"), class: "button is-primary") %>
+          </div>
+        </div>
+      </.form>
+    </div>
+  </div>
+</div>

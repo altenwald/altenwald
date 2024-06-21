@@ -1,0 +1,56 @@
+<%= for content <- @contents do %>
+<li>
+    <strong><%= raw content.title %></strong>
+    <%= if content.excerpt_filename do %>
+      <%= link gettext("sample"), to: content.excerpt_filename, class: "tag is-primary", target: "_blank" %>
+    <% else %>
+      <span class="tag is-danger" title={gettext "It's not going to be visible"}>
+        <i class="fas fa-eye-slash"></i>&nbsp;<%= gettext("no sample") %>
+      </span>
+    <% end %>
+    <%= if content.status == :done do %>
+      <span class={status_to_tag(content.status)} title={gettext "It's not going to be visible"}>
+        <i class="fas fa-eye-slash"></i>&nbsp;
+        <%= translate_content_status(content.status) %>
+      </span>
+    <% else %>
+      <span class={status_to_tag(content.status)}>
+        <%= translate_content_status(content.status) %>
+      </span>
+    <% end %>
+    <br/><br/>
+    <% return_to = catalog_path(@conn, :show, @book_slug, tab: "content") %>
+    <.form :let={f} for={@conn} action={catalog_contents_path(@conn, :update, @book_slug, content.id, return_to: return_to)} as={:content} class="form" method="put">
+      <div class="field">
+        <div class="control">
+          <p><%= raw content.description %></p>
+        </div>
+      </div>
+
+      <div class="field is-grouped is-grouped-right">
+        <div class="control">
+          <%= link title: gettext("Remove"), class: "button is-danger", to: catalog_contents_path(@conn, :delete, @book_slug, content.id, return_to: return_to), method: "delete", data: [confirm: gettext("Are you sure you want to remove this content?")] do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+          <%= link title: gettext("Edit"), class: "button is-warning", to: catalog_contents_path(@conn, :edit, @book_slug, content.id, return_to: return_to) do %>
+            <i class="fas fa-pencil-alt"></i>
+          <% end %>
+        </div>
+        <div class="field has-addons">
+          <div class="control">
+            <span class="select">
+              <%= select f, :status, content_status_list(), value: content.status %>
+            </span>
+          </div>
+          <div class="control">
+            <%= submit title: gettext("Save"), class: "button is-primary" do %>
+              <i class="fas fa-save"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </.form>
+
+    <br/>
+</li>
+<% end %>

@@ -1,0 +1,87 @@
+<section class="hero is-hero-bar">
+  <div class="hero-body">
+    <div class="level">
+      <div class="level-left">
+        <div class="level-item">
+          <div class="title"><%= gettext("Carousel Ad") %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section is-main-section">
+  <div class="card tile is-child has-table has-mobile-sort-spaced">
+    <header class="card-header">
+      <p class="card-header-title">
+        <span class="icon"><i class="fas fa-coins"></i></span>
+        <%= gettext("Carousel Ads") %>
+      </p>
+    </header>
+    <div class="card-content">
+      <div class="b-table has-pagination">
+        <div class="table-wrapper has-mobile-cards">
+          <div class="field is-grouped is-grouped-right">
+            <div class="control">
+              <%= link to: ads_path(@conn, :new), class: "button" do %>
+                <i class="fas fa-plus"></i>&nbsp;<%= gettext("New carousel ad") %>
+              <% end %>
+            </div>
+          </div>
+          <table class="table is-fullwidth is-striped is-hoverable">
+            <thead>
+              <th class="has-text-centered"><%= gettext("Enabled?") %></th>
+              <th class="has-text-centered"><%= gettext("Priority") %></th>
+              <th class="has-text-centered"><%= gettext("Image") %></th>
+              <th class="has-text-left"><%= gettext("Book / Bundle") %></th>
+              <th class="has-text-left"><%= gettext("Options") %></th>
+            </thead>
+            <tbody>
+            <%= for carousel <- @ads_carousel do %>
+            <tr>
+              <td class="has-text-centered">
+                <%= if carousel.enable do %>
+                <span class="icon has-text-success">
+                  <i class="fas fa-check"></i>
+                </span>
+                <% else %>
+                <span class="icon has-text-danger">
+                  <i class="fas fa-times"></i>
+                </span>
+                <% end %>
+              </td>
+              <td class="has-text-centered"><%= carousel.priority %></td>
+              <td class="has-text-centered"><img class="carousel-thumbnail" src={static_path(@conn, "/images/carousel/desktop/#{carousel.image}")}/></td>
+              <td class="has-text-left">
+                <%= if carousel.type == :book do %>
+                <strong>(<%= gettext("Book") %>)</strong> <%= get_title(carousel.book) %>
+                <% else %>
+                <strong>(<%= gettext("Bundle") %>)</strong> <%= carousel.bundle.name %>
+                <% end %>
+              </td>
+              <td class="has-text-centered">
+                <div class="field has-addons">
+                  <p class="control">
+                    <%= link to: ads_path(@conn, :edit, carousel.id), title: gettext("edit"), class: "button is-warning" do %>
+                      <span class="icon is-small">
+                        <i class="fas fa-pencil-alt"></i>
+                      </span>
+                    <% end %>
+                  </p>
+                  <p class="control">
+                    <%= link to: ads_path(@conn, :delete, carousel.id), title: gettext("delete"), class: "button is-danger", method: "delete", data: [confirm: gettext("Are you sure you want to remove this carousel ad?")] do %>
+                      <span class="icon is-small">
+                        <i class="fas fa-trash"></i>
+                      </span>
+                    <% end %>
+                  </p>
+                </div>
+              </td>
+            </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

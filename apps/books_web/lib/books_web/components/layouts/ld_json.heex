@@ -1,0 +1,47 @@
+<script type="application/ld+json">
+  <%= cond do %>
+  <% assigns[:book] -> %>
+  <%= @conn
+      |> ld_json_book(@book, Enum.find(@book.formats, & &1.enabled and &1.name == :digital))
+      |> Jason.encode!()
+      |> raw() %>
+  <% assigns[:posts] -> %>
+  {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "<%= "#{gettext("Posts")} - Altenwald" %>",
+      "publisher": {
+          "@type": "Organization",
+          "url": "https://altenwald.com",
+          "name": "Altenwald",
+          "logo": "<%= static_url @conn, "/images/altenwald_logo.jpg" %>"
+      }
+  }
+  <% assigns[:post] != nil and @post.id != nil -> %>
+  {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "<%= to_text(Books.Posts.get_full_title(@post)) %>",
+      "image": "<%= static_url @conn, "/images/posts/#{@post.featured_image}" %>",
+      "keywords": "<%= to_text(@post.tags_text) %>",
+      "url": "<%= BooksWeb.PostsHTML.post_url(@conn, @post) %>",
+      "datePublished": "<%= @post.inserted_at %>",
+      "dateCreated": "<%= @post.inserted_at %>",
+      "dateModified": "<%= @post.updated_at %>",
+      "description": "<%= to_text(@post.excerpt) %>",
+      "author": {
+          "@type": "Person",
+          "name": "<%= @post.author.full_name %>"
+      }
+  }
+  <% :else -> %>
+  {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "url": "https://altenwald.com",
+      "name": "Altenwald",
+      "logo": "<%= static_url @conn, "/images/altenwald_logo.jpg" %>",
+      "@id": "#store-organization"
+  }
+  <% end %>
+</script>

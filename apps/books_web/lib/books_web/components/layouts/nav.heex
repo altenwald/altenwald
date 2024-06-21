@@ -1,0 +1,76 @@
+<nav
+  class="navbar has-second-line is-white has-shadow"
+  role="navigation"
+  aria-label="main navigation"
+>
+  <div class="navbar-brand is-hidden-desktop">
+    <a class="navbar-item" href={Routes.catalog_path(@conn, :index)}>
+      <img
+        src={static_path(@conn, "/images/altenwald_logo_web.png")}
+        height="46"
+        alt="Altenwald logo"
+      />
+    </a>
+    <a
+      role="button"
+      class="navbar-burger"
+      aria-label="menu"
+      aria-expanded="false"
+      data-target="navbarSite"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarSite" class="navbar-menu">
+    <div class="navbar-brand is-hidden-touch">
+      <a class="navbar-item" href={Routes.catalog_path(@conn, :index)}>
+        <img
+          src={static_path(@conn, "/images/altenwald_logo_web.png")}
+          height="46"
+          alt="Altenwald logo"
+        />
+      </a>
+      <a
+        role="button"
+        class="navbar-burger"
+        aria-label="menu"
+        aria-expanded="false"
+        data-target="navbarSite"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-start">
+      <%= if @current_user != nil and user_admin?(@current_user) do %>
+        <a class="navbar-item" href="/admin"><%= gettext("Admin") %></a>
+      <% end %>
+      <a class="navbar-item" href={Routes.catalog_path(@conn, :index)}><%= gettext("Books") %></a>
+      <a class="navbar-item" href={Routes.posts_path(@conn, :index)}><%= gettext("Posts") %></a>
+    </div>
+    <.menu {assigns} />
+    <%= cond do %>
+      <% books = assigns[:books] -> %>
+        <div class="navbar-start navbar-wide is-primary">
+          <%= for {category, _} <- by_category(books) do %>
+            <a class={"navbar-item category is-#{category.color}"} href={"##{category.name}"}>
+              <%= category.name %>
+            </a>
+          <% end %>
+        </div>
+      <% nav_entries = assigns[:nav_entries] -> %>
+        <div class="navbar-start navbar-wide is-primary">
+          <%= for nav_entry <- nav_entries do %>
+            <a class={["navbar-item category", nav_entry[:class]]} href={"##{nav_entry.id}"}>
+              <%= nav_entry.name %>
+            </a>
+          <% end %>
+        </div>
+      <% :else -> %>
+    <% end %>
+  </div>
+</nav>

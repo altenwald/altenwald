@@ -1,0 +1,16 @@
+<div class="content">
+  <div class="columns">
+    <div class="column is-4-tablet is-offset-4-tablet">
+      <h1 class="title is-2"><%= gettext("Settings") %></h1>
+    </div>
+  </div>
+  <div class="columns">
+    <.live_component id="change-password" module={ChangePassword} {assigns} />
+  </div>
+  <div class="columns">
+    <.live_component id="marketing" module={Marketing} {assigns} />
+  </div>
+  <div class="columns">
+    <.live_component id="interests" module={Interest} {assigns} />
+  </div>
+</div>

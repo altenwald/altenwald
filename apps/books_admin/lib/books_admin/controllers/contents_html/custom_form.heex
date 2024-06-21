@@ -1,0 +1,8 @@
+<.simple_form :let={f} for={@changeset} action={@action} return_to={@return_to}>
+  <.select form={f} name={:status} label={gettext("Status")} required={true} values={@statuses} help={gettext("Choose a type for the kind of content.")}/>
+  <.select form={f} name={:chapter_type} label={gettext("Type")} required={true} values={@types} help={gettext("Choose a type for the kind of content.")}/>
+  <.number_input form={f} name={:order} label={gettext("Order")} help={gettext("(Optional) Order number if it's a chapter or an appendix.")}/>
+  <.text_input form={f} name={:title} label={gettext("Title")} required={true} help={gettext("The title of the chapter, appendix, preface, etc. Don't add numbers, only the title.")}/>
+  <.rich_textarea form={f} name={:description} label={gettext("Description")} required={true} help={gettext("Write the description which will be shown in the book page.")}/>
+  <.text_input form={f} name={:excerpt_filename} label={gettext("Excerpt filename")} help={gettext("(Optional) The filename or URI for accessing to the samples.")}/>
+</.simple_form>

@@ -1,0 +1,74 @@
+<div class="content">
+  <h1><%= gettext("Bookshelf") %></h1>
+  <p>
+    <%= raw(
+      gettext(
+        "If you requested paperback books, you can check your shipping status in your <a href='%{url}'>orders</a>.",
+        url: Routes.cart_path(@conn, :my_orders)
+      )
+    ) %>
+  </p>
+  <div class="columns is-multiline">
+    <%= if length(@bookshelf) > 0 do %>
+      <%= for %_{book: book} = book_item <- @bookshelf do %>
+        <div class="column is-6">
+          <div class="card">
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image">
+                    <image
+                      src={"/images/covers/#{ get_image(:small, book) }"}
+                      alt={Books.Catalog.get_book_title(book)}
+                    />
+                  </figure>
+                </div>
+                <div class="media-content is-hidden-touch">
+                  <p class="title is-4">
+                    <%= link(book.title, to: Routes.catalog_path(@conn, :book, book.slug)) %>
+                  </p>
+                  <p class="subtitle is-5"><%= book.subtitle %></p>
+                  <p><%= raw(short_text(book.description, 128)) %></p>
+                  <p><strong><%= gettext("Obtained") %>:</strong><%= book_item.description %></p>
+                </div>
+              </div>
+              <div class="content">
+                <div class="media-content is-hidden-desktop">
+                  <p class="title is-4">
+                    <%= link(book.title, to: Routes.catalog_path(@conn, :book, book.slug)) %>
+                  </p>
+                  <p class="subtitle is-5"><%= book.subtitle %></p>
+                  <p><%= raw(book.description) %></p>
+                  <br />
+                </div>
+                <div class="level">
+                  <div class="level-left">
+                    <%= for format <- book.formats, format.name in ~w[ digital presale ]a, format.enabled do %>
+                      <%= for file <- format.files, file.enabled do %>
+                        <div class="level-item">
+                          <a
+                            class="box has-text-centered"
+                            href={Routes.user_bookshelf_path(@conn, :download, file.id)}
+                          >
+                            <img
+                              alt={file.filetype}
+                              src={Routes.static_path(@conn, "/images/#{file.filetype}.png")}
+                              class="image is-48x48"
+                            />
+                            <p><%= file.description %></p>
+                          </a>
+                        </div>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <p><%= gettext("You don't still have purchased books to show.") %></p>
+    <% end %>
+  </div>
+</div>

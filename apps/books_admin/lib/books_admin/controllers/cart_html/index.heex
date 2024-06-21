@@ -1,0 +1,73 @@
+<section class="hero is-hero-bar">
+  <div class="hero-body">
+    <div class="level">
+      <div class="level-left">
+        <div class="level-item">
+          <div class="title"><%= gettext("Catalog") %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section is-main-section">
+  <div class="card has-table has-mobile-sort-spaced">
+    <header class="card-header">
+      <p class="card-header-title">
+        <span class="icon"><i class="fas fa-file-invoice"></i></span>
+        <%= gettext("Order detail") %>
+      </p>
+    </header>
+    <div class="card-content">
+      <div class="b-table has-pagination">
+        <div class="table-wrapper has-mobile-cards">
+          <table class="table is-fullwidth is-stripped is-hoverable">
+              <thead>
+                  <th><%= gettext("Date") %></th>
+                  <th><%= gettext("Time (UTC)") %></th>
+                  <th><%= gettext "Status" %></th>
+                  <th><%= gettext("Content") %></th>
+                  <th><%= gettext("Items") %></th>
+                  <th><%= gettext("Total") %></th>
+                  <th><%= gettext("Options") %></th>
+              </thead>
+              <tbody>
+                  <%= for order <- @page.entries do %>
+                  <tr>
+                      <td><%= NaiveDateTime.to_date(order.inserted_at) %></td>
+                      <td><%= NaiveDateTime.to_time(order.inserted_at) %></td>
+                      <td><%= translate_status(order.state) %></td>
+                      <td title={get_full_content(order)}>
+                          <%= link get_content(order), to: cart_path(@conn, :show, order) %>
+                      </td>
+                      <td><%= get_num_items(order) %></td>
+                      <td><%= order.total_price %></td>
+                      <td>
+                          <%= link to: cart_path(@conn, :show, order.id), class: "button is-default", title: gettext("show") do %>
+                            <i class="fas fa-eye"></i>
+                          <% end %>
+                          <%= if Cart.running?(order.id) do %>
+                          <%= link to: "#", class: "button is-default", disabled: "disabled", title: gettext("edit") do %>
+                            <i class="fas fa-pencil-alt"></i>
+                          <% end %>
+                          <%= link to: cart_path(@conn, :stop, order.id), class: "button is-danger", title: gettext("stop"), method: "delete", data: [confirm: gettext("Are you sure you want to stop this order?")] do %>
+                            <i class="fas fa-hand-paper"></i>
+                          <% end %>
+                          <% else %>
+                          <%= link to: cart_path(@conn, :edit, order.id), class: "button is-default", title: gettext("edit") do %>
+                            <i class="fas fa-pencil-alt"></i>
+                          <% end %>
+                          <%= link to: "#", title: gettext("stop"), class: "button", disabled: "disabled" do %>
+                            <i class="far fa-hand-paper"></i>
+                          <% end %>
+                          <% end %>
+                      </td>
+                  </tr>
+                  <% end %>
+              </tbody>
+          </table>
+        </div>
+        <.paginate page={@page} url={&cart_path(@conn, :index, page: "#{&1}")}/>
+      </div>
+    </div>
+  </div>
+</section>

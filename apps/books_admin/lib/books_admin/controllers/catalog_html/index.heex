@@ -1,0 +1,83 @@
+<section class="hero is-hero-bar">
+  <div class="hero-body">
+    <div class="level">
+      <div class="level-left">
+        <div class="level-item">
+          <div class="title"><%= gettext("Catalog") %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section is-main-section">
+  <div class="card tile is-child has-table has-mobile-sort-spaced">
+    <header class="card-header">
+      <p class="card-header-title">
+        <span class="icon"><i class="fas fa-book"></i></span>
+        <%= gettext("Books catalog") %>
+      </p>
+    </header>
+    <div class="card-content">
+      <div class="b-table has-pagination">
+        <div class="table-wrapper has-mobile-cards">
+          <div class="field is-grouped is-grouped-right">
+            <div class="control">
+              <%= link to: catalog_path(@conn, :new), class: "button" do %>
+                <i class="fas fa-plus"></i>&nbsp;<%= gettext("New book") %>
+              <% end %>
+            </div>
+          </div>
+          <table class="table is-fullwidth is-striped is-hoverable">
+            <thead>
+              <th class="has-text-left"><%= gettext("Book") %></th>
+              <th class="has-text-centered"><%= gettext("Cover") %></th>
+              <th class="has-text-centered"><%= gettext("Enabled?") %></th>
+              <th class="has-text-left"><%= gettext("Presale") %></th>
+              <th class="has-text-left"><%= gettext("Release") %></th>
+              <th class="has-text-centered"><%= gettext("Income") %></th>
+              <th class="has-text-left"><%= gettext("Options") %></th>
+            </thead>
+            <tbody>
+            <%= for book <- @books do %>
+            <tr>
+              <td>
+                <%= link to: catalog_path(@conn, :show, book.slug) do %>
+                  <strong><%= book.title %></strong><br/>
+                  <%= book.subtitle %>
+                <% end %>
+              </td>
+              <td><img class="image is-64x64" src={get_cover_path(@conn, book)}/></td>
+              <td class="has-text-centered">
+                <%= if book.enabled do %>
+                <span class="icon has-text-success">
+                  <i class="fas fa-check"></i>
+                </span>
+                <% else %>
+                <span class="icon has-text-danger">
+                  <i class="fas fa-times"></i>
+                </span>
+                <% end %>
+              </td>
+              <td><%= book.presale %></td>
+              <td><%= book.release %></td>
+              <td class="has-text-right"><%= book.income %></td>
+              <td class="has-text-centered">
+                <div class="field has-addons">
+                  <p class="control">
+                    <%= link to: catalog_contents_path(@conn, :index, book.slug), title: gettext("contents"), class: "button" do %>
+                      <span class="icon is-small">
+                        <i class="fas fa-list"></i>
+                      </span>
+                    <% end %>
+                  </p>
+                </div>
+              </td>
+            </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

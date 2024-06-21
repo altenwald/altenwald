@@ -1,0 +1,62 @@
+<%= cond do %>
+  <% assigns[:book] -> %>
+    <meta name="keywords" content={@book.keywords} />
+    <meta name="description" content={html2txt(@book.description)} />
+    <meta itemprop="name" content={"#{Catalog.get_book_title(@book)} - Altenwald"} />
+    <meta itemprop="description" content={html2txt(@book.description)} />
+    <meta itemprop="image" content={BooksWeb.BookCoverComponent.img_url(@conn, @book, :small)} />
+  <% assigns[:bundle] -> %>
+    <meta name="keywords" content={@bundle.keywords} />
+    <meta name="description" content={html2txt(@bundle.description)} />
+    <meta itemprop="name" content={"#{@bundle.name} - Altenwald"} />
+    <meta itemprop="description" content={html2txt(@bundle.description)} />
+    <meta itemprop="image" content={BooksWeb.BundleCoverComponent.img_url(@conn, @bundle)} />
+  <% assigns[:posts] -> %>
+    <meta
+      name="keywords"
+      content={
+        if keywords = assigns[:keywords],
+          do: keywords,
+          else:
+            gettext(
+              "manuel rubio, erlang, elixir, phoenix framework, programming languages, beam, programming, books"
+            )
+      }
+    />
+    <meta
+      name="description"
+      content={
+        gettext(
+          "Altenwald Blog is a good way to get up-to-date for technologies related to software development in an easy and simple way."
+        )
+      }
+    />
+    <meta itemprop="name" content={"#{gettext("Posts")} - Altenwald"} />
+  <% assigns[:post] -> %>
+    <meta name="keywords" content={@post.tags_text} />
+    <meta name="description" content={to_text(@post.excerpt)} />
+    <meta itemprop="name" content={"#{Posts.get_full_title(@post)} - Altenwald"} />
+    <meta itemprop="description" content={to_text(@post.excerpt)} />
+    <meta itemprop="image" content={static_url(@conn, "/images/posts/#{@post.featured_image}")} />
+  <% :else -> %>
+    <meta
+      name="keywords"
+      content={
+        if keywords = assigns[:keywords],
+          do: keywords,
+          else:
+            gettext(
+              "manuel rubio, erlang, elixir, phoenix framework, programming languages, beam, programming, books"
+            )
+      }
+    />
+    <meta
+      name="description"
+      content={
+        gettext(
+          "Altenwald is a technical bookshop online which brings you technologies related to software development in an easy and simple way."
+        )
+      }
+    />
+<% end %>
+<meta name="distribution" content="global" />

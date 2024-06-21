@@ -1,0 +1,105 @@
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul>
+    <li><%= link(gettext("Dashboard"), to: "#") %></li>
+    <li><%= link(gettext("My Orders"), to: Routes.cart_path(@conn, :my_orders)) %></li>
+    <li class="is-active">
+      <%= link(gettext("Order %{order_id}", order_id: @my_order.id),
+        to: "#",
+        "aria-current": "page"
+      ) %>
+    </li>
+  </ul>
+</nav>
+<div class="content">
+  <div class="card has-mobile-sort-spaced">
+    <header class="card-header">
+      <p class="card-header-title">
+        <span class="icon"><i class="fas fa-user"></i></span>
+        <%= gettext("Order data") %>
+      </p>
+    </header>
+    <div class="card-content">
+      <div class="content">
+        <div class="field">
+          <label class="label"><%= gettext("Shipping status") %></label>
+          <div class="control">
+            <%= if status = @my_order.shipping_status do %>
+              <%= translate_shipping_status(status) %> (<%= gettext("Last modification: %{date}",
+                date: @my_order.shipping_status_at
+              ) %>)
+            <% else %>
+              <%= gettext("No provided yet") %>
+            <% end %>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label"><%= gettext("Tracking URL") %></label>
+          <div class="control">
+            <%= if url = @my_order.shipping_tracking_url do %>
+              <%= link to: url do %>
+                <%= url %>&nbsp;<i class="fas fa-external-link-alt"></i>
+              <% end %>
+            <% else %>
+              <%= gettext("No provided yet") %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <table class="table is-stripped">
+    <tr>
+      <th><%= gettext("Book") %></th>
+      <th><%= gettext("Format") %></th>
+      <th><%= gettext("Quantity") %></th>
+      <th><%= gettext("Price") %></th>
+      <th><%= gettext("Total") %></th>
+    </tr>
+    <%= for item <- @my_order.items do %>
+      <tr>
+        <td>
+          <%= link to: Routes.catalog_path(@conn, :book, item.format.book.slug) do %>
+            <h4 class="order book-title"><%= item.format.book.title %></h4>
+            <p class="order book-subtitle"><%= item.format.book.subtitle %></p>
+          <% end %>
+        </td>
+        <td class="is-vcentered item-format"><%= item.format.name %></td>
+        <td class="is-vcentered has-text-right"><%= item.quantity %></td>
+        <td class="is-vcentered has-text-right item-price" id={"price-#{item.format.id}"}>
+          <%= money(item.format.price) %>
+        </td>
+        <td class="is-vcentered has-text-right item-total-price" id={"total-#{item.format.id}"}>
+          <%= money(item.format.price, item.quantity) %>
+        </td>
+      </tr>
+      <%= for offer <- @my_order.offers,
+            apply_on <- offer.applies,
+            apply_on.id == item.format_id do %>
+        <tr id={offer.id}>
+          <td colspan="3"><%= offer.name %></td>
+          <td class="has-text-right"><%= item.discount_display %></td>
+          <td class="has-text-right item-discount-total"><%= money(item.discount_total) %></td>
+        </tr>
+      <% end %>
+    <% end %>
+    <%= if @my_order.shipping? do %>
+      <tr>
+        <td colspan="3"><%= gettext("Shipping costs") %></td>
+        <td class="has-text-right item-shipping-quantity"><%= @my_order.shipping_items %></td>
+        <td class="has-text-right item-shipping-subtotal"><%= @my_order.shipping_subtotal %></td>
+      </tr>
+      <%= unless Money.zero?(@my_order.shipping_discount) do %>
+        <tr>
+          <td colspan="4"><%= gettext("Shipping discount") %></td>
+          <td class="has-text-right item-shipping-discount">
+            - <%= @my_order.shipping_discount %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+    <tr>
+      <td class="has-text-right" colspan="4"><%= gettext("Total (VAT incl.)") %></td>
+      <td class="total has-text-right" id="order-total-price"><%= @my_order.total_price %></td>
+    </tr>
+  </table>
+</div>

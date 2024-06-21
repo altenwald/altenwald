@@ -1,0 +1,1306 @@
+## This file is a PO Template file.
+##
+## `msgid`s here are often extracted from source code.
+## Add new translations manually only if they're dynamic
+## translations that can't be statically extracted.
+##
+## Run `mix gettext.extract` to bring this file up to
+## date. Leave `msgstr`s empty as changing them here as no
+## effect: edit them in PO (`.po`) files instead.
+msgid ""
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AC"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AD"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AE"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AF"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AG"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AI"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AL"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AM"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AN"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AO"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AQ"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AR"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AS"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AT"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AU"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AW"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AX"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AZ"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BA"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BB"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BD"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BE"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BF"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BG"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BH"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BI"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BJ"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BL"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BM"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BN"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BO"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BQ"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BR"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BS"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BT"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BV"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BW"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BY"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BZ"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CA"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CC"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CD"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CF"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CG"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CH"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CI"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CK"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CL"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CM"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CN"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CO"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CP"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CR"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CU"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CV"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CW"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CX"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CY"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CZ"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "DE"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "DG"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "DJ"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "DK"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "DM"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "DO"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "DZ"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "EA"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "EC"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "EE"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "EG"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "EH"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "ER"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "ES"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "ET"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "EU"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "FI"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "FJ"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "FK"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "FM"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "FO"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "FR"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GA"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GB"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GD"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GE"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GF"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GG"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GH"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GI"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GL"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GM"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GN"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GP"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GQ"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GR"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GS"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GT"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GU"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GW"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GY"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "HK"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "HM"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "HN"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "HR"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "HT"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "HU"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "IC"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "ID"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "IE"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "IL"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "IM"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "IN"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "IO"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "IQ"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "IR"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "IS"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "IT"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "JE"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "JM"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "JO"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "JP"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "KE"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "KG"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "KH"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "KI"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "KM"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "KN"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "KP"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "KR"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "KW"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "KY"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "KZ"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "LA"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "LB"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "LC"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "LI"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "LK"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "LR"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "LS"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "LT"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "LU"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "LV"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "LY"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MA"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MC"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MD"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "ME"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MF"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MG"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MH"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MK"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "ML"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MM"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MN"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MO"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MP"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MQ"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MR"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MS"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MT"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MU"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MV"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MW"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MX"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MY"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MZ"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "NA"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "NC"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "NE"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "NF"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "NG"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "NI"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "NL"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "NO"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "NP"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "NR"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "NU"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "NZ"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "OM"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PA"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PE"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PF"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PG"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PH"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PK"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PL"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PM"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PN"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PR"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PS"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PT"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PW"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PY"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "QA"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "QO"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "RE"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "RO"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "RS"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "RU"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "RW"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SA"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SB"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SC"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SD"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SE"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SG"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SH"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SI"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SJ"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SK"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SL"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SM"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SN"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SO"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SR"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SS"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "ST"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SV"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SX"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SY"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SZ"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TA"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TC"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TD"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TF"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TG"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TH"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TJ"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TK"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TL"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TM"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TN"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TO"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TR"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TT"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TV"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TW"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TZ"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "UA"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "UG"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "UM"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "US"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "UY"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "UZ"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "VA"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "VC"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "VE"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "VG"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "VI"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "VN"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "VU"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "WF"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "WS"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "XK"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "YE"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "YT"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "ZA"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "ZM"
+msgstr ""
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "ZW"
+msgstr ""

@@ -1,0 +1,27 @@
+<nav class="navbar is-white has-shadow" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <img src={static_path @conn, "/images/altenwald_logo_web.png"} height="46">
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarSite">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navbarSite" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href={home_path @conn, :index}><%= gettext "Admin" %></a>
+            <a class="navbar-item" href={catalog_path @conn, :index}><%= gettext "Catalog" %></a>
+            <a class="navbar-item" href={cart_path @conn, :index}><%= gettext "Cart" %></a>
+            <a class="navbar-item" href={offers_path @conn, :index}><%= gettext "Offers" %></a>
+            <a class="navbar-item" href={accounts_path @conn, :index}><%= gettext "Accounts" %></a>
+            <a class="navbar-item" href={finance_path @conn, :index}><%= gettext "Finance" %></a>
+            <a class="navbar-item" href={ads_path @conn, :index}><%= gettext "Ads" %></a>
+            <a class="navbar-item" href={bundles_path @conn, :index}><%= gettext "Bundles" %></a>
+            <a class="navbar-item" href={landings_path @conn, :index}><%= gettext "Landings" %></a>
+        </div>
+        <%= render_slot(@inner_block) %>
+    </div>
+</nav>

@@ -1,0 +1,89 @@
+<section class="section">
+  <div class="content">
+      <div class="columns is-multiline">
+          <div class="column is-full-mobile is-one-third-desktop">
+              <img class="book_cover" alt={gettext "book cover"} src={static_path @conn, "/images/covers/#{get_image(:big, @book)}"}/>
+          </div>
+          <div class="column is-full-mobile is-two-third-touch is-one-third-desktop">
+            <div class="tabs">
+                <ul>
+                    <li class={"tab-item#{if @tab_active == "info", do: " is-active"}"} data-id="tab-info"><a><%= gettext "Information" %></a></li>
+                    <li class={"tab-item#{if @tab_active == "content", do: " is-active"}"} data-id="tab-content"><a><%= gettext "Content"  %></a></li>
+                    <li class={"tab-item#{if @tab_active == "projects", do: " is-active"}"} data-id="tab-projects"><a><%= gettext "Projects"  %></a></li>
+                    <li class={"tab-item#{if @tab_active == "cross-selling", do: " is-active"}"} data-id="tab-cross-selling"><a><%= gettext "Cross Selling" %></a></li>
+                    <li class={"tab-item#{if @tab_active == "reviews", do: " is-active"}"} data-id="tab-reviews"><a><%= gettext "Reviews" %></a></li>
+                </ul>
+            </div>
+
+            <div id="tab-info" class={"tab-section#{if @tab_active != "info", do: " is-hidden"}"}>
+              <.tab_info conn={@conn} book={@book}/>
+            </div>
+
+            <div id="tab-content" class={"tab-section#{if @tab_active != "content", do: " is-hidden"}"}>
+              <.tab_content conn={@conn} book={@book}/>
+            </div>
+
+            <div id="tab-projects" class={"tab-section#{if @tab_active != "projects", do: " is-hidden"}"}>
+              <.tab_projects conn={@conn} book={@book}/>
+            </div>
+
+            <div id="tab-cross-selling" class={"tab-section#{if @tab_active != "cross-selling", do: " is-hidden"}"}>
+              <.tab_cross_selling conn={@conn} book={@book}/>
+            </div>
+
+            <div id="tab-reviews" class={"tab-section#{if @tab_active != "reviews", do: " is-hidden"}"}>
+              <.tab_reviews conn={@conn} book={@book}/>
+            </div>
+          </div>
+          <div class="column is-one-third-desktop is-full-touch">
+            <%= link to: catalog_path(@conn, :edit, @book.slug), class: "button is-fullwidth is-primary is-large" do %>
+              <p class="has-text-centered">
+                <i class="fas fa-pencil-alt"></i>&nbsp;<%= gettext("Edit") %>
+              </p>
+            <% end %>
+            <div class="box">
+                <h3 class="is-5"><%= gettext "Available formats" %></h3>
+                <%= for format <- Enum.sort_by(@book.formats, & &1.name) do %>
+                  <div class="box">
+                    <p class="is-pulled-right is-size-2">
+                      <%= link to: catalog_formats_path(@conn, :edit, @book.slug, format.id) do %>
+                        <i class="fas fa-pencil-alt"></i>
+                      <% end %>&nbsp;
+                      <%= link to: catalog_formats_path(@conn, :delete, @book.slug, format.id), method: "delete", data: [confirm: gettext("Are you sure you want to remove %{format} format?", format: format.name)] do %>
+                        <i class="fas fa-trash-alt"></i>
+                      <% end %>
+                    </p>
+                    <p class="is-size-4"><strong><%= translate_format(format.name) %></strong></p>
+                    <p class="is-size-4">
+                        <%= kind(format, assigns) %>&nbsp;
+                        <span id={"buy-#{format.name}-price"}><%= format.price %></span>
+                        <%= if format.shipping do %>
+                        + <i class="fas fa-shipping-fast"></i>&nbsp;
+                        <span id={"buy-#{format.name}-price-shipping"}><%= Books.Shipping.get_amount(nil) %></span>
+                        <% end %>
+                        <%= unless format.enabled do %>
+                        <span class="has-text-danger">(<%= gettext("Disabled") %>)</span>
+                        <% end %>
+                    </p>
+                  </div>
+                <% end %>
+                <%= link to: catalog_formats_path(@conn, :new, @book.slug), class: "box" do %>
+                  <p class="has-text-centered is-hoverable is-size-4">
+                    <i class="fas fa-plus"></i>&nbsp;<%= gettext("New format") %>
+                  </p>
+                <% end %>
+            </div>
+            <div class="box">
+              <h3 class="is-5"><%= gettext("Links") %></h3>
+                <%= for shop_link <- @book.shop_links do %>
+                <p>
+                    <a href={shop_link.url}>
+                        <img class="bookstores" id={shop_link.id} alt={shop_link.name} src={"/images/shoplinks/#{shop_link.id}-badge.png"}/>
+                    </a>
+                </p>
+                <% end %>
+            </div>
+          </div>
+      </div>
+  </div>
+</section>

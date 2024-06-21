@@ -1,0 +1,38 @@
+<div class="column is-4-tablet is-offset-4-tablet">
+  <h2 class="subtitle is-4"><%= gettext("Marketing options") %></h2>
+
+  <%= for option <- @marketing_options do %>
+    <div class="field">
+      <span class="control">
+        <label class="is-checkbox is-rounded is-primary">
+          <input
+            type="checkbox"
+            checked={option["enabled"]}
+            phx-value-checked={option["enabled"]}
+            phx-value-id={option["marketing_permission_id"]}
+            phx-click="change"
+            phx-target={@myself}
+            value="on"
+            id={option["marketing_permission_id"]}
+          />
+          <span class="icon checkmark">
+            <i class="fa fa-check"></i>
+          </span>
+          <span><%= translate(option["marketing_permission_id"], option["text"]) %></span>
+        </label>
+        <%= if option["marketing_permission_id"] == @status_id do %>
+          <%= if @status_ok do %>
+            <span class="icon has-text-success">
+              <i class="fas fa-check"></i>
+            </span>
+          <% else %>
+            <span class="icon has-text-danger">
+              <i class="fas fa-times"></i>
+            </span>
+          <% end %>
+        <% end %>
+      </span>
+      <p class="help"><%= help_for(option["marketing_permission_id"]) %></p>
+    </div>
+  <% end %>
+</div>

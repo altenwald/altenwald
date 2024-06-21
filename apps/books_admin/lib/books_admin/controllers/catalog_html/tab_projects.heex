@@ -1,0 +1,37 @@
+<div class="field is-grouped is-grouped-right">
+  <div class="control">
+    <% return_to = catalog_path(@conn, :show, @book.slug, tab: "projects") %>
+    <%= link to: catalog_projects_path(@conn, :new, @book.slug, return_to: return_to), class: "button" do %>
+      <i class="fas fa-plus"></i>&nbsp;<%= gettext("New project") %>
+    <% end %>
+  </div>
+</div>
+<%= for project <- @book.projects do %>
+<div class="card">
+    <div class="card-image">
+        <figure class="image">
+            <img src={static_path @conn, "/images/projects/#{project.logo}"} alt={project.name}/>
+        </figure>
+    </div>
+    <div class="card-content">
+        <div class="media">
+            <div class="media-content">
+                <p class="title is-4 project-name"><%= project.name %></p>
+                <p class="subtitle is-6 project-url"><%= link project.url, to: project.url, rel: "noopener", target: "_blank" %></p>
+            </div>
+        </div>
+        <div class="content project-description">
+            <%= raw project.description %>
+        </div>
+    </div>
+    <% return_to = catalog_path(@conn, :show, @book.slug, tab: "projects") %>
+    <footer class="card-footer">
+      <%= link to: catalog_projects_path(@conn, :edit, @book.slug, project.id, return_to: return_to), class: "card-footer-item" do %>
+        <i class="fas fa-pencil-alt"></i>&nbsp;<%= gettext("Edit") %>
+      <% end %>
+      <%= link to: catalog_projects_path(@conn, :delete, @book.slug, project.id, return_to: return_to), class: "card-footer-item", method: "delete", data: [confirm: gettext("Are you sure you want to remove %{project} project?", project: project.name)] do %>
+        <i class="fas fa-trash-alt"></i>&nbsp;<%= gettext("Delete") %>
+      <% end %>
+    </footer>
+</div>
+<% end %>

@@ -1,0 +1,34 @@
+<div class="field is-grouped is-grouped-right">
+  <div class="control">
+    <%= link to: catalog_contents_path(@conn, :index, @book.slug), class: "button" do %>
+      <i class="fas fa-list"></i>&nbsp;<%= gettext("Contents") %>
+    <% end %>
+  </div>
+  <div class="control">
+    <% return_to = catalog_path(@conn, :show, @book.slug, tab: "content") %>
+    <%= link to: catalog_contents_path(@conn, :new, @book.slug, return_to: return_to), class: "button" do %>
+      <i class="fas fa-plus"></i>&nbsp;<%= gettext("New content") %>
+    <% end %>
+  </div>
+</div>
+<% book_contents = Enum.group_by(@book.contents, &(&1.chapter_type)) %>
+<%= if contents = book_contents["1 preface"] do %>
+<ol>
+    <.content contents={contents} book_slug={@book.slug} conn={@conn}/>
+</ol>
+<% end %>
+<%= if contents = book_contents["2 intro"] do %>
+<ol class="ol-roman">
+    <.content contents={contents} book_slug={@book.slug} conn={@conn}/>
+</ol>
+<% end %>
+<%= if contents = book_contents["3 chapter"] do %>
+<ol class="ol-number">
+    <.content contents={contents} book_slug={@book.slug} conn={@conn}/>
+</ol>
+<% end %>
+<%= if contents = book_contents["4 appendix"] do %>
+<ol class="ol-letter">
+    <.content contents={contents} book_slug={@book.slug} conn={@conn}/>
+</ol>
+<% end %>

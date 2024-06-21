@@ -1,0 +1,26 @@
+<section class="hero is-hero-bar">
+  <div class="hero-body">
+    <div class="level">
+      <div class="level-left">
+        <div class="level-item">
+          <div class="title">
+            <%= gettext("Edit Landing Page") %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section is-main-section">
+  <div class="card has-mobile-sort-spaced">
+    <header class="card-header">
+      <p class="card-header-title">
+        <span class="icon"><i class="fas fa-book"></i></span>
+        <%= gettext("Landing Page") %>
+      </p>
+    </header>
+    <div class="card-content">
+      <.custom_form {Map.put(assigns, :action, landings_path(@conn, :update, @landing, return_to: @return_to))}/>
+    </div>
+  </div>
+</section>

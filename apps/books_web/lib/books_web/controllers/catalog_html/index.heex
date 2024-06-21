@@ -1,0 +1,118 @@
+<section class="section">
+  <div class="container">
+    <div id="carousel-hero" class="carousel">
+      <%= for {%{image: image, link: link, caption: caption}, i} <- Enum.with_index(@carousel, 1) do %>
+        <div class={"item-#{i} has-text-centered"}>
+          <a href={link}>
+            <img
+              class="carousel is-hidden-touch"
+              alt={caption}
+              src={static_path(@conn, "/images/carousel/desktop/#{image}")}
+            />
+            <img
+              class="carousel is-hidden-desktop"
+              alt={caption}
+              src={static_path(@conn, "/images/carousel/mobile/#{image}")}
+            />
+          </a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+<div class="content">
+  <h1 class="title"><%= gettext("Book catalog") %></h1>
+  <div class="columns is-desktop is-multiline">
+    <div class="column is-half-tablet">
+      <span class="is-size-5 has-text-weight-bold">
+        <%= gettext("Books' Languages") %>:&nbsp;
+      </span>
+      <br class="is-hidden-desktop" />
+      <%= for {lang, lang_name} <- [{"en", gettext("English")}, {"es", gettext("Spanish")}, {nil, gettext("All")}] do %>
+        <%= cond do %>
+          <% lang == @book_lang -> %>
+            <span class="tag is-dark"><%= lang_name %></span>
+          <% is_nil(lang) -> %>
+            <a href={Routes.catalog_path(@conn, :index)}>
+              <span class="tag"><%= lang_name %></span>
+            </a>
+          <% :else -> %>
+            <a href={Routes.catalog_path(@conn, :index, lang)}>
+              <span class="tag"><%= lang_name %></span>
+            </a>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <%= for alert <- @alerts, alert.type != :info, is_nil(alert.book_id) do %>
+    <div class={"notification is-#{ alert.type} is-light"}>
+      <button class="delete"></button>
+      <strong><%= alert.title %></strong>
+      <%= raw(alert.body) %>
+    </div>
+  <% end %>
+  <%= for {category, books} <- by_category(@books) do %>
+    <div class="tabs">
+      <ul>
+        <li class="is-active">
+          <a name={category.name}>
+            <h2 class="title"><%= category.name %></h2>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="columns is-desktop is-multiline">
+      <%= for book <- books do %>
+        <div class="column is-half-tablet is-one-fifth-desktop">
+          <a href={Routes.catalog_path(@conn, :book, book.slug)}>
+            <div class="card">
+              <div class="card-image">
+                <figure class="image cover-small">
+                  <BooksWeb.BookCoverComponent.img
+                    size="small"
+                    book={book}
+                    conn={@conn}
+                    alt={Books.Catalog.get_book_title(book)}
+                  />
+                  <span class="product-lang-label">
+                    <img alt={String.upcase(book.lang)} src={"/images/lang_#{book.lang}.png"} />
+                  </span>
+                  <%= cond do %>
+                    <% Catalog.book_released?(book) -> %>
+                      <%= for {format, i} <- Enum.with_index(Enum.sort_by(book.formats, & &1.name)) do %>
+                        <div class={"price price-#{i}"}>
+                          <%= kind(format, assigns) %>&nbsp;<%= Money.to_string(format.price) %>
+                        </div>
+                      <% end %>
+                    <% Catalog.book_in_presale?(book) -> %>
+                      <%= for {format, i} <- Enum.with_index(Enum.sort_by(book.formats, & &1.name)) do %>
+                        <div class={"price price-#{i}"}>
+                          <%= kind(format, assigns) %>&nbsp;<%= Money.to_string(format.price) %>
+                        </div>
+                      <% end %>
+                    <% book.presale != nil -> %>
+                  <% end %>
+                </figure>
+              </div>
+              <div class="card-content book-desc">
+                <div class="media">
+                  <div class="media-content">
+                    <p class={"title is-5 is-underlined book-title book-title-#{book.slug}"}>
+                      <%= book.title %>
+                    </p>
+                    <p class={"subtitle is-6 book-subtitle book-subtitle-#{book.slug}"}>
+                      <%= book.subtitle %>
+                    </p>
+                    <p class={"authors book-authors book-authors-#{book.slug}"}>
+                      <%= Catalog.get_book_authors(book, :short) %>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

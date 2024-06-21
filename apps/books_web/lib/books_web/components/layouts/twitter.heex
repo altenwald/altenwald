@@ -1,0 +1,46 @@
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@altenwald" />
+<meta name="twitter:creator" content="@altenwald" />
+<%= cond do %>
+  <% assigns[:book] -> %>
+    <meta name="twitter:title" content={Catalog.get_book_title(@book)} />
+    <meta name="twitter:description" content={html2txt(@book.description)} />
+    <meta
+      name="twitter:image"
+      content={BooksWeb.BookCoverComponent.img_url(@conn, @book, :small)}
+    />
+  <% assigns[:bundle] -> %>
+    <meta name="twitter:title" content={@bundle.name} />
+    <meta name="twitter:description" content={html2txt(@bundle.description)} />
+    <meta name="twitter:image" content={BooksWeb.BundleCoverComponent.img_url(@conn, @bundle)} />
+  <% assigns[:posts] -> %>
+    <meta name="twitter:title" content={"#{gettext("Posts")} - Altenwald"} />
+    <meta
+      name="twitter:description"
+      content={
+        gettext(
+          "Altenwald Blog is a good way to get up-to-date for technologies related to software development in an easy and simple way."
+        )
+      }
+    />
+    <meta name="twitter:image" content={static_url(@conn, "/images/altenwald_logo.jpg")} />
+  <% assigns[:post] -> %>
+    <meta name="twitter:title" content={Posts.get_full_title(@post)} />
+    <meta name="twitter:description" content={to_text(@post.excerpt)} />
+    <meta
+      name="twitter:image"
+      content={static_url(@conn, "/images/posts/#{@post.featured_image}")}
+    />
+  <% :else -> %>
+    <meta name="twitter:title" content="Altenwald" />
+    <meta
+      name="twitter:description"
+      content={
+        gettext(
+          "Altenwald is a technical bookshop online which brings you technologies related to software development in an easy an simple way."
+        )
+      }
+    />
+    <meta name="twitter:image" content={static_url(@conn, "/images/altenwald_logo.jpg")} />
+<% end %>

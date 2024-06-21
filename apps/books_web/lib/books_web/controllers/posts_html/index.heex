@@ -1,0 +1,138 @@
+<div class="content">
+  <% {recent_posts, more_posts} = Enum.split(@posts.entries, @recent_posts) %>
+  <%= if @recent_posts > 0 do %>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container">
+          <%= for {post, i} <- Enum.with_index(recent_posts) do %>
+            <%= if i > 0 do %>
+              <div class="is-divider"></div>
+            <% end %>
+            <section class="section">
+              <div class="columns">
+                <div class="column is-4-widescreen is-offset-1-widescreen">
+                  <figure class="image is-featured">
+                    <img
+                      alt={gettext("featured image")}
+                      src={"/images/posts/#{post.featured_image || "unknown.jpg"}"}
+                    />
+                  </figure>
+                </div>
+                <div class="column is-7">
+                  <div class="content is-medium">
+                    <h2 class="subtitle is-4">
+                      <a href="#">
+                                        <span class={"tag is-#{post.category.color} is-uppercase"}>
+                                            <%= post.category.name[@locale] %>
+                                        </span>
+                                    </a>&nbsp;
+                      <%= if post.private do %>
+                        <i class="fas fa-lock"></i>&nbsp;
+                      <% end %>
+                      <%= get_date(post) %>&nbsp;
+                      <span class="tag">
+                        <%= get_reading_min(post) %> <%= gettext("reading minutes") %>
+                      </span>
+                    </h2>
+                    <h1 class="title">
+                      <%= link(get_title(post), to: post_path(@conn, post)) %>
+                    </h1>
+                    <span class="is-flex is-flex-wrap-wrap ml-2 is-line-height-wider">
+                      <%= link to: post_path(@conn, post) <> "#comments" do %>
+                        <span class="tag is-ghost">
+                                            <i class="fas fa-comment"></i>&nbsp;
+                                            <%= length(post.comments) %>
+                                        </span>&nbsp;
+                      <% end %>
+                      <%= for tag <- post.tags do %>
+                        <%= link to: "#" do %>
+                          <span class="tag is-black">
+                                            <i class="fas fa-tag"></i>&nbsp;
+                                            <%= tag.name %>
+                                        </span>&nbsp;
+                        <% end %>
+                      <% end %>
+                    </span>
+                    <p><%= raw(to_html(get_excerpt(post))) %></p>
+                    <p>
+                      <%= link to: post_path(@conn, post) do %>
+                        <%= gettext("Read more") %> <i class="fas fa-arrow-right"></i>
+                      <% end %>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          <% end %>
+        </div>
+      </div>
+    </section>
+  <% end %>
+
+  <section class="hero">
+    <%= if @recent_posts == 0 do %>
+      <.paginate page={@posts} url={&Routes.posts_path(@conn, :index, page: to_string(&1))} />
+    <% end %>
+    <div class="hero-body">
+      <div class="container">
+        <section class="section">
+          <div class="columns is-multiline">
+            <%= for post <- more_posts do %>
+              <div class="column is-5-desktop is-offset-1-desktop is-6-tablet is-12-mobile">
+                <div class="content is-medium">
+                  <figure class="image is-100x100 is-pulled-left ml-0 mt-0 mr-5 mb-2">
+                    <img
+                      alt={gettext("featured image")}
+                      src={"/images/posts/#{post.featured_image || "unknown.jpg"}"}
+                    />
+                  </figure>
+                  <h2 class="subtitle is-5 has-text-grey">
+                    <a href="#">
+                                        <span class={"tag is-#{post.category.color} is-uppercase"}>
+                                            <%= post.category.name[@locale] %>
+                                        </span>
+                                    </a>&nbsp;
+                    <%= if post.private do %>
+                      <i class="fas fa-lock"></i>&nbsp;
+                    <% end %>
+                    <%= get_date(post) %>&nbsp;
+                    <span class="tag">
+                      <%= get_reading_min(post) %> <%= gettext("reading minutes") %>
+                    </span>
+                  </h2>
+                  <h1 class="title has-text-black is-3">
+                    <%= link(get_title(post), to: post_path(@conn, post)) %>
+                  </h1>
+                  <span class="is-flex is-flex-wrap-wrap ml-2 is-line-height-wider">
+                    <%= link to: post_path(@conn, post) <> "#comments" do %>
+                      <span class="tag is-ghost">
+                                            <i class="fas fa-comment"></i>&nbsp;
+                                            <%= length(post.comments) %>
+                                        </span>&nbsp;
+                    <% end %>
+                    <%= for tag <- post.tags do %>
+                      <%= link to: "#" do %>
+                        <span class="tag is-black">
+                                            <i class="fas fa-tag"></i>&nbsp;
+                                            <%= tag.name %>
+                                        </span>&nbsp;
+                      <% end %>
+                    <% end %>
+                  </span>
+                  <p class="has-text-dark"><%= raw(to_html(get_excerpt(post))) %></p>
+                  <p>
+                    <a href={post_path(@conn, post)}>
+                      <%= gettext("Read more") %> <i class="fas fa-arrow-right"></i>
+                    </a>
+                  </p>
+                </div>
+                <div class="is-divider"></div>
+              </div>
+            <% end %>
+          </div>
+        </section>
+      </div>
+    </div>
+    <.paginate page={@posts} url={&Routes.posts_path(@conn, :index, page: to_string(&1))} />
+  </section>
+</div>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang={@locale}>
+<head>
+    <meta charset="utf-8"/>
+    <title><%= if title = assigns[:title] do %><%= title %> - <% end %>Altenwald</title>
+    <%= csrf_meta_tag() %>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="Altenwald"/>
+    <.favicon {assigns}/>
+
+    <link rel="preload" href={static_path @conn, "/assets/css/admin.css"} as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href={static_path @conn, "/assets/css/admin.css"} rel="stylesheet">
+    </noscript>
+
+    <script type="text/javascript" src={static_path @conn, "/assets/js/app.js"}></script>
+    <meta name="channel_token" content={Phoenix.Token.sign(@conn, "cart admin salt", "admin")}/>
+    <script type="text/javascript" src={static_path @conn, "/assets/js/admin.js"}></script>
+</head>
+<body>
+    <.nav conn={@conn}>
+        <%= @menu %>
+    </.nav>
+
+    <%= @inner_content %>
+
+    <.footer conn={@conn}/>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<div class="column is-4-tablet is-offset-4-tablet">
+  <h2 class="subtitle is-4"><%= gettext("Interests") %></h2>
+
+  <%= for {category, tags} <- @interests do %>
+    <% checked = checked?(@current_user, tags) %>
+    <div class="field">
+      <span class="control">
+        <label class="is-checkbox is-rounded is-primary">
+          <input
+            type="checkbox"
+            checked={checked}
+            phx-value-checked={checked}
+            phx-value-id={category.id}
+            phx-click="change"
+            phx-target={@myself}
+            value="on"
+            id={category.id}
+          />
+          <span class="icon checkmark">
+            <i class="fa fa-check"></i>
+          </span>
+          <span><%= category.name %></span>
+        </label>
+        <%= if category.id == @status_id do %>
+          <%= if @status_ok do %>
+            <span class="icon has-text-success">
+              <i class="fas fa-check"></i>
+            </span>
+          <% else %>
+            <span class="icon has-text-danger">
+              <i class="fas fa-times"></i>
+            </span>
+          <% end %>
+        <% end %>
+      </span>
+      <p class="help">
+        <%= category.description[@locale] || gettext("Not available description.") %>
+      </p>
+    </div>
+  <% end %>
+</div>

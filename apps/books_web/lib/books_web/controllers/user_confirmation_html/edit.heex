@@ -1,0 +1,59 @@
+<div class="content">
+  <div class="columns">
+    <div class="column is-4-tablet is-offset-4-tablet">
+      <h1><%= gettext("Confirm account") %></h1>
+
+      <p>
+        <%= gettext("""
+        You are confirming you want to participate in the Altenwald
+        Community, if you agree with the terms and conditions, please
+        press the below button.
+        """) %>
+      </p>
+
+      <p>
+        <%= raw(
+          gettext(
+            """
+            You can read the <a href="%{tos}">Terms of Service</a> and
+            <a href="%{privacy}">Privacy Policy</a> following
+            their links (see footer of this page for further information).
+            """,
+            tos: Routes.legal_path(@conn, if(@locale == "es", do: :tos_es, else: :tos_en)),
+            privacy:
+              Routes.legal_path(@conn, if(@locale == "es", do: :privacy_es, else: :privacy_en))
+          )
+        ) %>
+      </p>
+
+      <.form
+        :let={_f}
+        for={%{}}
+        as={:user}
+        action={Routes.user_confirmation_path(@conn, :update, @token)}
+      >
+        <div class="level">
+          <div class="level-left">
+            <div class="level-item">
+              <%= submit(gettext("Confirm my account"), class: "button is-primary") %>
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item">
+              <%= link(gettext("Log in"),
+                to: Routes.user_session_path(@conn, :new),
+                class: "button is-ghost"
+              ) %>
+            </div>
+            <div class="level-item">
+              <%= link(gettext("Forgot your password?"),
+                to: Routes.user_reset_password_path(@conn, :new),
+                class: "button is-ghost"
+              ) %>
+            </div>
+          </div>
+        </div>
+      </.form>
+    </div>
+  </div>
+</div>

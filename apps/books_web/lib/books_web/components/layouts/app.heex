@@ -1,0 +1,15 @@
+<%= if info = Phoenix.Flash.get(@flash, :info) do %>
+  <div class="notification is-success has-text-centered">
+    <%= raw(info) %>
+  </div>
+<% end %>
+
+<%= if error = Phoenix.Flash.get(@flash, :error) do %>
+  <div class="notification is-danger has-text-centered">
+    <%= raw(error) %>
+  </div>
+<% end %>
+
+<section class="section">
+  <%= @inner_content %>
+</section>

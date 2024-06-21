@@ -1,0 +1,78 @@
+<.simple_form :let={f} for={@changeset} action={@action} return_to={@return_to}>
+  <.checkbox_enabled form={f} help={gettext("If enabled, it will appear in the public listing of books.")}/>
+  <.text_input form={f} name={:slug} label={gettext("slug")} help={gettext("Define a custom slug for your book. It must to be unique.")}/>
+  <.select form={f} name={:lang} values={@languages} required={true} label={gettext("Language")} help={gettext("Human language used to write the book.")}/>
+  <.select form={f} name={:category_id} values={@categories} required={true} label={gettext("Category")} help={gettext("Choose the category where the book will be placed.")}/>
+  <.number_input form={f} name={:edition} label={gettext("Edition")} required={true} help={gettext("Number of edition corresponding to this book.")}/>
+  <.text_input form={f} name={:title} label={gettext("Title")} required={true}/>
+  <.text_input form={f} name={:subtitle} label={gettext("Subtitle")}/>
+  <.textarea form={f} name={:description} label={gettext("Description")} required={true} help={gettext("Write the description which will be shown in the book page.")}/>
+  <.tags_input form={f} name={:keywords} label={gettext("Keywords")} help={gettext("(Optional) Use comma-separated values.")}/>
+  <.rich_textarea form={f} name={:marketing_description} label={gettext("Marketing description")} help={gettext("(Optional) This block is going to be shown in the main book page. Use <h2> for titles and <p> for each paragraph. See code for ensuring it's not messing the HTML.")}/>
+  <.text_input form={f} name={:resources} label={gettext("Resources URL")} help={gettext("(Optional) The URL where the resources (code, examples, ...) for the book are available (if any).")}/>
+  <.date_input form={f} name={:presale} label={gettext("Presale")} help={gettext("(Optional) Specify the date when the book will be available for presale.")}/>
+  <.date_input form={f} name={:release} label={gettext("Release")} help={gettext("(Optional) Specify the date when the book will be launched. Available to be purchased.")}/>
+  <.number_input form={f} name={:num_pages} label={gettext("Number of Pages")} help={gettext("(Optional) Specify the number of pages for the PDF/Paper book.")}/>
+  <.select form={f} name={:isbn} label={gettext("ISBN")} values={@isbns} help={gettext("(Optional) ISBN must be provided previously to be launched or in presale state.")}/>
+  <.text_input form={f} name={:legal_deposit} label={gettext("Legal deposit")} help={gettext("(Optional) If the book must be deposited in the Deposit Legal we could put here its code.")}/>
+
+  <div class="field">
+    <label class="label"><%= gettext("Shop links") %></label>
+    <%= inputs_for f, :shop_links, fn i -> %>
+      <%= hidden_input i, :order_id %>
+      <div class="columns">
+        <div class="column">
+          <div class="field">
+            <div class="control">
+              <%= text_input i, :id, class: "input", placeholder: "amazon" %>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="field">
+            <div class="control">
+              <%= text_input i, :name, class: "input", placeholder: "Amazon Kindle" %>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="field">
+            <div class="control">
+              <div class="select">
+                <%= select i, :type, [{gettext("Digital"), :digital}, {gettext("Paper"), :paper}], prompt: gettext("Choose type...") %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="field">
+            <div class="control">
+              <%= text_input i, :url, class: "input", placeholder: "https://www.amazon.com/dp/..." %>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="field">
+            <div class="control">
+              <%= submit class: "button", name: "subaction", value: "delete_shop_link_#{i.index}" do %>
+                <span class="icon is-small">
+                  <i class="fas fa-trash-alt"></i>
+                </span>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="field">
+    <div class="control">
+      <%= submit class: "button", name: "subaction", value: "add_shop_link" do %>
+        <span class="icon">
+          <i class="fas fa-plus"></i>
+        </span>
+        <span><%= gettext("Add Shop Link") %></span>
+      <% end %>
+    </div>
+  </div>
+</.simple_form>

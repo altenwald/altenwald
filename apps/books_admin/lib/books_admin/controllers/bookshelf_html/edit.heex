@@ -1,0 +1,26 @@
+<section class="hero is-hero-bar">
+  <div class="hero-body">
+    <div class="level">
+      <div class="level-left">
+        <div class="level-item">
+          <div class="title">
+            <%= gettext("Edit Bookshelf Item") %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section is-main-section">
+  <div class="card has-mobile-sort-spaced">
+    <header class="card-header">
+      <p class="card-header-title">
+        <span class="icon"><i class="fas fa-book"></i></span>
+        <%= gettext("Bookshelf item for user %{name}", name: @account.email) %>
+      </p>
+    </header>
+    <div class="card-content">
+      <.custom_form {Map.put(assigns, :action, accounts_bookshelf_path(@conn, :update, @account.id, @bookshelf_item.id, return_to: @return_to))}/>
+    </div>
+  </div>
+</section>

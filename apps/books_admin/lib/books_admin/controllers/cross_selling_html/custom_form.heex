@@ -1,0 +1,44 @@
+<.form :let={f} for={@changeset} action={@action} class="form">
+  <div class="field">
+    <label class="label"><%= gettext("Description") %> (*)</label>
+    <p class="help">
+      <.error_tag form={f} field={:description}/>
+      <%= gettext("Write the description which will be shown in the book page.") %>
+    </p>
+    <div class="control">
+      <%= textarea f, :description, class: "textarea#{if(f.errors[:description], do: " is-danger")}" %>
+    </div>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Book crossed") %></label>
+    <div class="control">
+      <div class={"select is-fullwidth#{if(f.errors[:book_crossed_id], do: " is-danger")}"}>
+        <%= select f, :book_crossed_id, @books %>
+      </div>
+    </div>
+    <p class="help">
+      <.error_tag form={f} field={:book_crossed_id}/>
+      <%= gettext("The books for the cross selling.") %>
+    </p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Language") %></label>
+    <div class="control">
+      <div class="select is-fullwidth">
+        <%= select f, :lang, @languages %>
+      </div>
+    </div>
+    <p class="help"><%= gettext("(Optional) The language for showing this description.") %></p>
+  </div>
+  <hr/>
+  <p class="help">(*) <%= gettext("required") %></p>
+  <hr/>
+  <div class="field is-grouped">
+    <p class="control">
+      <%= submit gettext("Save"), class: "button is-primary" %>
+    </p>
+    <p class="control">
+      <%= link gettext("Cancel"), to: @return_to, class: "button" %>
+    </p>
+  </div>
+</.form>

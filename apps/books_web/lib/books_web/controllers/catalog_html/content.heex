@@ -1,0 +1,14 @@
+<%= for content <- @contents do %>
+  <li>
+    <strong><%= raw(content.title) %></strong>
+    <%= if content.excerpt_filename do %>
+      <a target="_blank" class="tag is-primary" href={content.excerpt_filename}>
+        <%= gettext("sample") %>
+      </a>
+    <% end %>
+    <%= if content.status != :done do %>
+      <span class={status_to_tag(content.status)}><%= translate(content.status) %></span>
+    <% end %>
+    <p><%= raw(content.description) %></p>
+  </li>
+<% end %>

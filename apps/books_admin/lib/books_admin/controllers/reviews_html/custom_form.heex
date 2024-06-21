@@ -1,0 +1,60 @@
+<.form :let={f} for={@changeset} action={@action} class="form">
+  <div class="field">
+    <label class="label"><%= gettext("Full Name") %> (*)</label>
+    <div class="control">
+      <%= text_input f, :full_name, class: "input#{if(f.errors[:full_name], do: " is-danger")}" %>
+    </div>
+    <p class="help">
+      <.error_tag form={f} field={:full_name}/>
+      <%= gettext("The full name for the person who send us the review.") %>
+    </p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Position") %> (*)</label>
+    <div class="control">
+      <%= text_input f, :position, class: "input#{if(f.errors[:position], do: " is-danger")}" %>
+    </div>
+    <p class="help">
+      <.error_tag form={f} field={:position}/>
+      <%= gettext("The position that has the person who send us the review.") %>
+    </p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Company") %> (*)</label>
+    <div class="control">
+      <%= text_input f, :company, class: "input#{if(f.errors[:company], do: " is-danger")}" %>
+    </div>
+    <p class="help">
+      <.error_tag form={f} field={:company}/>
+      <%= gettext("The company where the person who send us the review works.") %>
+    </p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Value") %> (*)</label>
+    <div class="control">
+      <%= number_input f, :value, class: "input" %>
+    </div>
+    <p class="help"><%= gettext("Value 0-50 for the review.") %></p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Content") %> (*)</label>
+    <p class="help">
+      <.error_tag form={f} field={:content}/>
+      <%= gettext("Write the text sent as the review.") %>
+    </p>
+    <div class="control">
+      <%= textarea f, :content, class: "textarea trumbowyg#{if(f.errors[:content], do: " is-danger")}" %>
+    </div>
+  </div>
+  <hr/>
+  <p class="help">(*) <%= gettext("required") %></p>
+  <hr/>
+  <div class="field is-grouped">
+    <p class="control">
+      <%= submit gettext("Save"), class: "button is-primary" %>
+    </p>
+    <p class="control">
+      <%= link gettext("Cancel"), to: @return_to, class: "button" %>
+    </p>
+  </div>
+</.form>

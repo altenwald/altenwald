@@ -1,0 +1,388 @@
+<div class="content">
+  <%= for alert <- @book.visual_alerts, alert.enabled and alert.book_id == @book.id do %>
+    <div class={"notification is-#{alert.type} is-light"}>
+      <button class="delete"></button>
+      <strong><%= alert.title %></strong>
+      <%= raw(alert.body) %>
+    </div>
+  <% end %>
+  <div class="columns is-multiline">
+    <div class="column is-full-mobile is-one-third-desktop">
+      <BooksWeb.BookCoverComponent.img size="big" book={@book} conn={@conn} />
+      <div :if={Enum.any?(@book.contents, &(&1.excerpt_filename != nil))} class="box">
+        <h3 class="is-5"><%= gettext("Read sample") %></h3>
+        <p>
+          <%= gettext(
+            "Check content tab for further information of the book. Here you can see the excerpts:"
+          ) %>
+        </p>
+        <p :for={content <- @book.contents} :if={content.excerpt_filename != nil}>
+          <i class="fas fa-download"></i>&nbsp;&nbsp;<%= link(content.title,
+            to: content.excerpt_filename,
+            rel: "noopener",
+            rel: "noopener",
+            target: "_blank"
+          ) %>
+        </p>
+      </div>
+      <div :for={project <- @book.projects} class="card">
+        <div class="card-image">
+          <figure class="image is-3by1">
+            <img src={static_path(@conn, "/images/projects/#{project.logo}")} alt={project.name} />
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content">
+              <p class="title is-4 project-name"><%= project.name %></p>
+              <p class="subtitle is-6 project-url">
+                <%= link(project.url, to: project.url, rel: "noopener", target: "_blank") %>
+              </p>
+            </div>
+          </div>
+          <div class="content project-description">
+            <%= raw(project.description) %>
+          </div>
+        </div>
+      </div>
+      <%= if @book.posts != [] do %>
+        <h2><%= gettext("Private posts") %></h2>
+        <%= for post <- @book.posts do %>
+          <BooksWeb.PostsHTML.card post={post} conn={@conn} />
+        <% end %>
+      <% end %>
+    </div>
+    <div class="column is-full-mobile is-one-third-desktop">
+      <a name="description" />
+      <h1 class="title is-2 has-text-weight-bold book-title"><%= @book.title %></h1>
+      <h2 class="subtitle is-3 has-text-weight-normal book-subtitle"><%= @book.subtitle %></h2>
+      <p class="book-authors"><%= raw(authors(@book, :short_anchor)) %></p>
+      <%= raw(@book.marketing_description) %>
+
+      <a name="info" />
+      <div class="tabs">
+        <ul>
+          <li class="tab-item is-active">
+            <a><%= gettext("Information") %></a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <table class="table">
+          <tr :if={@book.isbn}>
+            <th><%= gettext("ISBN") %></th>
+            <td><%= @book.isbn %></td>
+          </tr>
+          <tr :if={@book.legal_deposit}>
+            <th><%= gettext("Legal deposit") %></th>
+            <td><%= @book.legal_deposit %></td>
+          </tr>
+          <tr>
+            <th><%= gettext("Number of pages") %></th>
+            <td><%= @book.num_pages || gettext("In process") %></td>
+          </tr>
+          <%= for {type, authors} <- Enum.group_by(@book.roles, & &1.role) do %>
+            <tr :for={{%{author: author}, i} <- Enum.with_index(authors)}>
+              <th :if={i == 0} rowspan={length(authors)}><%= translate_role(type) %></th>
+              <td><%= author.full_name %></td>
+            </tr>
+          <% end %>
+          <tr>
+            <th><%= gettext("Language") %></th>
+            <td class="lang">
+              <img
+                alt={String.upcase(@book.lang)}
+                src={static_path(@conn, "/images/lang_#{@book.lang}.png")}
+                width="30px"
+              />
+              <span>(<%= String.upcase(@book.lang) %>)</span>
+            </td>
+          </tr>
+          <%= cond do %>
+            <% Catalog.book_released?(@book) or @book.release != nil -> %>
+              <tr>
+                <th><%= gettext("Published date") %></th>
+                <td>
+                  <%= gettext("%{month} of %{year}",
+                    month: month(@book.release),
+                    year: year(@book.release)
+                  ) %>
+                </td>
+              </tr>
+            <% Catalog.book_in_presale?(@book) and @book.presale != nil -> %>
+              <tr>
+                <th><%= gettext("Presale started") %></th>
+                <td>
+                  <%= gettext("%{month} of %{year}",
+                    month: month(@book.presale),
+                    year: year(@book.presale)
+                  ) %>
+                </td>
+              </tr>
+            <% not Catalog.book_in_presale?(@book) and @book.presale != nil -> %>
+              <tr>
+                <th><%= gettext("Presale will start") %></th>
+                <td>
+                  <%= gettext("%{month} of %{year}",
+                    month: month(@book.presale),
+                    year: year(@book.presale)
+                  ) %>
+                </td>
+              </tr>
+            <% :else -> %>
+          <% end %>
+          <tr>
+            <th><%= gettext("Edition") %></th>
+            <td><%= edition(@book) %></td>
+          </tr>
+        </table>
+      </div>
+
+      <a name="content" />
+      <div class="tabs">
+        <ul>
+          <li class="tab-item is-active"><a><%= gettext("Content") %></a></li>
+        </ul>
+      </div>
+
+      <div>
+        <% book_contents = Enum.group_by(@book.contents, & &1.chapter_type) %>
+        <ol :if={contents = book_contents["1 preface"]}>
+          <.content contents={contents} />
+        </ol>
+        <ol :if={contents = book_contents["2 intro"]} class="ol-roman">
+          <.content contents={contents} />
+        </ol>
+        <ol :if={contents = book_contents["3 chapter"]} class="ol-number">
+          <.content contents={contents} />
+        </ol>
+        <ol :if={contents = book_contents["4 appendix"]} class="ol-letter">
+          <.content contents={contents} />
+        </ol>
+      </div>
+
+      <a name="author" />
+      <h3 class="title is-2"><%= gettext("Authors") %></h3>
+      <%= for %_{author: author} = role <- @book.roles, role.role == :author do %>
+        <a name={"author-#{author.id}"}></a>
+        <div class="card">
+          <.author_box conn={@conn} locale={@locale} author={author} />
+        </div>
+      <% end %>
+    </div>
+    <nav class="navbar is-white has-shadow is-fixed-bottom is-hidden-tablet" role="navigation">
+      <div class="navbar-brand">
+        <a
+          class="navbar-item is-expanded is-block has-text-centered"
+          href={Routes.cart_path(@conn, :index)}
+        >
+          <i class="fas fa-shopping-cart"></i>
+          <p class="is-size-7">
+            <span class="tag is-black is-rounded"><%= num_items(@cart) %></span>
+          </p>
+        </a>
+        <%= if Catalog.can_be_bought?(@book) and @book.formats != [] do %>
+          <a
+            :for={format <- Enum.sort_by(@book.formats, & &1.name)}
+            class="navbar-item is-expanded is-block has-text-centered"
+            href={Routes.cart_path(@conn, :add, format.id)}
+          >
+            <%= kind(format, assigns) %>
+            <p class="is-size-7">
+              <%= translate_format(format.name) %>
+              <%= format.price %>
+              <%= if format.shipping do %>
+                (+ <%= Books.Shipping.get_amount(nil) %>)
+              <% end %>
+            </p>
+          </a>
+        <% else %>
+          <a class="navbar-item is-expanded is-block has-text-centered" href="#">
+            <%= gettext("Comming soon") %>
+            <p :if={@book.presale} class="is-size-7">
+              <strong><%= month(@book.presale) %> <%= year(@book.presale) %></strong>
+            </p>
+          </a>
+        <% end %>
+      </div>
+    </nav>
+    <div class="column is-one-third-desktop is-hidden-touch">
+      <div class="box">
+        <%= if Catalog.can_be_bought?(@book) and @book.formats != [] do %>
+          <h3 class="is-5"><%= gettext("Available formats") %></h3>
+          <%= for format <- Enum.sort_by(@book.formats, & &1.name) do %>
+            <.link
+              navigate={Routes.cart_path(@conn, :add, format.id)}
+              class="box"
+              id={"buy-#{format.name}"}
+            >
+              <p class="is-pulled-right is-hoverable is-size-2">
+                <i class="fas fa-cart-arrow-down"></i>
+              </p>
+              <p class="is-size-4"><strong><%= translate_format(format.name) %></strong></p>
+              <p class="is-size-4">
+                <%= kind(format, assigns) %>&nbsp;
+                <span id={"buy-#{format.name}-price"}><%= format.price %></span>
+                <%= if format.shipping do %>
+                  + <i class="fas fa-shipping-fast"></i>&nbsp;
+                  <span id={"buy-#{format.name}-price-shipping"}>
+                    <%= Books.Shipping.get_amount(nil) %>
+                  </span>
+                <% end %>
+              </p>
+            </.link>
+            <p :if={format.shipping} class="is-size-7">
+              <%= gettext("""
+              Depending on the country it could take 6 to 28 working days
+              for receiving the book. Tracking isn't available for all of
+              the countries.
+              """) %>
+            </p>
+          <% end %>
+        <% else %>
+          <h3 class="is-5"><%= gettext("Coming soon") %></h3>
+          <p :if={@book.presale != nil}>
+            <%= raw(
+              gettext("Presale will start in <strong>%{month} %{year}</strong>",
+                month: month(@book.presale),
+                year: year(@book.presale)
+              )
+            ) %>
+          </p>
+          <%= if @current_user do %>
+            <%= if @subscribe do %>
+              <p>
+                <%= gettext(
+                  "Subscribe to receive updates for this book and to know when it will be available:"
+                ) %>
+              </p>
+              <p>
+                <%= link(gettext("Subscribe"),
+                  to: Routes.user_settings_path(@conn, :subscribe, @book.slug),
+                  class: "button is-info"
+                ) %>
+              </p>
+            <% else %>
+              <p>
+                <%= gettext(
+                  "You has been subscribed for updates for this book. If you want to stop receiving information press the following button:"
+                ) %>
+              </p>
+              <p>
+                <%= link(gettext("Unsubscribe"),
+                  to: Routes.user_settings_path(@conn, :unsubscribe, @book.slug),
+                  class: "button is-danger"
+                ) %>
+              </p>
+            <% end %>
+          <% else %>
+            <%= if @subscribe do %>
+              <p>
+                <%= gettext(
+                  "If you want to get updates for this book, provide your name and email to be subscribed to the newsletter:"
+                ) %>
+              </p>
+              <p>
+                <.form
+                  :let={f}
+                  for={@subscribe || ""}
+                  action={Routes.catalog_path(@conn, :subscribe, @book.slug)}
+                >
+                  <div class="field">
+                    <div class="control">
+                      <%= text_input(f, :full_name,
+                        class: input_classes(f, :full_name),
+                        placeholder: gettext("Full Name")
+                      ) %>
+                    </div>
+                    <.error_tag form={f} field={:full_name} />
+                  </div>
+                  <div class="field">
+                    <div class="control">
+                      <%= text_input(f, :email,
+                        class: input_classes(f, :email),
+                        placeholder: gettext("Enter Your email")
+                      ) %>
+                    </div>
+                    <.error_tag form={f} field={:email} />
+                  </div>
+                  <div class="field">
+                    <div class="control">
+                      <%= submit(gettext("Subscribe!"), class: "button is-primary") %>
+                    </div>
+                  </div>
+                </.form>
+              </p>
+            <% else %>
+              <p>
+                <%= gettext(
+                  "Subscribed successfully. You will receive news from us soon. Thank you for your interest."
+                ) %>
+              </p>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div :if={Enum.any?(@book.shop_links, &(&1.type == :paper))} class="box">
+        <h3 class="is-5"><%= gettext("Paper book available on...") %></h3>
+        <p :for={%{type: :paper} = shop_item <- @book.shop_links}>
+          <a href={shop_item.url}>
+            <img
+              class="bookstores"
+              id={shop_item.id}
+              alt={shop_item.name}
+              src={static_path(@conn, "/images/shoplinks/#{shop_item.id}-badge.png")}
+            />
+          </a>
+        </p>
+      </div>
+
+      <div :if={@book.cross_sellings != []} class="box">
+        <h3 class="is-5"><%= gettext("Related books") %></h3>
+        <div id="carousel-crossell" class="carousel">
+          <%= for {cross, item} <- Enum.with_index(@book.cross_sellings, 1), cross.lang == @locale do %>
+            <div class={"item-#{item} has-text-centered carousel-items"}>
+              <p class="is-6"><strong><%= cross.description %></strong></p>
+              <a
+                class="catalogo-item"
+                href={Routes.catalog_path(@conn, :book, cross.book_crossed.slug)}
+              >
+                <BooksWeb.BookCoverComponent.img
+                  size="small"
+                  book={cross.book_crossed}
+                  conn={@conn}
+                />
+                <%= for format <- cross.book_crossed.formats do %>
+                  <.link navigate={Routes.cart_path(@conn, :add, format.id)} class="button box">
+                    <%= kind(format, assigns) %> <%= Money.to_string(format.price) %>
+                    <%= if format.shipping do %>
+                      + <i class="fas fa-shipping-fast"></i>&nbsp; <%= Books.Shipping.get_amount(
+                        nil
+                      ) %>
+                    <% end %>
+                  </.link>
+                <% end %>
+              </a>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div :if={Enum.any?(@book.shop_links, &(&1.type == :digital))} class="box">
+        <h3 class="is-5"><%= gettext("Digital also available on...") %></h3>
+        <p :for={%{type: :digital} = shop_item <- @book.shop_links}>
+          <a href={shop_item.url}>
+            <img
+              class="bookstores"
+              id={shop_item.id}
+              alt={shop_item.name}
+              src={static_path(@conn, "/images/shoplinks/#{shop_item.id}-badge.png")}
+            />
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="content">
+  <div class="columns">
+    <div class="column is-10 is-offset-1">
+      <h1 class="title is-2"><%= gettext("New Post") %></h1>
+    </div>
+  </div>
+  <div class="columns">
+    <.custom_form {Map.put(assigns, :action, Routes.posts_path(@conn, :create))} />
+  </div>
+</div>

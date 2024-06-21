@@ -1,0 +1,26 @@
+<section class="hero is-hero-bar">
+  <div class="hero-body">
+    <div class="level">
+      <div class="level-left">
+        <div class="level-item">
+          <div class="title">
+            <%= gettext("Edit an Outcome Balance") %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section is-main-section">
+  <div class="card has-mobile-sort-spaced">
+    <header class="card-header">
+      <p class="card-header-title">
+        <span class="icon"><i class="fas fa-book"></i></span>
+        <%= gettext("Outcome") %>
+      </p>
+    </header>
+    <div class="card-content">
+      <.form_outcome {Map.put(assigns, :action, finance_path(@conn, :update, @balance.id, return_to: @return_to))}/>
+    </div>
+  </div>
+</section>

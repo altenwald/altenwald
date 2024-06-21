@@ -1,0 +1,11 @@
+<.simple_form :let={f} for={@changeset} action={@action} return_to={@return_to}>
+  <.checkbox form={f} name={:enable} label={gettext("Enabled?")} help={gettext("If enabled, it will appear in the public listing of books.")}/>
+  <.tags_input form={f} name={:slugs} label={gettext("Slugs")} required={true} help={gettext("The slugs we will use to localize the landing page.")}/>
+  <.select form={f} name={:lang} label={gettext("Language")} values={@languages} required={true} help={gettext("Human language used to write the book.")}/>
+  <.textarea form={f} name={:description} label={gettext("Description")} required={true} help={gettext("Write the description which will be shown in the landing page.")}/>
+  <.textarea form={f} name={:about} label={gettext("About")} required={true} help={gettext("Write the information about the product offered in the page.")}/>
+  <.select form={f} name={:book_id} label={gettext("Book")} values={@books} prompt={gettext("Choose a book...")} help={gettext("The book for the landing page.")}/>
+  <.select form={f} name={:bundle_id} label={gettext("Bundle")} values={@bundles} prompt={gettext("Choose a bundle...")} help={gettext("The bundle for the landing page.")}/>
+  <.number_input form={f} name={:preview_pages} label={gettext("Preview pages")} help={gettext("The number of pages to be loaded in the Kindle image (only if you choose book)")}/>
+  <.textarea form={f} name={:engagement_phrases} label={gettext("Engagement phrases")} help={gettext("Phrases (one per line) for the engagement place.")}/>
+</.simple_form>

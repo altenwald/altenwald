@@ -1,0 +1,26 @@
+<div class="content">
+  <div class="columns">
+    <div class="column is-4-tablet is-offset-4-tablet">
+      <h1><%= gettext("Forgot your password?") %></h1>
+
+      <.form
+        :let={f}
+        for={%{}}
+        as={:user}
+        action={Routes.user_reset_password_path(@conn, :create)}
+      >
+        <div class="field">
+          <%= label(f, :email, gettext("Email"), class: "label") %>
+          <div class="control">
+            <%= email_input(f, :email, required: true, class: input_classes(f, :email)) %>
+          </div>
+        </div>
+
+        <div class="field">
+          <%= submit(gettext("Send"), class: "button is-primary") %>
+          <p class="help"><%= gettext("Send instructions to reset password") %></p>
+        </div>
+      </.form>
+    </div>
+  </div>
+</div>

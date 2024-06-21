@@ -1,0 +1,530 @@
+
+@media (min-width:1200px){
+    .large-container .container{
+        max-width:1290px;
+        margin:auto;
+    }
+
+    .top-socials-3{
+        margin-left:20px;
+        padding-left:20px;
+        border-left :1px solid rgba(255,255,255,.09);
+    }
+
+      
+}
+
+
+@media (min-width: 1024px) {
+    .main-banner-content h1 {
+        font-size: 65px;
+        line-height: 1.3;
+    }
+
+    .preview-section{
+        padding-bottom:0px;
+        padding-top:0px;
+    }
+
+    .banner-main-2 h1{
+        font-size: 75px;
+    }
+    .banner-main-2 h1 br{
+        display: none;
+    }
+  
+  
+
+}
+
+@media (min-width: 768px) and (max-width: 992px){
+    .section {
+        padding: 7.5rem 0;
+    }
+    .section-top {
+        padding-top: 10.3125rem;
+    }
+    .featured-client img {
+        margin: 20px 0px;
+    }
+    
+    .owl-reviews .owl-controls {
+        position: relative;
+        text-align: center;
+        top: -30px;
+    }
+    .owl-reviews .owl-controls .owl-prev,
+    .owl-reviews .owl-controls .owl-next {
+        position: relative;
+        display: inline-block;
+        font-size: 36px;
+    }
+    /* home 3 */
+    .main-banner-content h1 {
+        font-size: 36px;
+        line-height: 44px;
+    }
+    .main-banner-content p {
+        font-size: 16px;
+    }
+    .heading h2 {
+        font-size: 33px;
+        line-height: 43px;
+    }
+    .counter-3 {
+        padding-bottom: 75px !important;
+    }
+    .subscribe-form{
+        margin-top:30px;
+    }
+    .header-top {
+        padding: 20px 0px;
+    }
+    .header-contact span{
+        display:block;
+    }
+
+    .banner-4 .main-banner-content h1{
+        font-size: 65px;
+        line-height: 1.3;
+    }
+    .contact-info-wrapper .contact-info-block{
+        float: left;
+        width:50%;
+    }
+
+    .right-chapter{
+        margin-top: 5rem!important;
+        display: block;
+    }
+
+    .chapter-4{
+        padding:80px 0px;
+    }
+
+    .navbar-toggler{
+        color:#fff;
+    }
+
+    .nav-classic .navbar-collapse.collapse.show  .navbar-nav .nav-link{
+        color:#222;
+    }
+    .preview-section{
+        padding-bottom:0px;
+        padding-top:0px;
+    }
+
+    #features{
+        padding:50px 0px;
+    }
+
+    .preview-section .book-info{
+        padding-top:0px;
+    }
+    .navbar-collapse.collapse.show .top-socials-3 a{
+        color:#222;
+    }
+    .nav-classic.menu_fixed .navbar-toggler{
+        color:#222;
+    }
+
+
+    .others-book{
+        padding-bottom: 100px;
+    }
+
+    .author{
+        padding-bottom: 80px;
+    }
+
+
+   
+    
+  }
+
+
+  @media (max-width: 768px) {
+    .book-info {
+      padding-top: 100px;
+    }
+    .featured-client img {
+      margin: 20px 0px;
+    }
+    
+    /* home 3 */
+
+    .banner-main-3 .banner-img{
+        display: none;
+    }
+
+    .cta-3 .cta-content span {
+        font-size: 14px;
+    }
+    .cta-3 .cta-content h2 {
+        font-size: 34px;
+    }
+    .counter-3 {
+        padding-bottom:60px!important;
+    }
+    .subscribe-form{
+        margin-top:30px;
+    }
+    .right-border{
+        border-color:transparent;
+    }
+    .footer-widget, .footer-about {
+        padding: 30px 0px;
+    }
+    .header-contact{
+        text-align: center;
+    }
+    .header-contact span{
+        display:block;
+    }
+    .header-socials{
+        float:none;
+    }
+    .header-socials ul{
+        display: inline-block;
+        padding-left: 0px;  
+        margin-top:15px;
+    }
+    .main-banner-content h1 {
+        font-size: 57px;
+        line-height: 1.4;
+    }
+   
+    .text-lg{
+        font-size: 34px;
+    }
+    .counter-4 {
+        padding:60px 0px;
+    }
+    .counter-4 .counter-item {
+        padding: 0px 0px;
+    }
+    .countdown-wrapper{
+        margin-bottom: 20px;
+    }
+    .countdown-wrapper .time {
+        line-height: 4rem;
+        display: block;
+    }
+      
+
+    .faq-4 .panel-title > a {
+        font-size: 16px;
+    }
+    .faq-4 .panel-title > a i {
+        display: none;
+    }
+
+    .footer-top.section{
+        padding:0px;
+    }
+
+    .main-banner.main-banner-content {
+        padding: 60px 0px 0px;
+    }
+
+    .feature-two{
+        padding:20px 0px;
+    }
+
+    .navbar-toggler{
+        color:#fff;
+    }
+
+    .nav-classic .navbar-collapse.collapse.show  .navbar-nav .nav-link{
+        color:#222;
+    }
+    .preview-section{
+        padding-bottom:0px;
+        padding-top:0px;
+    }
+
+    .preview-section .book-info{
+        padding-top:0px;
+    }
+
+    #features{
+        padding:50px 0px;
+    }
+
+    .chapter-4{
+        padding-bottom:50px;
+    }
+
+    .section-heading{
+        margin-bottom: 50px;
+    }
+
+    .nav-classic .navbar-toggler{
+        color:#fff;
+    }
+
+    .nav-classic.menu_fixed .navbar-toggler{
+        color:#222;
+    }
+
+    .navbar-collapse.collapse.show .top-socials-3 a{
+        color:#222;
+    }
+    .banner-main-2 h1{
+        font-size: 65px;
+        line-height: 1;
+    }
+    .banner-main-2 h1 br{
+        display: none;
+    }
+
+    .banner-main-2 {
+        padding-top: 125px;
+    }
+  }
+  
+
+
+  
+@media (max-width: 480px){
+    .fixed-top.site-header {
+        background: #fff;
+      }
+    h1 {
+      font-size: 45px;
+      line-height: 55px;
+    }
+    .main-banner p {
+      padding-right: 0px;
+    }
+    .owl-book .item img {
+        width: 92%;
+        margin: 0px;
+    }
+    .featured-client img {
+        margin: 20px 0px;
+        width: 60%;
+    }
+    .owl-book .book-item {
+        margin-top: 39px;
+    }
+
+    
+    .main-banner-content h1 {
+        font-size: 37px;
+        line-height: 1.4;
+    }
+   
+    .text-lg{
+        font-size: 34px;
+    }
+    .counter-4 {
+        padding:60px 0px;
+    }
+    .counter-4 .counter-item {
+        padding: 0px 0px;
+    }
+    .countdown-wrapper{
+        margin-bottom: 20px;
+    }
+    .countdown-wrapper .time {
+        line-height: 4rem;
+        display: block;
+    }
+      
+
+    .faq-4 .panel-title > a {
+        font-size: 16px;
+    }
+    .faq-4 .panel-title > a i {
+        display: none;
+    }
+
+    .footer-top.section{
+        padding:0px;
+    }
+
+    .main-banner.main-banner-content {
+        padding: 60px 0px 0px;
+    }
+    .navbar-toggler{
+        color:#fff;
+    }
+
+    .nav-classic .navbar-collapse.collapse.show  .navbar-nav .nav-link{
+        color:#222;
+    }
+ 
+    .preview-section{
+        padding-bottom:0px;
+        padding-top:0px;
+    }
+
+    #features{
+        padding:50px 0px;
+    }
+
+    .chapter-4{
+        padding-bottom:80px;
+    }
+
+    .section-heading{
+        margin-bottom: 50px;
+    }
+
+    .nav-classic.menu_fixed .navbar-toggler{
+        color:#222;
+    }
+
+    .navbar-collapse.collapse.show .top-socials-3 a{
+        color:#222;
+    }
+
+    .nav-classic.menu_fixed.fixed-top.site-header{
+        background: #fff;
+    }
+    .nav-classic.fixed-top.site-header{
+        background: transparent;
+    }
+
+    .banner-main-2 h1{
+        font-size: 35px;
+        line-height: 1;
+    }
+
+    .banner-main-2 {
+        padding-top: 120px;
+    }
+
+
+    .submenu{
+        left: 0px;
+        right: 0px;
+        margin: auto;
+    }
+  }
+  
+
+  
+  @media (max-width: 400px) {
+    h1 {
+        font-size: 36px;
+        line-height: 46px;
+    }
+    .main-banner p {
+        padding-right: 0px;
+    }
+    .owl-book .item img {
+        width: 69%;
+        margin: 0px;
+      }
+      .owl-book .item {
+        margin-top: 35px;
+      }
+      .featured-client img {
+        margin: 20px 0px;
+        width: 60%;
+      }
+      .owl-book .book-item {
+        margin-top: 39px;
+      }
+    .featured-client img {
+      margin: 20px 0px;
+    }
+    .btn {
+        padding: 15px 37px;
+    }
+    .display-4 {
+        font-size: 2rem;
+    }
+    .banner-main-3 .btn{
+        margin-top:10px;
+    }
+
+    .main-banner-content h1 {
+        font-size: 37px;
+        line-height: 1.4;
+    }
+   
+    .text-lg{
+        font-size: 34px;
+    }
+    .counter-4 {
+        padding:60px 0px;
+    }
+    .counter-4 .counter-item {
+        padding: 0px 0px;
+    }
+
+    .countdown-wrapper .time {
+        line-height: 4rem;
+        margin-bottom: 20px;
+        display: block;
+    }
+      
+
+    .faq-4 .panel-title > a {
+        font-size: 16px;
+    }
+    .faq-4 .panel-title > a i {
+        display: none;
+    }
+
+    .footer-top.section{
+        padding:0px;
+    }
+
+    .main-banner.main-banner-content {
+        padding: 60px 0px 0px;
+    }
+
+    .navbar-toggler{
+        color:#fff;
+    }
+    .navbar-toggler{
+        color:#fff;
+    }
+
+    .nav-classic.fixed-top.site-header{
+        background:transparent;
+    }
+  
+    .nav-classic .navbar-collapse.collapse.show  .navbar-nav .nav-link{
+        color:#222;
+    }
+
+    .preview-section .book-info{
+        padding-top:0px;
+    }
+
+    .preview-section{
+        padding-bottom:0px;
+        padding-top:0px;
+    }
+
+    #features{
+        padding:50px 0px;
+    }
+
+    .chapter-4{
+        padding-bottom:80px;
+    }
+
+    .section-heading{
+        margin-bottom: 50px;
+    }
+
+    .nav-classic.menu_fixed .navbar-toggler{
+        color:#222;
+    }
+
+    .nav-classic.menu_fixed.fixed-top.site-header{
+        background:#fff;
+    }
+
+    .nav-classic.fixed-top.site-header{
+        background: transparent;
+    }
+  
+  }
+

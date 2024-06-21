@@ -1,0 +1,149 @@
+<section class="hero is-hero-bar">
+  <div class="hero-body">
+    <div class="level">
+      <div class="level-left">
+        <div class="level-item">
+          <div class="title"><%= gettext("Catalog") %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section is-main-section">
+  <%= if @order do %>
+  <div class="card has-mobile-sort-spaced">
+    <header class="card-header">
+      <p class="card-header-title">
+        <span class="icon"><i class="fas fa-user"></i></span>
+        <%= gettext("Order data") %>
+      </p>
+    </header>
+    <div class="card-content">
+      <div class="content">
+        <div class="field">
+          <label class="label"><%= gettext("Email") %></label>
+          <div class="control">
+            <input type="text" readonly="readonly" class="input" value={@order.email || gettext("No provided yet")}/>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label"><%= gettext("First Name") %></label>
+          <div class="control">
+            <input type="text" readonly="readonly" class="input" value={@order.first_name || gettext("No provided yet")}/>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label"><%= gettext("Last Name") %></label>
+          <div class="control">
+            <input type="text" readonly="readonly" class="input" value={@order.last_name || gettext("No provided yet")}/>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label"><%= gettext("Remote IP") %></label>
+          <div class="control">
+            <input type="text" readonly="readonly" class="input" value={@order.remote_ip}/>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label"><%= gettext("Country") %></label>
+          <div class="control">
+            <input type="text" readonly="readonly" class="input" value={@order.country}/>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label"><%= gettext("Inserted At") %></label>
+          <div class="control">
+            <input type="text" readonly="readonly" class="input" value={get_date(@order.inserted_at)}/>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label"><%= gettext("Status") %></label>
+          <div class="control">
+            <input type="text" readonly="readonly" class="input" value={@order.state}/>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label"><%= gettext("Payment Option") %></label>
+          <div class="control">
+            <input type="text" readonly="readonly" class="input" value={get_payment_option(@order.payment_option)}/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card has-table has-mobile-sort-spaced">
+    <header class="card-header">
+      <p class="card-header-title">
+        <span class="icon"><i class="fas fa-file-invoice"></i></span>
+        <%= gettext("Order detail") %>
+      </p>
+    </header>
+    <div class="card-content">
+      <div class="b-table has-pagination">
+        <div class="table-wrapper has-mobile-cards">
+          <table class="table is-fullwidth is-stripped">
+              <tr>
+                  <th><%= gettext "Book" %></th>
+                  <th><%= gettext "Format" %></th>
+                  <th><%= gettext "Quantity" %></th>
+                  <th><%= gettext "Price" %></th>
+                  <th><%= gettext "Total" %></th>
+              </tr>
+              <%= for item <- @order.items do %>
+              <tr>
+                  <td>
+                      <%= link to: catalog_path(@conn, :show, item.format.book.slug) do %>
+                          <h4 class="order book-title"><%= item.format.book.title %></h4>
+                          <p class="order book-subtitle"><%= item.format.book.subtitle %></p>
+                      <% end %>
+                  </td>
+                  <td class="is-vcentered item-format"><%= item.format.name %></td>
+                  <td class="is-vcentered has-text-right"><%= item.quantity %></td>
+                  <td class="is-vcentered has-text-right item-price" id={"price-#{item.format.id}"}><%= money(item.format.price) %></td>
+                  <td class="is-vcentered has-text-right item-total-price" id={"total-#{item.format.id}"}><%= money(item.format.price, item.quantity) %></td>
+              </tr>
+              <%= for offer <- @order.offers,
+                      apply_on <- offer.applies,
+                      apply_on.id == item.format_id do %>
+              <tr id={offer.id}>
+                  <td colspan="3">
+                    <%= link offer.name, to: offers_path(@conn, :edit, offer.id) %>
+                  </td>
+                  <td class="has-text-right"><%= item.discount_display %></td>
+                  <td class="has-text-right item-discount-total"><%= money(item.discount_total) %></td>
+              </tr>
+              <% end %>
+              <% end %>
+              <%= if @order.shipping? do %>
+              <tr>
+                  <td colspan="3"><%= gettext "Shipping costs" %></td>
+                  <td class="has-text-right item-shipping-quantity"><%= @order.shipping_items %></td>
+                  <td class="has-text-right item-shipping-subtotal"><%= @order.shipping_subtotal %></td>
+              </tr>
+              <%= unless Money.zero?(@order.shipping_discount) do %>
+              <tr>
+                  <td colspan="4"><%= gettext "Shipping discount" %></td>
+                  <td class="has-text-right item-shipping-discount">- <%= @order.shipping_discount %></td>
+              </tr>
+              <% end %>
+              <% end %>
+              <tr>
+                  <td class="has-text-right" colspan="4"><%= gettext "Total (VAT incl.)" %></td>
+                  <td class="total has-text-right" id="order-total-price"><%= @order.total_price %></td>
+              </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% else %>
+  <div class="card has-table has-mobile-sort-spaced">
+    <header class="card-header">
+      <p class="card-header-title">
+        <span class="icon"><i class="fas fa-file-invoice"></i></span>
+        <%= gettext("Order not found") %>
+      </p>
+    </header>
+  </div>
+  <% end %>
+</section>

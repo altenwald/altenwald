@@ -1,0 +1,93 @@
+<.form :let={f} for={@changeset} action={@action} class="form">
+  <div class="field">
+    <label class="label"><%= gettext("Name") %> (*)</label>
+    <div class="control">
+      <%= text_input f, :name, class: "input" %>
+    </div>
+    <p class="help"><%= gettext("The name of the project.") %></p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Type") %> (*)</label>
+    <div class="control">
+      <div class="select is-fullwidth">
+        <%= select f, :type, @types %>
+      </div>
+    </div>
+    <p class="help"><%= gettext("The type of offer.") %></p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Code") %></label>
+    <div class="control">
+      <%= text_input f, :code, class: "input" %>
+    </div>
+    <p class="help"><%= gettext("(Optional) If the type of offer is 'code' then it's compulsory.") %></p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Combo formats") %></label>
+    <div class="control">
+      <div class="select is-multiple is-fullwidth">
+        <%= multiple_select f, :format_offers, @formats, selected: Enum.map(@offer.format_offers, & &1.format_id) %>
+      </div>
+    </div>
+    <p class="help"><%= gettext("The type of discount to be applied.") %></p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Discount Type") %> (*)</label>
+    <div class="control">
+      <div class="select is-fullwidth">
+        <%= select f, :discount_type, @discount_types %>
+      </div>
+    </div>
+    <p class="help"><%= gettext("The type of discount to be applied.") %></p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Discount Amount / Percentage") %> (*)</label>
+    <div class="control">
+      <%= number_input f, :discount_amount, class: "input" %>
+    </div>
+    <p class="help"><%= gettext("The amount or percentage to be applied. If the discount type is percetage it is a percentage of discount and if it's amount, it's defined as cents.") %></p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Expiration") %></label>
+    <div class="control">
+      <%= datetime_local_input f, :expiration, class: "input" %>
+    </div>
+    <p class="help"><%= gettext("(Optional) Define the maximum date and time for this offer.") %></p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Max Uses") %></label>
+    <div class="control">
+      <%= number_input f, :max_uses, class: "input" %>
+    </div>
+    <p class="help"><%= gettext("(Optional) Define the maximum number of uses for this offer, only applies to codes.") %></p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Group") %></label>
+    <div class="control">
+      <div class="select is-fullwidth">
+        <%= select f, :offer_group_id, @offer_groups, prompt: gettext("No group") %>
+      </div>
+    </div>
+    <p class="help"><%= gettext("(Optional) Group helps to filter the different offers together.") %></p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Apply on") %> (*)</label>
+    <div class="control">
+      <div class="select is-multiple is-fullwidth">
+        <%= multiple_select f, :offer_applies, @formats, selected: Enum.map(@offer.offer_applies, & &1.format_id) %>
+      </div>
+    </div>
+    <p class="help"><%= gettext("The type of discount to be applied.") %></p>
+  </div>
+  <hr/>
+  <p class="help">(*) <%= gettext("required") %></p>
+  <hr/>
+  <div class="field is-grouped">
+    <p class="control">
+      <%= submit gettext("Save"), class: "button is-primary" %>
+    </p>
+    <p class="control">
+      <%= link gettext("Cancel"), to: @return_to, class: "button" %>
+    </p>
+  </div>
+</.form>

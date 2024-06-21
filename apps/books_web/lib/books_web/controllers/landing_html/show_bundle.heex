@@ -1,0 +1,321 @@
+<!-- Banner -->
+<section class="banner-main py-7" id="banner">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-7 col-md-12">
+        <div class="main-banner">
+          <%= raw(@landing.description) %>
+
+          <img src="/images/pdf.png" alt="PDF" />
+          <img src="/images/epub.png" alt="ePUB" />
+          <a
+            href={Routes.cart_path(@conn, :bundle, @landing.bundle.slug)}
+            class="btn btn-main-2 mt-2"
+            title={gettext("Digital version")}
+          >
+            <%= if @landing.bundle.price != @landing.bundle.real_price do %>
+              <s><%= @landing.bundle.real_price %></s>&nbsp;
+            <% end %>
+            <%= @landing.bundle.price %>
+          </a>
+          <p class="mt-4">&nbsp;</p>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="banner-img">
+          <BooksWeb.BundleCoverComponent.img
+            bundle={@landing.bundle}
+            conn={@conn}
+            class="img-fluid w-100"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Book preview -->
+<section class="" id="book">
+  <div class="container">
+    <div class="row">
+      <div class="section-heading book-info mt-5 mt-lg-0 pl-4">
+        <h2 class="text-lg mb-4"><%= gettext("About The Bundle") %></h2>
+        <%= raw(@landing.about) %>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Services -->
+<section :if={@landing.features != []} class="service" id="features">
+  <div class="container">
+    <div class="row align-items-center">
+      <div :for={feature <- @landing.features} class="col-lg-4 col-md-6 col-sm-6">
+        <div class="service-block mb-4 mb-lg-0 bg-grey">
+          <i class={feature.icon}></i>
+          <h5 class="mb-3 mt-4"><%= feature.title %></h5>
+          <p class="mb-0"><%= feature.content %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Chapter -->
+<section :if={@landing.bundle.contents != []} class="section chapter" id="content">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="section-heading text-center">
+          <h2 class="text-lg"><%= gettext("What's inside the books") %></h2>
+          <p>
+            <%= gettext(
+              "Here you can check it out what you can find inside of the books, some chapters and some extracts if you want jump into the reading right now."
+            ) %>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <% contents = @landing.bundle.contents
+    {first_contents, second_contents} = Enum.split(contents, ceil(length(contents) / 2)) %>
+    <div class="row">
+      <div class="col-lg-6 col-sm-6">
+        <div class="chapter-inner">
+          <div :for={content <- first_contents} class="chapter-item d-flex">
+            <i class="ti-check"></i>
+            <div class="content pl-4">
+              <h4>
+                <%= content.title %>
+                <%= if content.excerpt_filename do %>
+                  &nbsp;
+                  <a
+                    target="_blank"
+                    class="badge badge-pill badge-secondary"
+                    href={content.excerpt_filename}
+                  >
+                    <%= gettext("sample") %>
+                  </a>
+                <% end %>
+              </h4>
+              <p><%= raw(content.description) %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-sm-6">
+        <div class="chapter-inner">
+          <div :for={content <- second_contents} class="chapter-item d-flex">
+            <i class="ti-check"></i>
+            <div class="content pl-4">
+              <h4>
+                <%= content.title %>
+                <%= if content.excerpt_filename do %>
+                  &nbsp;
+                  <a
+                    target="_blank"
+                    class="badge badge-pill badge-secondary"
+                    href={content.excerpt_filename}
+                  >
+                    <%= gettext("sample") %>
+                  </a>
+                <% end %>
+              </h4>
+              <p><%= raw(content.description) %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Call to action -->
+<section class="cta-2">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="cta-content text-center">
+          <span><%= Enum.random(@landing.engagement_phrases) %></span>
+          <h2 class="text-lg mb-4 mt-3">
+            <%= gettext("Don’t miss the opportunity of learning!") %>
+          </h2>
+          <img src="/images/pdf.png" alt="PDF" />
+          <img src="/images/epub.png" alt="ePUB" />
+          <%= link to: Routes.cart_path(@conn, :bundle, @landing.bundle.slug), class: "btn btn-main-2 mt-2", title: gettext("Digital version") do %>
+            <%= if @landing.bundle.price != @landing.bundle.real_price do %>
+              <s><%= @landing.bundle.real_price %></s>&nbsp;
+            <% end %>
+            <%= @landing.bundle.price %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--  FAQ -->
+<section :if={@landing.faqs != []} class="section faq border-bottom" id="faq">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-12 col-lg-8">
+        <div class="section-heading text-center">
+          <h2 class="mb-2 text-lg"><%= gettext("Frequently Asked Questions") %></h2>
+          <p>
+            <%= gettext(
+              "Whether you have questions or you would just like to say hello, contact us. Maybe some of your questions could be answered with the following frequently asked questions."
+            ) %>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <div :for={faq <- @landing.faqs} class="panel panel-default">
+            <% answer = to_html(faq.answer) %>
+            <div class="panel-heading" role="tab" id={"heading-#{faq.id}"}>
+              <h4 class="panel-title">
+                <a
+                  role="button"
+                  data-toggle="collapse"
+                  data-parent="#accordion"
+                  href={"#collapse-#{faq.id}"}
+                  aria-controls={"collapse-#{faq.id}"}
+                >
+                  <i class="more-less ti-plus"></i>
+                  <%= faq.question %>
+                </a>
+              </h4>
+            </div>
+            <div
+              id={"collapse-#{faq.id}"}
+              class="panel-collapse collapse"
+              role="tabpanel"
+              aria-labelledby={"heading-#{faq.id}"}
+            >
+              <div class="panel-body">
+                <%= raw(answer) %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- panel-group -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Review-->
+<div :if={@reviews != []} class="section bg-grey " data-aos="fade-up" id="reviews">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <h2 class="text-lg mb-5"><%= gettext("Readers Reviews") %></h2>
+      </div>
+    </div>
+    <div class="row justify-content-center text-center" data-aos="fade-up">
+      <div class="col-md-8">
+        <div class="owl-carousel home-slider-loop-false owl-theme">
+          <div :for={review <- @reviews} class="testimonial-item">
+            <blockquote class="testimonial2">
+              <p>&ldquo;<%= review.content %>&rdquo;</p>
+              <div class="author mt-5">
+                <div
+                  class="rating"
+                  title={gettext("rated %{value} out of 5", value: review.value / 10)}
+                >
+                  <%= for i <- 10..50//10 do %>
+                    <%= cond do %>
+                      <% i <= review.value -> %>
+                        <a href="#"><i class="fas fa-star"></i></a>
+                      <% (i / 10) == ceil(review.value / 10) -> %>
+                        <a href="#"><i class="fas fa-star-half-alt"></i></a>
+                      <% :else -> %>
+                        <a href="#"><i class="far fa-star"></i></a>
+                    <% end %>
+                  <% end %>
+                </div>
+                <h4 class="mb-0"><%= review.full_name %></h4>
+                <p><%= review.position %>, <%= review.company %></p>
+              </div>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- About Author -->
+<section class="about section" id="author">
+  <div class="container">
+    <div :for={author <- @authors} class="row align-items-center">
+      <div class="col-lg-5">
+        <div class="about-img">
+          <img
+            src={static_path(@conn, "/images/authors/#{author.id}.png")}
+            alt={author.short_name}
+            class="img-fluid w-75 rounded-circle"
+          />
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="author-info pl-4 mt-5 mt-lg-0">
+          <span><%= gettext("Know More About Author") %></span>
+          <h2 class="text-lg"><%= author.short_name %></h2>
+          <span class="text-sm"><%= author.title[@locale] %></span>
+
+          <p class="mb-4 mt-3"><%= author.description[@locale] %></p>
+
+          <div class="follow mt-5">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <span class="mb-3"><%= gettext("Follow Me") %>:</span>
+              </li>
+              <li
+                :for={{name, url} <- author.urls}
+                :if={name != "personal"}
+                class="list-inline-item"
+              >
+                <a href={url}><i class={"ti-#{name}"}></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Call to action -->
+<section class="section cta-home">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <h2 class="text-lg">
+          <%= gettext("If you want to get updates for this book, offers and more:") %>
+        </h2>
+      </div>
+
+      <div class="col-lg-6">
+        <.form
+          :let={f}
+          for={@subscribe}
+          action={Routes.landing_path(@conn, :subscribe, Enum.join(@landing.slugs, ","))}
+          class="subscribe-form"
+        >
+          <div class="form-group">
+            <%= text_input(f, :full_name,
+              class: "form-control",
+              placeholder: gettext("Full Name")
+            ) %>
+          </div>
+          <div class="form-group">
+            <%= text_input(f, :email,
+              class: "form-control",
+              placeholder: gettext("Enter Your email")
+            ) %>
+          </div>
+
+          <%= submit(gettext("Subscribe!"), class: "btn btn-main-2") %>
+        </.form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Contact -->

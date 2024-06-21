@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang={@locale}>
+  <head>
+    <meta charset="utf-8" />
+    <title><%= gettext("Stripe Payment") %> - Altenwald</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Altenwald" />
+    <meta name="sitemap" type="application/xml" title="Sitemap" href="/sitemaps/sitemap.xml.gz" />
+    <.favicon {assigns} />
+
+    <link rel="stylesheet" href={static_path(@conn, "/assets/css/stripe.css")} />
+    <link rel="stylesheet" href={static_path(@conn, "/assets/css/app.css")} />
+
+    <script type="text/javascript" src={static_path(@conn, "/assets/js/app.js")}>
+    </script>
+  </head>
+  <body>
+    <nav class="navbar is-white has-shadow" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href={Routes.catalog_path(@conn, :index)}>
+          <img
+            src={static_path(@conn, "/images/altenwald_logo_web.png")}
+            height="46"
+            alt="Altenwald logo"
+          />
+        </a>
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarSite"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    </nav>
+
+    <section class="section">
+      <%= @inner_content %>
+    </section>
+
+    <.footer {assigns} />
+  </body>
+</html>

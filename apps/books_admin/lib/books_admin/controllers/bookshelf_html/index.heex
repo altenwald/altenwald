@@ -1,0 +1,88 @@
+<section class="hero is-hero-bar">
+  <div class="hero-body">
+    <div class="level">
+      <div class="level-left">
+        <div class="level-item">
+          <div class="title"><%= gettext("Bookshelf for %{name}", name: @account.email) %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section is-main-section">
+  <div class="card tile is-child has-table has-mobile-sort-spaced">
+    <header class="card-header">
+      <p class="card-header-title">
+        <span class="icon"><i class="fas fa-user"></i></span>
+        <%= gettext("Account") %>
+      </p>
+    </header>
+    <div class="card-content">
+      <div class="b-table has-pagination">
+        <div class="table-wrapper has-mobile-cards">
+          <div class="field is-grouped is-grouped-right">
+            <div class="control">
+              <%= link to: accounts_bookshelf_path(@conn, :new, @account.id), class: "button" do %>
+                <i class="fas fa-plus"></i>&nbsp;<%= gettext("New bookshelf item") %>
+              <% end %>
+            </div>
+          </div>
+          <table class="table is-fullwidth is-striped is-hoverable">
+            <thead>
+              <th class="has-text-left"><%= gettext("Book") %></th>
+              <th class="has-text-centered"><%= gettext("Cover") %></th>
+              <th class="has-text-centered"><%= gettext("Started at") %></th>
+              <th class="has-text-left"><%= gettext("Type") %></th>
+              <th class="has-text-left"><%= gettext("Description") %></th>
+              <th class="has-text-left"><%= gettext("Order") %></th>
+              <th class="has-text-left"><%= gettext("Options") %></th>
+            </thead>
+            <tbody>
+            <%= for %_{book: book} = bookshelf_item <- @bookshelf_items do %>
+            <tr>
+              <td>
+                <%= link to: catalog_path(@conn, :show, book.slug) do %>
+                  <strong><%= book.title %></strong><br/>
+                  <%= book.subtitle %>
+                <% end %>
+              </td>
+              <td><img class="image is-64x64" src={get_cover_path(@conn, book)}/></td>
+              <td class="has-text-centered"><%= bookshelf_item.started_at %></td>
+              <td><%= translate(bookshelf_item.type) %></td>
+              <td><%= bookshelf_item.description %></td>
+              <td>
+                <%= if order_id = bookshelf_item.order_id do %>
+                  <%= link to: cart_path(@conn, :show, order_id), class: "button" do %>
+                    <i class="fas fa-eye"></i>
+                  <% end %>
+                <% else %>
+                  <%= gettext("No order") %>
+                <% end %>
+              </td>
+              <td class="has-text-centered">
+                <div class="field has-addons">
+                  <p class="control">
+                    <%= link to: accounts_bookshelf_path(@conn, :edit, @account.id, bookshelf_item.id), title: gettext("edit"), class: "button" do %>
+                      <span class="icon is-small">
+                        <i class="fas fa-pencil-alt"></i>
+                      </span>
+                    <% end %>
+                  </p>
+                  <p class="control">
+                    <%= link to: accounts_bookshelf_path(@conn, :delete, @account.id, bookshelf_item.id), title: gettext("edit"), class: "button", method: "delete", data: [confirm: gettext("Are you sure you want to remove this book from the bookshelf?")] do %>
+                      <span class="icon is-small">
+                        <i class="fas fa-trash"></i>
+                      </span>
+                    <% end %>
+                  </p>
+                </div>
+              </td>
+            </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,11 @@
+<.simple_form :let={f} for={@changeset} action={@action} return_to={@return_to}>
+  <.checkbox form={f} name={:enabled} label={gettext("Enabled?")} help={gettext("If enabled, it will appear in the public listing of books.")}/>
+  <.text_input form={f} name={:name} label={gettext("Name")} required={true} help={gettext("The name of the project.")}/>
+  <.text_input form={f} name={:slug} label={gettext("Slug")} required={true} help={gettext("The canonical name for using in URI and friendly place.")}/>
+  <.text_input form={f} name={:real_price} label={gettext("Real price")} required={true} help={gettext("The price of the whole bundle. It's not applying offers.")}/>
+  <.text_input form={f} name={:price} label={gettext("Price to pay")} required={true} help={gettext("The price with all of the offers applied to give the idea how much the user will pay.")}/>
+  <.select form={f} name={:lang} label={gettext("Language")} values={@languages} required={true} help={gettext("Human language used to write the book.")}/>
+  <.textarea form={f} name={:description} label={gettext("Description")} required={true} help={gettext("Write the description which will be shown in the book page.")}/>
+  <.multiple_select form={f} name={:bundle_formats} label={gettext("Formats")} required={true} values={@formats} selected={Enum.map(@bundle.bundle_formats, & &1.format_id)} help={gettext("The formats inside of the bundle.")}/>
+  <.tags_input form={f} name={:keywords} label={gettext("Keywords")} help={gettext("(Optional) Use comma-separated values.")}/>
+</.simple_form>

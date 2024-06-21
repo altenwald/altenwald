@@ -1,0 +1,38 @@
+<footer class="footer">
+  <div class="content is-size-7">
+    <p>
+      <%= link to: "https://facebook.com/altenwald", rel: "noopener", target: "_blank", class: "button is-ghost" do %>
+        <i class="fab fa-facebook-f"></i>
+      <% end %>
+      <%= link to: "https://twitter.com/altenwald", rel: "noopener", target: "_blank", class: "button is-ghost" do %>
+        <i class="fab fa-twitter"></i>
+      <% end %>
+      <%= link to: "https://youtube.com/altenwald", rel: "noopener", target: "_blank", class: "button is-ghost" do %>
+        <i class="fab fa-youtube"></i>
+      <% end %>
+      <%= link to: "https://instagram.com/altenwald.solutions", rel: "noopener", target: "_blank", class: "button is-ghost" do %>
+        <i class="fab fa-instagram"></i>
+      <% end %>
+      <%= link to: "https://github.com/altenwald", rel: "noopener", target: "_blank", class: "button is-ghost" do %>
+        <i class="fab fa-github"></i>
+      <% end %>
+      <%= link to: "https://linkedin.com/company/altenwald", rel: "noopener", target: "_blank", class: "button is-ghost" do %>
+        <i class="fab fa-linkedin"></i>
+      <% end %>
+    </p>
+    <p>
+      Copyright &copy; 2012-<%= DateTime.utc_now().year %> - Altenwald (v<%= BooksWeb.vsn() %>)
+    </p>
+    <p>
+      <%= raw(
+        gettext(
+          "Check out our <a href='%{privacy}'>Privacy Policy</a>, <a href='%{cookies}'>Cookies Policy</a>, <a href='%{about}'>About us</a> and <a href='%{tos}'>Terms of Service</a>.",
+          privacy: Routes.legal_path(@conn, String.to_atom("privacy_#{@locale}")),
+          cookies: Routes.legal_path(@conn, String.to_atom("cookies_#{@locale}")),
+          about: Routes.legal_path(@conn, String.to_atom("about_#{@locale}")),
+          tos: Routes.legal_path(@conn, String.to_atom("tos_#{@locale}"))
+        )
+      ) %>
+    </p>
+  </div>
+</footer>

@@ -1,0 +1,246 @@
+<div class="content">
+  <%= for alert <- @alerts, is_nil(alert.book_id) do %>
+    <div class={"notification is-#{ alert.type } is-light"}>
+      <button class="delete"></button>
+      <strong><%= alert.title %></strong>
+      <%= raw(alert.body) %>
+    </div>
+  <% end %>
+  <%= if @cart != nil and @cart.items != [] do %>
+    <table class="table is-stripped">
+      <tr>
+        <th><%= gettext("Book") %></th>
+        <th><%= gettext("Format") %></th>
+        <th><%= gettext("Quantity") %></th>
+        <th><%= gettext("Price") %></th>
+        <th><%= gettext("Total") %></th>
+      </tr>
+      <%= for item <- @cart.items do %>
+        <tr>
+          <td>
+            <a href={Routes.catalog_path(@conn, :book, item.format.book.slug)}>
+              <h4 class="order book-title"><%= item.format.book.title %></h4>
+              <p class="order book-subtitle"><%= item.format.book.subtitle %></p>
+            </a>
+          </td>
+          <td class="is-vcentered item-format"><%= item.format.name %></td>
+          <td class="is-vcentered">
+            <div class="field has-addons">
+              <div class="control">
+                <a class="button" href={Routes.cart_path(@conn, :rem, item.format.id)}>-</a>
+              </div>
+              <div class="control">
+                <a class="button is-static item-quantity"><%= item.quantity %></a>
+              </div>
+              <div class="control">
+                <a class="button" href={Routes.cart_path(@conn, :add, item.format.id)}>+</a>
+              </div>
+            </div>
+          </td>
+          <td class="is-vcentered has-text-right item-price" id={"price-#{item.format.id}"}>
+            <%= money(item.format.price) %>
+          </td>
+          <td class="is-vcentered has-text-right item-total-price" id={"total-#{item.format.id}"}>
+            <%= money(item.format.price, item.quantity) %>
+          </td>
+        </tr>
+        <%= for offer <- @cart.offers,
+                apply_on <- offer.applies,
+                apply_on.id == item.format_id do %>
+          <tr id={offer.id}>
+            <td colspan="3"><%= offer.name %></td>
+            <td class="has-text-right"><%= item.discount_display %></td>
+            <td class="has-text-right item-discount-total"><%= money(item.discount_total) %></td>
+          </tr>
+        <% end %>
+      <% end %>
+      <%= if @cart.shipping? do %>
+        <tr>
+          <td colspan="3"><%= gettext("Shipping costs") %></td>
+          <td class="has-text-right item-shipping-quantity"><%= @cart.shipping_items %></td>
+          <td class="has-text-right item-shipping-subtotal"><%= @cart.shipping_subtotal %></td>
+        </tr>
+        <%= unless Money.zero?(@cart.shipping_discount) do %>
+          <tr>
+            <td colspan="4"><%= gettext("Shipping discount") %></td>
+            <td class="has-text-right item-shipping-discount">
+              - <%= @cart.shipping_discount %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+      <tr>
+        <td class="has-text-right" colspan="4"><%= gettext("Total (VAT incl.)") %></td>
+        <td class="total has-text-right" id="order-total-price"><%= @cart.total_price %></td>
+      </tr>
+    </table>
+    <div class="columns is-multiline">
+      <div class="column is-9-desktop">
+        <h2 class="cart"><%= gettext("Discount code") %></h2>
+        <.form :let={f} for={@code_offer} action={Routes.cart_path(@conn, :discount)}>
+          <div id="discount-code">
+            <label><%= gettext("Apply discount code:") %></label>
+            <div class="field has-addons">
+              <div class="control">
+                <%= text_input(f, :code, class: "input") %>
+              </div>
+              <div class="control">
+                <%= submit(gettext("Apply"), class: "button is-info") %>
+              </div>
+            </div>
+            <%= if message = f.errors[:code] do %>
+              <span class="help-block"><%= translate_error(message) %></span>
+            <% end %>
+          </div>
+        </.form>
+        <h2 class="cart"><%= gettext("Payment options") %></h2>
+        <%= if Money.zero?(@cart.total_price) do %>
+          <p><%= gettext("The order is for free, you don't need to pay anything.") %></p>
+        <% else %>
+          <p><%= gettext("You can perform the payment via the following payment methods:") %></p>
+          <ul>
+            <%= for po <- @payment_options do %>
+              <%= case po.slug do %>
+                <% "stripe" -> %>
+                  <li>
+                    <%= raw(
+                      gettext(
+                        "<strong>Card</strong> (Stripe): recommended for credit/debit card."
+                      )
+                    ) %>
+                  </li>
+                <% "paypal" -> %>
+                  <li>
+                    <%= raw(
+                      gettext("<strong>PayPal</strong>: debit/credit card and PayPal balance.")
+                    ) %>
+                  </li>
+                <% _ -> %>
+              <% end %>
+            <% end %>
+          </ul>
+        <% end %>
+      </div>
+      <div class="column is-3-desktop">
+        <.form :let={f} for={@changeset} action={Routes.cart_path(@conn, :payment)}>
+          <%= hidden_input(f, :is_shipping, value: @cart.shipping?) %>
+          <div>
+            <div class="pay field">
+              <label class="label"><%= gettext("Name") %></label>
+              <%= text_input(f, :first_name, class: input_classes(f, :first_name)) %>
+              <.error_tag form={f} field={:first_name} />
+            </div>
+            <div class="pay field">
+              <label class="label"><%= gettext("Surname") %></label>
+              <%= text_input(f, :last_name, class: input_classes(f, :last_name)) %>
+              <.error_tag form={f} field={:last_name} />
+            </div>
+            <div class="pay field">
+              <label class="label"><%= gettext("Email") %></label>
+              <%= email_input(f, :email, class: input_classes(f, :email)) %>
+              <.error_tag form={f} field={:email} />
+              <%= unless f.errors[:email] do %>
+                <p class="help">
+                  <%= gettext(
+                    "Provide your email for payment and notifications from acquired products and Altenwald membership."
+                  ) %>
+                </p>
+              <% end %>
+            </div>
+          </div>
+          <%= if @cart.shipping? do %>
+            <div>
+              <div class="pay field">
+                <label class="label"><%= gettext("Address") %></label>
+                <%= text_input(f, :shipping_address, class: input_classes(f, :shipping_address)) %>
+                <.error_tag form={f} field={:shipping_address} />
+              </div>
+              <div class="pay field">
+                <label class="label"><%= gettext("Postal Code") %></label>
+                <%= text_input(f, :shipping_postal_code,
+                  class: input_classes(f, :shipping_postal_code)
+                ) %>
+                <.error_tag form={f} field={:shipping_postal_code} />
+              </div>
+              <div class="pay field">
+                <label class="label"><%= gettext("City") %></label>
+                <%= text_input(f, :shipping_city, class: input_classes(f, :shipping_city)) %>
+                <.error_tag form={f} field={:shipping_city} />
+              </div>
+              <div class="pay field">
+                <label class="label"><%= gettext("Province / State") %></label>
+                <%= text_input(f, :shipping_state, class: input_classes(f, :shipping_state)) %>
+                <.error_tag form={f} field={:shipping_state} />
+              </div>
+              <div class="pay field">
+                <label class="label"><%= gettext("Country") %></label>
+                <div class="select">
+                  <%= select(f, :shipping_country, countries(),
+                    class: "selectpicker",
+                    "data-live-search": "true"
+                  ) %>
+                </div>
+                <.error_tag form={f} field={:shipping_country} />
+                <%= unless f.errors[:shipping_country] do %>
+                  <p class="help">
+                    <%= gettext("Depending on the country, the shipping price could be modified.") %>
+                  </p>
+                <% end %>
+              </div>
+              <div class="pay field">
+                <label class="label"><%= gettext("Phone") %></label>
+                <%= text_input(f, :shipping_phone, class: input_classes(f, :shipping_phone)) %>
+                <.error_tag form={f} field={:shipping_phone} />
+                <%= unless f.errors[:shipping_phone] do %>
+                  <p class="help">
+                    <%= gettext("""
+                    Shipping companies requires phone number for sending the
+                    packages.
+                    """) %>
+                  </p>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+          <%= if Money.zero?(@cart.total_price) do %>
+            <%= hidden_input(f, :payment_option_id, value: @payment_option.id) %>
+          <% else %>
+            <div class="pay field">
+              <label class="label"><%= gettext("Method to pay") %></label>
+              <div class="select">
+                <%= select(
+                  f,
+                  :payment_option_id,
+                  for(p <- @payment_options, do: {translate(p.name), p.id}),
+                  class: "form-control selectpicker",
+                  prompt: gettext("Pay with...")
+                ) %>
+              </div>
+              <.error_tag form={f} field={:payment_option_id} />
+            </div>
+          <% end %>
+          <div class={"field#{if f.errors[:accept_tos], do: " error", else: ""}"}>
+            <label>
+              <%= checkbox(f, :accept_tos, class: check_classes(f, :accept_tos)) %>
+              <%= raw(
+                gettext("Accept the <a href='%{tos_url}'>Terms of Service</a>",
+                  tos_url: Routes.legal_path(@conn, String.to_atom("tos_#{@locale}"))
+                )
+              ) %>
+            </label>
+            <.error_tag form={f} field={:accept_tos} />
+          </div>
+          <div class="field">
+            <%= if Money.zero?(@cart.total_price) do %>
+              <%= submit(gettext("Obtain"), class: "button is-info") %>
+            <% else %>
+              <%= submit(gettext("Pay"), class: "button is-info") %>
+            <% end %>
+          </div>
+        </.form>
+      </div>
+    </div>
+  <% else %>
+    <p id="cart-message"><%= gettext("The cart is empty.") %></p>
+  <% end %>
+</div>

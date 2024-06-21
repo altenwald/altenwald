@@ -1,0 +1,17 @@
+<%# TODO change this to be in the core components %>
+<%= if info = Phoenix.Flash.get(@flash, :info) do %>
+<div class="notification is-success has-text-centered">
+  <%= raw info %>
+</div>
+<% end %>
+
+<%# TODO change this to be in the core components %>
+<%= if error = Phoenix.Flash.get(@flash, :error) do %>
+<div class="notification is-danger has-text-centered">
+  <%= raw error %>
+</div>
+<% end %>
+
+<div id="app">
+  <%= @inner_content %>
+</div>

@@ -1,0 +1,188 @@
+<section class="hero is-medium is-bold" style={background_image(@conn, @post)}>
+  <div class="hero-body">
+    <div class="card">
+      <div class="media">
+        <%= if @post.featured_image do %>
+          <div class="media-left is-hidden-touch ml-4 mr-4 mt-4">
+            <figure class="image is-128x128">
+              <img alt={gettext("featured image")} src={"/images/posts/#{@post.featured_image}"} />
+            </figure>
+          </div>
+        <% end %>
+        <div class="media-content">
+          <figure class="image is-featured is-hidden-desktop ml-2 mt-2">
+            <img alt={gettext("featured image")} src={"/images/posts/#{@post.featured_image}"} />
+          </figure>
+          <h2 class="subtitle is-4 mt-4">
+            <a href="#" class="ml-2">
+                            <span class={"tag is-#{@post.category.color} is-uppercase"}>
+                                <%= @post.category.name[@locale] %>
+                            </span>
+                        </a>&nbsp;
+            <%= if @post.private do %>
+              <i class="fas fa-lock"></i>&nbsp;
+            <% end %>
+            <span class="is-size-5 is-hidden-touch"><%= get_full_date(@post) %></span>
+            <span class="is-size-6 is-hidden-desktop ml-2"><%= get_full_date(@post) %></span>
+            &nbsp;
+            <span class="tag ml-2">
+              <%= get_reading_min(@post) %> <%= gettext("reading minutes") %>
+            </span>
+          </h2>
+          <h1 class="title is-hidden-touch"><%= get_title(@post) %></h1>
+          <h1 class="title is-4 is-hidden-desktop ml-2"><%= get_title(@post) %></h1>
+          <span class="is-flex is-flex-wrap-wrap ml-2 mb-2 is-hidden-desktop is-line-height-wider">
+            <%= link to: "#comments" do %>
+              <span class="tag is-ghost">
+                <i class="fas fa-comment"></i>&nbsp; <%= length(@post.comments) %>
+              </span>
+            <% end %>
+          </span>
+          <span class="is-flex is-flex-wrap-wrap ml-2 is-hidden-desktop is-line-height-wider">
+            <%= for tag <- @post.tags do %>
+              <%= link to: "#" do %>
+                <span class="tag is-black">
+                                <i class="fas fa-tag"></i>&nbsp;
+                                <%= tag.name %>
+                            </span>&nbsp;
+              <% end %>
+            <% end %>
+          </span>
+          <span class="is-hidden-touch">
+            <%= link to: "#comments" do %>
+              <span class="tag is-ghost">
+                <i class="fas fa-comment"></i>&nbsp; <%= length(@post.comments) %>
+              </span>
+            <% end %>
+            <%= for tag <- @post.tags do %>
+              <%= link to: "#" do %>
+                <span class="tag is-black">
+                  <i class="fas fa-tag"></i>&nbsp; <%= tag.name %>
+                </span>
+              <% end %>
+            <% end %>
+          </span>
+          <%= if user_role?(@current_user, :author) and @current_user.id == @post.author.user_id do %>
+            <%= link to: Routes.posts_path(@conn, :edit, @post.id), class: "tag is-short" do %>
+              <i class="fas fa-pen"></i>&nbsp; <%= gettext("Edit") %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="card-content"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="content">
+    <div class="box box-adjust" id="post-content">
+      <%= if @permitted? do %>
+        <%= raw(to_html(@post.content)) %>
+      <% else %>
+        <%= raw(to_html(@post.excerpt)) %>
+        <article class="message is-warning">
+          <div class="message-header">
+            <p>
+              <i class="fas fa-lock"></i>&nbsp; <%= gettext("Private content") %>
+            </p>
+          </div>
+          <div class="message-body">
+            <%= if @post.books == [] do %>
+              <%= gettext(
+                "It's not allowed the access to this content. Contact our team to get more information."
+              ) %>
+            <% else %>
+              <%= gettext("You need to acquire one of the following items") %>
+              <ul>
+                <%= for book <- @post.books, book.enabled do %>
+                  <li>
+                    <%= link(get_full_book_title(book),
+                      to: Routes.catalog_path(@conn, :book, book.slug)
+                    ) %>
+                  </li>
+                <% end %>
+              </ul>
+              <%= unless @current_user do %>
+                <%= raw(
+                  gettext(
+                    "If you acquired one of these items, you can <a href='%{url}'>log in</a> to read them.",
+                    url:
+                      Routes.user_session_path(@conn, :new, redirect_to: post_path(@conn, @post))
+                  )
+                ) %>
+              <% end %>
+            <% end %>
+          </div>
+        </article>
+      <% end %>
+    </div>
+
+    <div class="card box-adjust">
+      <BooksWeb.AuthorComponent.author_box conn={@conn} author={@post.author} locale={@locale} />
+    </div>
+  </div>
+
+  <%= if @permitted? do %>
+    <div class="content">
+      <a name="comments"></a>
+      <div class="box box-adjust" id="comments">
+        <h2><%= gettext("Comments") %></h2>
+        <% num_comments = length(@comments) %>
+        <%= if num_comments == 0 do %>
+          <p>
+            <%= gettext("There are no comments.") %>
+            <%= unless @current_user do %>
+              <%= raw(
+                gettext("<a href='%{url}'>Log in</a> to send a comment.",
+                  url: Routes.user_session_path(@conn, :new)
+                )
+              ) %>
+            <% end %>
+          </p>
+        <% else %>
+          <p>
+            <%= ngettext("There is one comment.", "There are %{num} comments.", num_comments,
+              num: num_comments
+            ) %>
+            <%= unless @current_user do %>
+              <%= raw(
+                gettext("<a href='%{url}'>Log in</a> to send a comment.",
+                  url: Routes.user_session_path(@conn, :new)
+                )
+              ) %>
+            <% end %>
+          </p>
+          <div class="chat">
+            <div class="chat-history">
+              <ul class="chat-ul">
+                <%= for comment <- @comments do %>
+                  <.comment comment={comment} conn={@conn} locale={@locale} users={@users} />
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        <% end %>
+        <%= if @current_user do %>
+          <.form
+            :let={f}
+            for={@changeset}
+            action={Routes.comments_path(@conn, :create, @post.slug)}
+          >
+            <div class="message_write">
+              <div class="field">
+                <%= textarea(f, :content,
+                  class: "textarea",
+                  placeholder: gettext("type a comment")
+                ) %>
+              </div>
+              <div class="field">
+                <%= submit(gettext("Send"), to: "#", class: "button is-success") %>
+              </div>
+            </div>
+          </.form>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</section>

@@ -1,0 +1,77 @@
+<.form :let={f} for={@changeset} action={@action} class="form">
+  <%= hidden_input f, :type, value: "income" %>
+  <div class="field">
+    <label class="label"><%= gettext("Year") %> (*)</label>
+    <div class={"control#{if(f.errors[:year], do: " is-danger")}"}>
+      <%= number_input f, :year, class: "input" %>
+    </div>
+    <p class="help">
+      <.error_tag form={f} field={:year}/>
+      <%= gettext("Insert the year of the income.") %>
+    </p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Month") %> (*)</label>
+    <div class="control">
+      <div class={"select is-fullwidth#{if(f.errors[:month], do: " is-danger")}"}>
+        <%= select f, :month, @months %>
+      </div>
+    </div>
+    <p class="help">
+      <.error_tag form={f} field={:month}/>
+      <%= gettext("Choose a month for the income.") %>
+    </p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Items") %></label>
+    <div class="control">
+      <%= number_input f, :items, class: "input" %>
+    </div>
+    <p class="help"><%= gettext("(Optional) Items number included in the income.") %></p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Amount") %> (*)</label>
+    <div class="control">
+      <%= text_input f, :amount, class: "input#{if(f.errors[:amount], do: " is-danger")}" %>
+    </div>
+    <p class="help">
+      <.error_tag form={f} field={:amount}/>
+      <%= gettext("The amount of money of the income.") %>
+    </p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Source") %> (*)</label>
+    <div class="control">
+      <div class={"select is-fullwidth#{if(f.errors[:source], do: " is-danger")}"}>
+        <%= select f, :source, @sources %>
+      </div>
+    </div>
+    <p class="help">
+      <.error_tag form={f} field={:source}/>
+      <%= gettext("Choose a the source where the income came from.") %>
+    </p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Book") %></label>
+    <div class="control">
+      <div class={"select is-fullwidth#{if(f.errors[:book_id], do: " is-danger")}"}>
+        <%= select f, :book_id, @books, prompt: gettext("-- No book implied --") %>
+      </div>
+    </div>
+    <p class="help">
+      <.error_tag form={f} field={:book_id}/>
+      <%= gettext("(Optional) The book that originated this income.") %>
+    </p>
+  </div>
+  <hr/>
+  <p class="help">(*) <%= gettext("required") %></p>
+  <hr/>
+  <div class="field is-grouped">
+    <p class="control">
+      <%= submit gettext("Save"), class: "button is-primary" %>
+    </p>
+    <p class="control">
+      <%= link gettext("Cancel"), to: @return_to, class: "button" %>
+    </p>
+  </div>
+</.form>

@@ -1,0 +1,61 @@
+<.form :let={f} for={@changeset} action={@action} class="form">
+  <div class="field">
+    <label class="label"><%= gettext("Enabled?") %></label>
+    <div class="control">
+      <label class="switch is-rounded">
+        <%= checkbox f, :enabled %>
+        <span class="check"></span>
+        <span class="control-label"></span>
+      </label>
+    </div>
+    <p class="help"><%= gettext("If enabled, it will appear to be purchased.") %></p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Type") %> (*)</label>
+    <div class="control">
+      <div class="select is-fullwidth">
+        <%= select f, :name, @format_types, prompt: gettext("Choose one...") %>
+      </div>
+    </div>
+    <.error_tag form={f} field={:name}/>
+    <p class="help"><%= gettext("Choose a type for the kind of format.") %></p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Price") %> (*)</label>
+    <div class="control">
+      <%= text_input f, :price, class: "input" %>
+    </div>
+    <.error_tag form={f} field={:price}/>
+    <p class="help"><%= gettext("The format price to be purchased.") %></p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Shipping?") %></label>
+    <div class="control">
+      <label class="switch is-rounded">
+        <%= checkbox f, :shipping %>
+        <span class="check"></span>
+        <span class="control-label"></span>
+      </label>
+    </div>
+    <p class="help"><%= gettext("Indicate if it has associated shipping costs.") %></p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Tax") %> (*)</label>
+    <div class="control">
+      <%= number_input f, :tax, class: "input" %>
+    </div>
+    <.error_tag form={f} field={:tax}/>
+    <p class="help"><%= gettext("The amount of tax which is included in the price.") %></p>
+  </div>
+  <hr/>
+  <p class="help">(*) <%= gettext("required") %></p>
+  <hr/>
+  <div class="field is-grouped">
+    <p class="control">
+      <%= submit gettext("Save"), class: "button is-primary" %>
+    </p>
+    <p class="control">
+      <%= link gettext("Cancel"), to: @return_to, class: "button" %>
+    </p>
+  </div>
+</.form>

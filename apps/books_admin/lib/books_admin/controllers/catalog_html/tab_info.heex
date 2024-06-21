@@ -1,0 +1,79 @@
+<h1 class="title is-2 has-text-weight-bold book-title"><%= @book.title %></h1>
+<h2 class="subtitle is-3 has-text-weight-normal book-subtitle"><%= @book.subtitle %></h2>
+<p class="book-authors">
+  <% return_to = catalog_path(@conn, :show, @book.slug) %>
+  <%= for %{author: author, id: role_id, role: role} <- @book.roles do %>
+  <%= author.short_name %>&nbsp;(<%= translate_role(role) %>)&nbsp;
+  <%= link to: authors_path(@conn, :edit, author.id, return_to: return_to), title: gettext("Edit role profile") do %>
+    <i class="fas fa-id-badge"></i>
+  <% end %>&nbsp;
+  <%= link to: catalog_book_authors_path(@conn, :edit, @book.slug, role_id, return_to: return_to), title: gettext("Edit role for the book") do %>
+    <i class="fas fa-pencil-alt"></i>
+  <% end %>&nbsp;
+  <%= link to: catalog_book_authors_path(@conn, :delete, @book.slug, role_id, return_to: return_to), title: gettext("Remove the role from this book"), method: "delete", data: [confirm: gettext("Are you sure you want to remove the role from the book?")] do %>
+    <i class="fas fa-trash-alt"></i>
+  <% end %>
+  <br/>
+  <% end %>
+</p>
+<p>
+  <%= link to: authors_path(@conn, :new, return_to: return_to, book_slug: @book.slug), class: "button", title: gettext("Create a new profile") do %>
+    <span class="icon">
+      <i class="fas fa-id-badge"></i>
+    </span>
+    <span><%= gettext("Create profile") %></span>
+  <% end %>
+  <%= link to: catalog_book_authors_path(@conn, :new, @book.slug, return_to: return_to), class: "button", title: gettext("Add a new role to this book") do %>
+    <span class="icon">
+      <i class="fas fa-user-plus"></i>
+    </span>
+    <span><%= gettext("Add role") %></span>
+  <% end %>
+</p>
+<%= raw @book.marketing_description %>
+
+<table class="table">
+    <tr>
+        <th><%= gettext "ISBN" %></th>
+        <td><%= if @book.isbn, do: @book.isbn, else: gettext("Pending") %></td>
+    </tr>
+    <%= if @book.legal_deposit do %>
+    <tr>
+        <th><%= gettext "Legal deposit" %></th>
+        <td><%= @book.legal_deposit %></td>
+    </tr>
+    <% end %>
+    <tr>
+        <th><%= gettext "Number of pages" %></th>
+        <td><%= if @book.num_pages, do: @book.num_pages, else: gettext("In process") %></td>
+    </tr>
+    <tr>
+        <th><%= gettext "Language" %></th>
+        <td class="lang">
+            <img alt={String.upcase(@book.lang)} src={static_path @conn, "/images/lang_#{@book.lang}.png"} width="30px"/>
+            <span>(<%= String.upcase(@book.lang) %>)</span>
+        </td>
+    </tr>
+    <%= cond do %>
+    <% Catalog.book_released?(@book) or @book.release != nil -> %>
+    <tr>
+        <th><%= gettext "Published date" %></th>
+        <td><%= gettext "%{month} of %{year}", month: month(@book.release), year: year(@book.release) %></td>
+    </tr>
+    <% Catalog.book_in_presale?(@book) and @book.presale != nil -> %>
+    <tr>
+        <th><%= gettext "Presale started" %></th>
+        <td><%= gettext "%{month} of %{year}", month: month(@book.presale), year: year(@book.presale) %></td>
+    </tr>
+    <% not Catalog.book_in_presale?(@book) and @book.presale != nil -> %>
+    <tr>
+        <th><%= gettext "Presale will start" %></th>
+        <td><%= gettext "%{month} of %{year}", month: month(@book.presale), year: year(@book.presale) %></td>
+    </tr>
+    <% true -> %>
+    <% end %>
+    <tr>
+        <th><%= gettext "Edition" %></th>
+        <td><%= edition(@book) %></td>
+    </tr>
+</table>

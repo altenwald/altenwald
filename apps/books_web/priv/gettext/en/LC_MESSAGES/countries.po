@@ -1,0 +1,1307 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"X-Generator: countries-i18n 1.0.0\n"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AC"
+msgstr "Ascension Island"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AD"
+msgstr "Andorra"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AE"
+msgstr "United Arab Emirates"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AF"
+msgstr "Afghanistan"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AG"
+msgstr "Antigua & Barbuda"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AI"
+msgstr "Anguilla"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AL"
+msgstr "Albania"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AM"
+msgstr "Armenia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AN"
+msgstr "Netherlands Antilles"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AO"
+msgstr "Angola"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AQ"
+msgstr "Antarctica"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AR"
+msgstr "Argentina"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AS"
+msgstr "American Samoa"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AT"
+msgstr "Austria"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AU"
+msgstr "Australia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AW"
+msgstr "Aruba"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AX"
+msgstr "Åland Islands"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "AZ"
+msgstr "Azerbaijan"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BA"
+msgstr "Bosnia & Herzegovina"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BB"
+msgstr "Barbados"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BD"
+msgstr "Bangladesh"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BE"
+msgstr "Belgium"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BF"
+msgstr "Burkina Faso"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BG"
+msgstr "Bulgaria"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BH"
+msgstr "Bahrain"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BI"
+msgstr "Burundi"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BJ"
+msgstr "Benin"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BL"
+msgstr "St. Barthélemy"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BM"
+msgstr "Bermuda"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BN"
+msgstr "Brunei"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BO"
+msgstr "Bolivia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BQ"
+msgstr "Caribbean Netherlands"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BR"
+msgstr "Brazil"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BS"
+msgstr "Bahamas"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BT"
+msgstr "Bhutan"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BV"
+msgstr "Bouvet Island"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BW"
+msgstr "Botswana"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BY"
+msgstr "Belarus"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "BZ"
+msgstr "Belize"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CA"
+msgstr "Canada"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CC"
+msgstr "Cocos (Keeling) Islands"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CD"
+msgstr "Congo - Kinshasa"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CF"
+msgstr "Central African Republic"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CG"
+msgstr "Congo - Brazzaville"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CH"
+msgstr "Switzerland"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CI"
+msgstr "Côte d’Ivoire"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CK"
+msgstr "Cook Islands"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CL"
+msgstr "Chile"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CM"
+msgstr "Cameroon"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CN"
+msgstr "China"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CO"
+msgstr "Colombia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CP"
+msgstr "Clipperton Island"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CR"
+msgstr "Costa Rica"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CU"
+msgstr "Cuba"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CV"
+msgstr "Cape Verde"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CW"
+msgstr "Curaçao"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CX"
+msgstr "Christmas Island"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CY"
+msgstr "Cyprus"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "CZ"
+msgstr "Czech Republic"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "DE"
+msgstr "Germany"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "DG"
+msgstr "Diego Garcia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "DJ"
+msgstr "Djibouti"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "DK"
+msgstr "Denmark"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "DM"
+msgstr "Dominica"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "DO"
+msgstr "Dominican Republic"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "DZ"
+msgstr "Algeria"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "EA"
+msgstr "Ceuta & Melilla"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "EC"
+msgstr "Ecuador"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "EE"
+msgstr "Estonia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "EG"
+msgstr "Egypt"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "EH"
+msgstr "Western Sahara"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "ER"
+msgstr "Eritrea"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "ES"
+msgstr "Spain"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "ET"
+msgstr "Ethiopia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "EU"
+msgstr "European Union"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "FI"
+msgstr "Finland"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "FJ"
+msgstr "Fiji"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "FK"
+msgstr "Falkland Islands"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "FM"
+msgstr "Micronesia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "FO"
+msgstr "Faroe Islands"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "FR"
+msgstr "France"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GA"
+msgstr "Gabon"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GB"
+msgstr "United Kingdom"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GD"
+msgstr "Grenada"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GE"
+msgstr "Georgia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GF"
+msgstr "French Guiana"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GG"
+msgstr "Guernsey"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GH"
+msgstr "Ghana"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GI"
+msgstr "Gibraltar"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GL"
+msgstr "Greenland"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GM"
+msgstr "Gambia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GN"
+msgstr "Guinea"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GP"
+msgstr "Guadeloupe"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GQ"
+msgstr "Equatorial Guinea"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GR"
+msgstr "Greece"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GS"
+msgstr "South Georgia & South Sandwich Islands"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GT"
+msgstr "Guatemala"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GU"
+msgstr "Guam"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GW"
+msgstr "Guinea-Bissau"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "GY"
+msgstr "Guyana"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "HK"
+msgstr "Hong Kong SAR China"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "HM"
+msgstr "Heard & McDonald Islands"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "HN"
+msgstr "Honduras"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "HR"
+msgstr "Croatia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "HT"
+msgstr "Haiti"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "HU"
+msgstr "Hungary"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "IC"
+msgstr "Canary Islands"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "ID"
+msgstr "Indonesia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "IE"
+msgstr "Ireland"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "IL"
+msgstr "Israel"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "IM"
+msgstr "Isle of Man"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "IN"
+msgstr "India"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "IO"
+msgstr "British Indian Ocean Territory"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "IQ"
+msgstr "Iraq"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "IR"
+msgstr "Iran"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "IS"
+msgstr "Iceland"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "IT"
+msgstr "Italy"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "JE"
+msgstr "Jersey"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "JM"
+msgstr "Jamaica"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "JO"
+msgstr "Jordan"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "JP"
+msgstr "Japan"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "KE"
+msgstr "Kenya"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "KG"
+msgstr "Kyrgyzstan"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "KH"
+msgstr "Cambodia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "KI"
+msgstr "Kiribati"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "KM"
+msgstr "Comoros"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "KN"
+msgstr "St. Kitts & Nevis"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "KP"
+msgstr "North Korea"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "KR"
+msgstr "South Korea"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "KW"
+msgstr "Kuwait"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "KY"
+msgstr "Cayman Islands"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "KZ"
+msgstr "Kazakhstan"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "LA"
+msgstr "Laos"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "LB"
+msgstr "Lebanon"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "LC"
+msgstr "St. Lucia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "LI"
+msgstr "Liechtenstein"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "LK"
+msgstr "Sri Lanka"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "LR"
+msgstr "Liberia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "LS"
+msgstr "Lesotho"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "LT"
+msgstr "Lithuania"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "LU"
+msgstr "Luxembourg"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "LV"
+msgstr "Latvia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "LY"
+msgstr "Libya"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MA"
+msgstr "Morocco"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MC"
+msgstr "Monaco"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MD"
+msgstr "Moldova"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "ME"
+msgstr "Montenegro"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MF"
+msgstr "St. Martin"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MG"
+msgstr "Madagascar"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MH"
+msgstr "Marshall Islands"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MK"
+msgstr "Macedonia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "ML"
+msgstr "Mali"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MM"
+msgstr "Myanmar (Burma)"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MN"
+msgstr "Mongolia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MO"
+msgstr "Macau SAR China"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MP"
+msgstr "Northern Mariana Islands"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MQ"
+msgstr "Martinique"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MR"
+msgstr "Mauritania"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MS"
+msgstr "Montserrat"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MT"
+msgstr "Malta"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MU"
+msgstr "Mauritius"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MV"
+msgstr "Maldives"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MW"
+msgstr "Malawi"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MX"
+msgstr "Mexico"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MY"
+msgstr "Malaysia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "MZ"
+msgstr "Mozambique"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "NA"
+msgstr "Namibia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "NC"
+msgstr "New Caledonia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "NE"
+msgstr "Niger"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "NF"
+msgstr "Norfolk Island"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "NG"
+msgstr "Nigeria"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "NI"
+msgstr "Nicaragua"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "NL"
+msgstr "Netherlands"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "NO"
+msgstr "Norway"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "NP"
+msgstr "Nepal"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "NR"
+msgstr "Nauru"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "NU"
+msgstr "Niue"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "NZ"
+msgstr "New Zealand"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "OM"
+msgstr "Oman"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PA"
+msgstr "Panama"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PE"
+msgstr "Peru"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PF"
+msgstr "French Polynesia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PG"
+msgstr "Papua New Guinea"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PH"
+msgstr "Philippines"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PK"
+msgstr "Pakistan"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PL"
+msgstr "Poland"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PM"
+msgstr "St. Pierre & Miquelon"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PN"
+msgstr "Pitcairn Islands"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PR"
+msgstr "Puerto Rico"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PS"
+msgstr "Palestinian Territories"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PT"
+msgstr "Portugal"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PW"
+msgstr "Palau"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "PY"
+msgstr "Paraguay"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "QA"
+msgstr "Qatar"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "QO"
+msgstr "Outlying Oceania"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "RE"
+msgstr "Réunion"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "RO"
+msgstr "Romania"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "RS"
+msgstr "Serbia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "RU"
+msgstr "Russia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "RW"
+msgstr "Rwanda"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SA"
+msgstr "Saudi Arabia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SB"
+msgstr "Solomon Islands"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SC"
+msgstr "Seychelles"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SD"
+msgstr "Sudan"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SE"
+msgstr "Sweden"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SG"
+msgstr "Singapore"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SH"
+msgstr "St. Helena"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SI"
+msgstr "Slovenia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SJ"
+msgstr "Svalbard & Jan Mayen"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SK"
+msgstr "Slovakia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SL"
+msgstr "Sierra Leone"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SM"
+msgstr "San Marino"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SN"
+msgstr "Senegal"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SO"
+msgstr "Somalia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SR"
+msgstr "Suriname"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SS"
+msgstr "South Sudan"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "ST"
+msgstr "São Tomé & Príncipe"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SV"
+msgstr "El Salvador"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SX"
+msgstr "Saint Martin"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SY"
+msgstr "Syria"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "SZ"
+msgstr "Swaziland"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TA"
+msgstr "Tristan da Cunha"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TC"
+msgstr "Turks & Caicos Islands"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TD"
+msgstr "Chad"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TF"
+msgstr "French Southern Territories"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TG"
+msgstr "Togo"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TH"
+msgstr "Thailand"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TJ"
+msgstr "Tajikistan"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TK"
+msgstr "Tokelau"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TL"
+msgstr "Timor-Leste"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TM"
+msgstr "Turkmenistan"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TN"
+msgstr "Tunisia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TO"
+msgstr "Tonga"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TR"
+msgstr "Turkey"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TT"
+msgstr "Trinidad & Tobago"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TV"
+msgstr "Tuvalu"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TW"
+msgstr "Taiwan"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "TZ"
+msgstr "Tanzania"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "UA"
+msgstr "Ukraine"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "UG"
+msgstr "Uganda"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "UM"
+msgstr "U.S. Outlying Islands"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "US"
+msgstr "United States"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "UY"
+msgstr "Uruguay"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "UZ"
+msgstr "Uzbekistan"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "VA"
+msgstr "Vatican City"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "VC"
+msgstr "St. Vincent & Grenadines"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "VE"
+msgstr "Venezuela"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "VG"
+msgstr "British Virgin Islands"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "VI"
+msgstr "U.S. Virgin Islands"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "VN"
+msgstr "Vietnam"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "VU"
+msgstr "Vanuatu"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "WF"
+msgstr "Wallis & Futuna"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "WS"
+msgstr "Samoa"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "XK"
+msgstr "Kosovo"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "YE"
+msgstr "Yemen"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "YT"
+msgstr "Mayotte"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "ZA"
+msgstr "South Africa"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "ZM"
+msgstr "Zambia"
+
+#: lib/books_web/controllers/cart_html.ex:3
+#, elixir-autogen, elixir-format
+msgid "ZW"
+msgstr "Zimbabwe"

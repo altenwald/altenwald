@@ -1,0 +1,105 @@
+<.form :let={f} for={@changeset} action={@action} class="form">
+  <div class="field">
+    <label class="label"><%= gettext("User") %></label>
+    <div class="control">
+      <div class="select is-fullwidth">
+        <%= select f, :user_id, @users, value: @user_id %>
+      </div>
+    </div>
+    <p class="help"><%= gettext("Your full name. Use your full names (first, middle, last, all of the names).") %></p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Full Name") %> (*)</label>
+    <div class="control">
+      <%= text_input f, :full_name, class: "input#{if(f.errors[:full_name], do: " is-danger")}" %>
+    </div>
+    <p class="help">
+      <.error_tag form={f} field={:full_name}/>
+      <%= gettext("Your full name. Use your full names (first, middle, last, all of the names).") %>
+    </p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Short Name") %> (*)</label>
+    <div class="control">
+      <%= text_input f, :short_name, class: "input#{if(f.errors[:short_name], do: " is-danger")}" %>
+    </div>
+    <p class="help">
+      <.error_tag form={f} field={:short_name}/>
+      <%= gettext("Your short name. The name shown under the book.") %>
+    </p>
+  </div>
+  <div class="field">
+    <label class="label">URL</label>
+    <div class="control">
+      <%= text_input f, :url, class: "input", name: "author[urls][personal]", value: @author.urls["personal"] %>
+    </div>
+    <p class="help"><%= gettext("The URL for identifying the author.") %></p>
+  </div>
+
+  <div class="tabs">
+    <ul>
+      <li class="tab-item is-active" data-id="tab-es"><a><%= gettext "Spanish" %></a></li>
+      <li class="tab-item" data-id="tab-en"><a><%= gettext "English" %></a></li>
+    </ul>
+  </div>
+
+  <div id="tab-es" class="tab-section">
+    <div class="field">
+      <label class="label"><%= gettext("Title") %></label>
+      <div class="control">
+        <%= text_input f, :title_es, class: "input", name: "author[title][es]", value: @author.title["es"] %>
+      </div>
+      <p class="help"><%= gettext("The title or position you have.") %></p>
+    </div>
+    <div class="field">
+      <label class="label"><%= gettext("Description") %></label>
+      <p class="help"><%= gettext("Write the description which will be shown in the book page.") %></p>
+      <div class="control">
+        <%= textarea f, :description_es, class: "textarea trumbowyg", name: "author[description][es]", value: @author.description["es"] %>
+      </div>
+      <p class="help"><%= gettext("A bit of you, your bio.") %></p>
+    </div>
+  </div>
+
+  <div id="tab-en" class="tab-section is-hidden">
+    <div class="field">
+      <label class="label"><%= gettext("Title") %></label>
+      <div class="control">
+        <%= text_input f, :title_en, class: "input", name: "author[title][en]", value: @author.title["en"] %>
+      </div>
+      <p class="help"><%= gettext("The title or position you have.") %></p>
+    </div>
+    <div class="field">
+      <label class="label"><%= gettext("Description") %></label>
+      <p class="help"><%= gettext("Write the description which will be shown in the book page.") %></p>
+      <div class="control">
+        <%= textarea f, :description_en, class: "textarea trumbowyg", name: "author[description][en]", value: @author.description["en"] %>
+      </div>
+      <p class="help"><%= gettext("A bit of you, your bio.") %></p>
+    </div>
+  </div>
+
+  <%= for {social_networks_key, name} <- [ social_networks_linkedin: "LinkedIn",
+                                           social_networks_github: "Github",
+                                           social_networks_twitter: "Twitter" ] do %>
+  <div class="field">
+    <label class="label"><%= name %></label>
+    <div class="control">
+      <% key_name = String.downcase(name) %>
+      <%= text_input f, social_networks_key, class: "input", name: "author[urls][#{key_name}]", value: @author.urls[key_name] %>
+    </div>
+    <p class="help"><%= gettext("A link to your %{name} profile.", name: name) %></p>
+  </div>
+  <% end %>
+  <hr/>
+  <p class="help">(*) <%= gettext("required") %></p>
+  <hr/>
+  <div class="field is-grouped">
+    <p class="control">
+      <%= submit gettext("Save"), class: "button is-primary" %>
+    </p>
+    <p class="control">
+      <%= link gettext("Cancel"), to: @return_to, class: "button" %>
+    </p>
+  </div>
+</.form>

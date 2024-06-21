@@ -1,0 +1,36 @@
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul>
+    <li><%= link(gettext("Dashboard"), to: "#") %></li>
+    <li class="is-active"><%= link(gettext("My Orders"), to: "#", "aria-current": "page") %></li>
+  </ul>
+</nav>
+<div class="content">
+  <table class="table is-stripped is-hoverable">
+    <thead>
+      <th><%= gettext("Date") %></th>
+      <th><%= gettext("Status") %></th>
+      <th><%= gettext("Content") %></th>
+      <th><%= gettext("Items") %></th>
+      <th><%= gettext("Total") %></th>
+      <th><%= gettext("Options") %></th>
+    </thead>
+    <tbody>
+      <%= for order <- @my_orders do %>
+        <tr>
+          <td><%= NaiveDateTime.to_date(order.inserted_at) %></td>
+          <td><%= translate_status(order.state) %></td>
+          <td>
+            <%= link(get_content(order), to: Routes.cart_path(@conn, :my_order, order)) %>
+          </td>
+          <td><%= get_num_items(order) %></td>
+          <td><%= order.total_price %></td>
+          <td>
+            <%= link to: Routes.cart_path(@conn, :my_order, order) do %>
+              <i class="fas fa-eye"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

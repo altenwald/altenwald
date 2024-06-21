@@ -1,0 +1,41 @@
+<.form :let={f} for={@changeset} action={@action} class="form">
+  <div class="field">
+    <label class="label"><%= gettext("Name") %> (*)</label>
+    <div class="control">
+      <%= text_input f, :name, class: "input" %>
+    </div>
+    <p class="help"><%= gettext("The name of the project.") %></p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Logo URL") %> (*)</label>
+    <div class="control">
+      <%= text_input f, :logo, class: "input" %>
+    </div>
+    <p class="help"><%= gettext("The URL for the logo of the project.") %></p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Description") %> (*)</label>
+    <p class="help"><%= gettext("Write the description which will be shown in the book page.") %></p>
+    <div class="control">
+      <%= textarea f, :description, class: "textarea trumbowyg" %>
+    </div>
+  </div>
+  <div class="field">
+    <label class="label">URL (*)</label>
+    <div class="control">
+      <%= text_input f, :url, class: "input" %>
+    </div>
+    <p class="help"><%= gettext("The URL for accessing to the project.") %></p>
+  </div>
+  <hr/>
+  <p class="help">(*) <%= gettext("required") %></p>
+  <hr/>
+  <div class="field is-grouped">
+    <p class="control">
+      <%= submit gettext("Save"), class: "button is-primary" %>
+    </p>
+    <p class="control">
+      <%= link gettext("Cancel"), to: @return_to, class: "button" %>
+    </p>
+  </div>
+</.form>

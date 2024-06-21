@@ -1,0 +1,18 @@
+<div class="content">
+  <h1 class="title is-2"><%= gettext("Payment cancelled") %></h1>
+  <p>
+    <%= gettext("""
+    The payment was cancelled by the payment gateway. If that's not
+    correct or you need support, please,
+    contact with the administrator using the following email:
+    """) %>
+  </p>
+  <p>
+    <%= link("info@altenwald.com",
+      to: "mailto:info@altenwald.com",
+      rel: "noopener",
+      target: "_blank"
+    ) %>
+  </p>
+  <p><%= gettext("Thank you and sorry about the inconveniences.") %></p>
+</div>

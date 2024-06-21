@@ -1,0 +1,91 @@
+<div class="content inform">
+  <h1><%= gettext("Payment successfully") %></h1>
+  <p><%= gettext("The payment was received successfully.") %></p>
+  <%= if length(@files) > 0 do %>
+    <p>
+      <%= gettext("""
+      The link(s) for the digital downloading are the following:
+      """) %>
+    </p>
+    <%= for {file, i} <- Enum.with_index(@files), file.enabled do %>
+      <a
+        id="purchase-download-#{file.id}"
+        href={Routes.download_path(@conn, :download, @hashid, i, file.filetype)}
+        target="_blank"
+      >
+        <div class="download-section">
+          <img
+            class="download-icon"
+            src={static_path(@conn, "/images/#{file.filetype}.png")}
+            alt={file.filetype}
+          />
+          <%= file.filename %> (<%= file.description %>)
+        </div>
+      </a>
+    <% end %>
+  <% else %>
+    <%= if @preventa do %>
+      <p>
+        <%= gettext("""
+        You has been subscribed to the Altenwald community as a member and you will
+        receive notifications from us about updates and improvements on the books you
+        bought, new drafts you could have access to download and other information you
+        could find useful.
+        """) %>
+      </p>
+    <% end %>
+  <% end %>
+  <%= if @order.shipping_address do %>
+    <p>
+      <%= gettext("""
+      In a one working day maximum you will receive an email with the information about
+      the prepartion for the sending of the book. In addition, you has been subscribed
+      to the Altenwald community, you will receive the welcome message and information
+      about the membership.
+      """) %>
+    </p>
+  <% end %>
+  <%= if @current_user do %>
+    <p>
+      <%= raw(
+        gettext(
+          """
+          You could see the book in your <a href="%{url}">bookshelf</a> and download it
+          whenever.
+          """,
+          url: Routes.user_bookshelf_path(@conn, :index)
+        )
+      ) %>
+    </p>
+  <% else %>
+    <%= if exists_user?(@order.email) do %>
+      <p>
+        <%= raw(
+          gettext(
+            """
+            Your purchase was added to your bookshelf based on your email
+            (<strong>%{email}</strong>), you can check your
+            <a href="%{bookshelf_url}">bookshelf in this link</a>.
+            """,
+            email: @order.email,
+            bookshelf_url: Routes.user_bookshelf_path(@conn, :index)
+          )
+        ) %>
+      </p>
+    <% else %>
+      <p>
+        <%= raw(
+          gettext(
+            """
+            You will receive a message to confirm your email (<strong>%{email}</strong>) and
+            join the Altenwald Community. This way you can have access to download the books
+            whenever and you will receive information about the community.
+            """,
+            email: @order.email
+          )
+        ) %>
+      </p>
+    <% end %>
+  <% end %>
+  <p><%= gettext("Thanks for your purchase.") %></p>
+</div>

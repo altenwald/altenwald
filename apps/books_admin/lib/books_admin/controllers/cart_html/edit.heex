@@ -1,0 +1,99 @@
+<section class="hero is-hero-bar">
+  <div class="hero-body">
+    <div class="level">
+      <div class="level-left">
+        <div class="level-item">
+          <div class="title"><%= gettext("Catalog") %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section is-main-section">
+  <%= if @order do %>
+  <div class="card has-mobile-sort-spaced">
+    <header class="card-header">
+      <p class="card-header-title">
+        <span class="icon"><i class="fas fa-user"></i></span>
+        <%= gettext("Order data") %>
+      </p>
+    </header>
+    <.form :let={f} for={@changeset} action={cart_path(@conn, :update, @order.id)} class="form">
+    <div class="card-content">
+      <div class="content">
+        <div class="field">
+          <label class="label"><%= gettext("Email") %></label>
+          <div class="control">
+            <%= text_input f, :email, class: "input#{if(f.errors[:email], do: " is-danger")}" %>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label"><%= gettext("First Name") %></label>
+          <div class="control">
+            <%= text_input f, :first_name, class: "input#{if(f.errors[:first_name], do: " is-danger")}" %>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label"><%= gettext("Last Name") %></label>
+          <div class="control">
+            <%= text_input f, :last_name, class: "input#{if(f.errors[:last_name], do: " is-danger")}" %>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label"><%= gettext("Shipping Status") %></label>
+          <div class="control">
+            <div class={"select is-fullwidth#{if(f.errors[:shipping_status], do: " is-danger")}"}>
+              <%= select f, :shipping_status, @shipping_statuses %>
+            </div>
+          </div>
+          <p class="help">
+            <.error_tag form={f} field={:shipping_status}/>
+            <%= gettext("(Optional) Choose shipping status for the current order.") %>
+          </p>
+        </div>
+        <div class="field">
+          <label class="label"><%= gettext("Shipping Status At") %></label>
+          <div class="control">
+            <%= date_input f, :shipping_status_at, class: "input#{if(f.errors[:shipping_status_at], do: " is-danger")}" %>
+          </div>
+          <p class="help">
+            <.error_tag form={f} field={:shipping_status_at}/>
+            <%= gettext("(Optional) When the shipping status changed.") %>
+          </p>
+        </div>
+        <div class="field">
+          <label class="label"><%= gettext("Shipping Tracking URL") %></label>
+          <div class="control">
+            <%= text_input f, :shipping_tracking_url, class: "input#{if(f.errors[:shipping_tracking_url], do: " is-danger")}" %>
+          </div>
+          <p class="help">
+            <.error_tag form={f} field={:shipping_tracking_url}/>
+            <%= gettext("(Optional) The URL tracking.") %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr/>
+    <p class="help">(*) <%= gettext("required") %></p>
+    <hr/>
+    <div class="field is-grouped">
+      <p class="control">
+        <%= submit gettext("Save"), class: "button is-primary" %>
+      </p>
+      <p class="control">
+        <%= link gettext("Cancel"), to: cart_path(@conn, :index), class: "button" %>
+      </p>
+    </div>
+    </.form>
+  </div>
+  <% else %>
+  <div class="card has-table has-mobile-sort-spaced">
+    <header class="card-header">
+      <p class="card-header-title">
+        <span class="icon"><i class="fas fa-file-invoice"></i></span>
+        <%= gettext("Order not found") %>
+      </p>
+    </header>
+  </div>
+  <% end %>
+</section>

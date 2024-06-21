@@ -1,0 +1,31 @@
+<.form :let={f} for={@changeset} action={@action} class="form">
+  <div class="field">
+    <label class="label"><%= gettext("Profile") %> (*)</label>
+    <div class="control">
+      <div class="select is-fullwidth">
+        <%= select f, :author_id, @authors %>
+      </div>
+    </div>
+    <p class="help"><%= gettext("Choose a profile to be assigned to a role for this book.") %></p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Role") %> (*)</label>
+    <div class="control">
+      <div class="select is-fullwidth">
+        <%= select f, :role, @roles %>
+      </div>
+    </div>
+    <p class="help"><%= gettext("Choose a role for the profile for this book.") %></p>
+  </div>
+  <hr/>
+  <p class="help">(*) <%= gettext("required") %></p>
+  <hr/>
+  <div class="field is-grouped">
+    <p class="control">
+      <%= submit gettext("Save"), class: "button is-primary" %>
+    </p>
+    <p class="control">
+      <%= link gettext("Cancel"), to: @return_to, class: "button" %>
+    </p>
+  </div>
+</.form>

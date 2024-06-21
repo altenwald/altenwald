@@ -1,0 +1,80 @@
+<.form :let={f} for={@changeset} action={@action} class="form">
+  <%= hidden_input f, :type, value: "income" %>
+  <div class="field">
+    <label class="label"><%= gettext("Enabled?") %></label>
+    <div class="control">
+      <label class="switch is-rounded">
+        <%= checkbox f, :enable %>
+        <span class="check"></span>
+        <span class="control-label"></span>
+      </label>
+    </div>
+    <p class="help"><%= gettext("If enabled, it will appear in the carousel ads in the main page.") %></p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Priority") %> (*)</label>
+    <div class={"control#{if(f.errors[:priority], do: " is-danger")}"}>
+      <%= number_input f, :priority, class: "input" %>
+    </div>
+    <p class="help">
+      <.error_tag form={f} field={:priority}/>
+      <%= gettext("Insert the priority of the carousel ad.") %>
+    </p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Image") %> (*)</label>
+    <div class="control">
+      <div class={"select is-fullwidth#{if(f.errors[:image], do: " is-danger")}"}>
+        <%= select f, :image, @images, prompt: gettext("Choose an image...") %>
+      </div>
+    </div>
+    <p class="help">
+      <.error_tag form={f} field={:image}/>
+      <%= gettext("Choose an image to show in the carousel for the main page.") %>
+    </p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Type") %> (*)</label>
+    <div class="control">
+      <div class="select is-fullwidth">
+        <%= select f, :type, [{gettext("Book"), "book"}, {gettext("Bundle"), "bundle"}] %>
+      </div>
+    </div>
+    <p class="help"><%= gettext("Choose the type for the link to add a book or a bundle.") %></p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Book") %> (*)</label>
+    <div class="control">
+      <div class={"select is-fullwidth#{if(f.errors[:book_id], do: " is-danger")}"}>
+        <%= select f, :book_id, @books, prompt: gettext("Choose a book...") %>
+      </div>
+    </div>
+    <p class="help">
+      <.error_tag form={f} field={:book_id}/>
+      <%= gettext("The book where goes when clicking/tapping the image.") %>
+    </p>
+  </div>
+  <div class="field">
+    <label class="label"><%= gettext("Bundle") %> (*)</label>
+    <div class="control">
+      <div class={"select is-fullwidth#{if(f.errors[:bundle_id], do: " is-danger")}"}>
+        <%= select f, :bundle_id, @bundles, prompt: gettext("Choose a bundle...") %>
+      </div>
+    </div>
+    <p class="help">
+      <.error_tag form={f} field={:bundle_id}/>
+      <%= gettext("The bundle where goes when clicking/tapping the image.") %>
+    </p>
+  </div>
+  <hr/>
+  <p class="help">(*) <%= gettext("required") %></p>
+  <hr/>
+  <div class="field is-grouped">
+    <p class="control">
+      <%= submit gettext("Save"), class: "button is-primary" %>
+    </p>
+    <p class="control">
+      <%= link gettext("Cancel"), to: @return_to, class: "button" %>
+    </p>
+  </div>
+</.form>

@@ -1,0 +1,44 @@
+<script src="https://checkout.stripe.com/checkout.js">
+</script>
+<script>
+  <!--
+    var payment = false;
+    var handler = StripeCheckout.configure({
+      key: '<%= @api_key %>',
+      submitType: 'pay',
+      image: 'https://altenwald.com/images/altenwald_logo.jpg',
+      locale: '<%= @locale %>',
+      token: function(stripeToken) {
+        var xhr = new XMLHttpRequest();
+        payment = true;
+        xhr.open("POST", "<%= @save_url %>");
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onload = function() {
+          if (xhr.status === 200 && xhr.responseText == "ok") {
+            window.location.href = '<%= raw @return_url %>';
+          } else {
+            window.location.href = '<%= raw @cancel_url %>';
+          }
+        };
+        xhr.setRequestHeader('X-CSRF-Token', '<%= @csrf_token %>');
+        xhr.send(encodeURI('token=' + stripeToken.id));
+      },
+      closed: function(e) {
+        if (!payment) {
+          window.location.href = '<%= raw @cancel_url %>';
+        }
+      }
+    });
+    handler.open({
+      name: "Altenwald",
+      description: '<%= gettext "Books purchase" %>',
+      amount: <%= @cart.total_price.amount %>,
+      email: '<%= @cart.email %>',
+      currency: "eur"
+    });
+    console.log(handler);
+  // -->
+</script>
+<div class="content">
+  <p class="title"><%= gettext("Wait a moment...") %></p>
+</div>

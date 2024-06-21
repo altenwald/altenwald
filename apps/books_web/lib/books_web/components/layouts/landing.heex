@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang={@landing.lang}>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <%= cond do %>
+      <% @landing.book -> %>
+        <meta name="description" content={@landing.book.title} />
+        <meta name="keywords" content={@landing.book.keywords} />
+
+        <title><%= @landing.book.title %> - Altenwald</title>
+      <% @landing.bundle -> %>
+        <meta name="description" content={@landing.bundle.name} />
+        <meta name="keywords" content={@landing.bundle.keywords} />
+
+        <title><%= @landing.bundle.name %> - Altenwald</title>
+    <% end %>
+
+    <.itemprops conn={@conn} locale={@locale} book={@landing.book} bundle={@landing.bundle} />
+    <.facebook conn={@conn} locale={@locale} book={@landing.book} bundle={@landing.bundle} />
+    <.twitter conn={@conn} locale={@locale} book={@landing.book} bundle={@landing.bundle} />
+    <!-- Favicon -->
+    <.favicon {assigns} />
+
+    <.google {assigns} />
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" href={static_path(@conn, "/vendor/css/bootstrap.min.css")} />
+    <!-- Animate Css -->
+    <link rel="stylesheet" href={static_path(@conn, "/vendor/css/animate.css")} />
+    <!-- icon Css -->
+    <link rel="stylesheet" href={static_path(@conn, "/vendor/css/fontawesome.css")} />
+    <link rel="stylesheet" href={static_path(@conn, "/vendor/css/themify-icons.css")} />
+    <link rel="stylesheet" href={static_path(@conn, "/vendor/css/magnific-popup.css")} />
+    <link rel="stylesheet" href={static_path(@conn, "/vendor/css/slick.css")} />
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href={static_path(@conn, "/vendor/css/owl.carousel.min.css")} />
+    <link rel="stylesheet" href={static_path(@conn, "/vendor/css/owl.theme.default.min.css")} />
+
+    <% [main_slug | rest_slugs] = @landing.slugs %>
+    <link rel="canonical" href={Path.join([BooksWeb.Endpoint.url(), main_slug])} />
+    <link rel="alternate" href={Routes.landing_url(@conn, :show, main_slug)} />
+    <%= for slug <- rest_slugs do %>
+      <link rel="alternate" href={Path.join([BooksWeb.Endpoint.url(), slug])} />
+      <link rel="alternate" href={Routes.landing_url(@conn, :show, slug)} />
+    <% end %>
+    <%= if @landing.book && @landing.book.slug not in @landing.slugs do %>
+      <link rel="alternate" href={Path.join([BooksWeb.Endpoint.url(), @landing.book.slug])} />
+      <link rel="alternate" href={Routes.landing_url(@conn, :show, @landing.book.slug)} />
+    <% end %>
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href={static_path(@conn, "/vendor/css/landing.css")} />
+    <link rel="stylesheet" href={static_path(@conn, "/vendor/css/responsive.css")} />
+    <%= if @landing.faqs != [] do %>
+      <script type="application/ld+json">
+        <%= raw ld_json_faqs(@landing.faqs) %>
+      </script>
+    <% end %>
+  </head>
+  <body id="top-header">
+    <!-- Navigation Menu -->
+
+    <!-- NAVBAR
+    ================================================= -->
+    <div class="main-navigation fixed-top site-header border-bottom" id="mainmenu-area">
+      <nav class="navbar navbar-expand-lg ">
+        <div class="container align-items-center">
+          <a class="navbar-brand" href={Routes.catalog_path(@conn, :index)}>
+            <h2 class="mb-0">
+              <img
+                src={static_path(@conn, "/images/altenwald_logo_web.png")}
+                alt="Altenwald logo"
+              />
+            </h2>
+          </a>
+          <!-- Toggler -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarmain"
+            aria-controls="navbarmain"
+            aria-expanded="false"
+            aria-label={gettext("Toggle navigation")}
+          >
+            <span class="ti-menu-alt"></span>
+          </button>
+          <!-- Collapse -->
+          <div class="collapse navbar-collapse text-center text-lg-left" id="navbarmain">
+            <!-- Links -->
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a href="#book" class="nav-link smoth-scroll">
+                  <%= gettext("About") %>
+                </a>
+              </li>
+
+              <li :if={@landing.book} class="nav-item ">
+                <a href="#chapter" class="nav-link smoth-scroll">
+                  <%= gettext("Chapters") %>
+                </a>
+              </li>
+
+              <li :if={@landing.bundle} class="nav-item ">
+                <a href="#content" class="nav-link smoth-scroll">
+                  <%= gettext("Content") %>
+                </a>
+              </li>
+
+              <li :if={@landing.faqs != []} class="nav-item ">
+                <a href="#faq" class="nav-link smoth-scroll">
+                  <%= gettext("FAQ") %>
+                </a>
+              </li>
+
+              <li :if={@landing.book && @landing.book.reviews != []} class="nav-item ">
+                <a href="#reviews" class="nav-link smoth-scroll">
+                  <%= gettext("Reviews") %>
+                </a>
+              </li>
+
+              <li class="nav-item ">
+                <a href="#author" class="nav-link smoth-scroll">
+                  <%= gettext("Author") %>
+                </a>
+              </li>
+
+              <li class="nav-item ">
+                <%= link(gettext("Subscribe"), to: "#subscribe", class: "nav-link smoth-scroll") %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <section class="banner-main pt-7 clear-next-pt-7" id="banner">
+      <div class="container">
+        <%= if info = Phoenix.Flash.get(@flash, :info) do %>
+          <div class="alert alert-success" role="alert">
+            <%= info %>
+          </div>
+        <% end %>
+        <%= if error = Phoenix.Flash.get(@flash, :error) do %>
+          <div class="alert alert-danger" role="alert">
+            <%= error %>
+          </div>
+        <% end %>
+      </div>
+    </section>
+
+    <%= @inner_content %>
+    <!--  Footer start -->
+    <footer class="footer bg-dark">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <p class="footer-copy text-white-50 mb-0">
+              &copy; Copyright <span class="current-year">Altenwald</span>
+              All rights reserved-<%= Date.utc_today().year %>.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <div class="footer-btm-menu text-lg-right mt-3 mt-lg-0"></div>
+          </div>
+        </div>
+        <!-- / .row -->
+      </div>
+    </footer>
+    <!--  Page Scroll to Top  -->
+    <a class="scroll-to-top smoth-scroll" href="#top-header">
+      <i class="ti-angle-up"></i>
+    </a>
+    <!-- Main jQuery -->
+    <script src={static_path(@conn, "/vendor/js/jquery.min.js")}>
+    </script>
+    <!-- Bootstrap 4.3.1 -->
+    <script src={static_path(@conn, "/vendor/js/popper.min.js")}>
+    </script>
+    <script src={static_path(@conn, "/vendor/js/bootstrap.min.js")}>
+    </script>
+    <script src={static_path(@conn, "/vendor/js/owl.carousel.min.js")}>
+    </script>
+    <script src={static_path(@conn, "/vendor/js/jquery.magnific-popup.js")}>
+    </script>
+    <script src={static_path(@conn, "/vendor/js/slick.min.js")}>
+    </script>
+    <!-- Counter Js -->
+    <script src={static_path(@conn, "/vendor/js/waypoint.js")}>
+    </script>
+    <script src={static_path(@conn, "/vendor/js/jquery.counterup.min.js")}>
+    </script>
+    <script src={static_path(@conn, "/vendor/js/contact.js")}>
+    </script>
+    <script src={static_path(@conn, "/vendor/js/theme.js")}>
+    </script>
+  </body>
+</html>

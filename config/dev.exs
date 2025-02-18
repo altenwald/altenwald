@@ -60,5 +60,5 @@ config :swoosh, :api_client, false
 
 config :ex_gram, token: System.get_env("EXGRAM_TOKEN")
 
-config :books_bot, :granted_users, String.split(System.get_env("GRANTED_USERS"), ",")
-config :books_bot, :group_chat_ids, String.split(System.get_env("GROUP_CHAT_IDS"), ",")
+config :books_bot, :granted_users, String.split(System.get_env("GRANTED_USERS", ""), ",")
+config :books_bot, :group_chat_ids, String.split(System.get_env("GROUP_CHAT_IDS", ""), ",")

@@ -27,8 +27,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
-    "esbuild": "^0.14.18",
+    "esbuild": "^0.25.0",
     "esbuild-plugin-babel": "^0.2.3",
-    "esbuild-sass-plugin": "^2.2.2"
+    "esbuild-sass-plugin": "^3.3.1"
   }
 }
